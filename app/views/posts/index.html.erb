@@ -1,0 +1,12 @@
+<h1>List of Your Posts</h1>
+
+<% @posts.each do |post| %>
+  <% unless post.user != current_user %>
+    <%= link_to post_path(post) do %>
+    <h3><%= post.content %> - <%= post.created_at %> <%= post.user.email %></h3>
+      <%= link_to "Delete Post", post_path(post),
+                method: :delete,
+                data: { confirm: "Delete Post?" }, class: 'btn btn-danger' %>
+    <% end %>
+  <% end %>
+<% end %>
