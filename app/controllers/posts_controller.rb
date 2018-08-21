@@ -8,9 +8,12 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     authorize @post
+    @comment = Comment.new(post_id: params[:post_id])
   end
 
   def show
+    @comment = Comment.new
+    @comments = @post.comments
   end
 
   def create
