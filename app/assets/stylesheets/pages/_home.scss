@@ -1,1 +1,56 @@
-// Specific CSS for your home-page
+.dashboard-container {
+  border: solid .5px;
+
+  display: flex;
+}
+.news-container {
+  display: flex;
+  flex-direction: column;
+  flex: 20%;
+  min-height: calc(150vh - 60px);
+  background-color: #e3e4e5;
+}
+.news-inner-container {
+  min-height: 700px;
+  background-color: #f7f9f9;
+  border-radius: 2px;
+  margin: 20px;
+  padding: 2px;
+}
+.prices-container {
+  display: flex;
+  flex-direction: column;
+  flex: 55%;
+  min-height: calc(150vh - 60px);
+  background-color: #e3e4e5;
+}
+.prices-inner-container {
+  min-height: 700px;
+  background-color: #f7f9f9;
+  border-radius: 2px;
+  margin: 20px;
+  padding: 2px;
+}
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  flex: 25%;
+  min-height: calc(150vh - 60px);
+  background-color: #e3e4e5;
+}
+.posts-inner-container{
+  min-height: 700px;
+  background-color: #f7f9f9;
+  border-radius: 2px;
+  margin: 20px;
+  padding: 2px;
+}
+.dashboard-container h1 {
+  text-align: center;
+  border-radius: 2px;
+  margin: 2px;
+  font-size: 30px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-style: light;
+}
