@@ -1,11 +1,15 @@
 class PortfoliosController < ApplicationController
-  # before_action :set_portfolio, only: [:show, :destroy]
+  before_action :set_portfolio, only: [:show, :destroy]
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
     @portfolios = policy_scope(Portfolio)
     @portfolio = @portfolios.find_by(user: current_user)
     @ownedcurrencies = Ownedcurrency.where(portfolio: @portfolio)
+
+    #create new ownedcurrency
+    @ownedcurrency = Ownedcurrency.new
+
   end
 
   def destroy
@@ -23,4 +27,5 @@ class PortfoliosController < ApplicationController
     @portfolio = Portfolio.find(params[:id])
     authorize @post
   end
+
 end
