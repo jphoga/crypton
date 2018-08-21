@@ -1,6 +1,0 @@
-<h1>Hello, this is your portfolio: <%= @portfolio.name %></h1>
-<h3>You own the following currencies:</h3>
-<p>Currency Name | Owned quantity | Market Price | Owned Share (USD)</p>
-<% @ownedcurrencies.each do |currency| %>
-  <p><%= currency.cryptocurrency.name %> | <%= currency.quantity %> |  <%= currency.cryptocurrency.market_price %> | <%= currency.cryptocurrency.market_price * currency.quantity %> </p>
-<% end %>
