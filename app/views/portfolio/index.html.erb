@@ -2,5 +2,5 @@
 <h3>You own the following currencies:</h3>
 <p>Currency Name | Owned quantity | Market Price | Owned Share (USD)</p>
 <% @ownedcurrencies.each do |currency| %>
-  <p><%= currency.cryptocurrency.name %> <%= currency.quantity %> |  <%= currency.cryptocurrency.market_price %> | <%= currency.cryptocurrency.market_price * currency.quantity %> </p>
+  <p><%= currency.cryptocurrency.name %> | <%= currency.quantity %> |  <%= currency.cryptocurrency.market_price %> | <%= currency.cryptocurrency.market_price * currency.quantity %> </p>
 <% end %>
