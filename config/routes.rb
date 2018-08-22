@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :portfolios, only: [ :new, :create, :destroy ] do
   end
   resources :posts do
-    resources :comments
+    resources :comments, only: [:create]
   end
   resources :comments, only: [:destroy]
   resources :ownedcurrencies, only: [ :index, :show, :new, :create, :destroy ]

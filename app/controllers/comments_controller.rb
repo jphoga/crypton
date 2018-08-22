@@ -5,8 +5,17 @@ class CommentsController < ApplicationController
     @comment.post = @post
     @comment.user = current_user
     authorize @comment
-    @comment.save
-    redirect_to post_path(@post)
+    if @comment.save
+      respond_to do |format|
+        format.html { redirect_to post_path(@post) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render 'posts/show' }
+        format.js
+      end
+    end
   end
 
   private
