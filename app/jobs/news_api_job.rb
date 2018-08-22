@@ -9,9 +9,7 @@ class NewsApiJob < ApplicationJob
     puts "Starting job searching for news"
     url = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=9d89b4c8e6574b3685109b85a70f9fc5"
 
-    if Article.count > 50
-      Article.first(20).each { |a| a.destroy }
-    end
+    Article.destroy_all
 
     response = open(url).read
     articles = JSON.parse(response)
