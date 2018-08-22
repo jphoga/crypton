@@ -6,9 +6,19 @@ Rails.application.routes.draw do
   resources :portfolios, only: [ :new, :create, :destroy ] do
     resources :ownedcurrencies, only: [:create]
   end
+  resources :users, only: [:show] do
+    member do
+      get '/posts', to: 'users#posts'
+    end
+  end
   resources :posts do
     resources :comments, only: [:create]
   end
   resources :comments, only: [:destroy]
   resources :ownedcurrencies, only: [ :index, :show, :new, :destroy ]
+
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end

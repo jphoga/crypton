@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :destroy]
-  skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @posts = policy_scope(Post).order("created_at DESC")
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 
     @post.user = current_user
     if @post.save
-      redirect_to posts_path
+      redirect_to post_path(@post)
     else
       render :new
     end
