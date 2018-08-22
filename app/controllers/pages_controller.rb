@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   def home
     @posts = policy_scope(Post).order("created_at DESC")
     @post = Post.new
+    @articles = Article.all
   end
 end
