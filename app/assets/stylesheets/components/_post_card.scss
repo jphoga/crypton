@@ -4,6 +4,7 @@
   position: relative;
   padding: 3px;
   color: black;
+  border-radius: 3px;
   &:hover {
     text-decoration: none;
   }
@@ -27,3 +28,8 @@
   }
 }
 
+.trash-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

@@ -5,6 +5,10 @@ class PostPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
+
   def show?
     true
   end
@@ -15,5 +19,9 @@ class PostPolicy < ApplicationPolicy
 
   def destroy?
     record.user == user
+  end
+
+  def posts?
+    true
   end
 end
