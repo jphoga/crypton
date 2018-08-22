@@ -2,6 +2,6 @@
     <div class="card">
       <div class="card-meta"><time><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
       <article class="card-content"><p><%= post.content %></p></article>
-      <div class="card-user"> By <span class="card-username"><%= post.user.email %></span> <%= link_to "View", post_path(post) %></div>
+      <div class="card-user"> By <span class="card-username"><%= post.user.email %></span> <%= link_to "Comments", post_path(post) %></div>
     </div>
 <% end %>
