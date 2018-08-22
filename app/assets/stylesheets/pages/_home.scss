@@ -1,7 +1,6 @@
 
 .dashboard-container {
   border: solid .5px;
-
   display: flex;
 }
 .news-container {
@@ -12,7 +11,7 @@
   background-color: #e3e4e5;
 }
 .news-inner-container {
-  min-height: 700px;
+  min-height: 950px;
   background-color: #f7f9f9;
   border-radius: 2px;
   margin: 20px;
@@ -26,11 +25,17 @@
   background-color: #e3e4e5;
 }
 .prices-inner-container {
-  min-height: 700px;
+  min-height: 950px;
   background-color: #f7f9f9;
   border-radius: 2px;
   margin: 20px;
   padding: 2px;
+}
+.card-container {
+  margin-top: 100px;
+  border: solid 2px;
+  border-radius: 5px;
+  height: 55vh;
 }
 .posts-container {
   display: flex;
@@ -40,7 +45,7 @@
   background-color: #e3e4e5;
 }
 .posts-inner-container{
-  min-height: 700px;
+  min-height: 950px;
   background-color: #f7f9f9;
   border-radius: 2px;
   margin: 20px;
@@ -56,31 +61,9 @@
   font-style: light;
 }
 
-// Specific CSS for your home-page
-
-// .wrapper {
-// }
-
-// .grid {
-//   display: grid;
-//   grid-template-columns: [news] 350px [crypto] auto [posts] 350px;
-// }
-
-// .item-news {
-//   grid-column-start: 1;
-//   grid-column-end: 1;
-//   border: solid;
-// }
-
-// .item-crypto {
-//   grid-column-start: 2;
-//   grid-column-end: 2;
-//   border: solid;
-// }
-
-// .item-posts {
-//   grid-column-start: 3;
-//   grid-column-end: 3;
-//   border: solid;
-// }
-
+.coinmarketcap-currency-widget {
+ // width: 10px;
+ margin: 10px;
+ display: flex;
+ justify-content: space-around;
+}

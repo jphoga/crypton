@@ -1,26 +1,23 @@
 <div class="navbar-wagon">
   <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "avatar.jpg", height: 50 %>
+  <% end %>
 
 
-  <div class="Profile">
+  <div class="profile">
     Profile
   </div>
 
-  <div class="Portfolio">
+  <div class="portfolio">
     Portfolio
   </div>
 
-  <div class="Posts">
+  <div class="posts">
     Posts
   </div>
 
 
-
-
-
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
-  <% end %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>

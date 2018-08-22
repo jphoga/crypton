@@ -29,7 +29,7 @@
             <td>$ <%= (currency.cryptocurrency.market_price).round(2) %></td>
             <td>$ <%= (currency.cryptocurrency.market_price * currency.quantity).round(2) %></td>
             <td>
-              <%= link_to  "/ownedcurrencies/#{currency.id}",:class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
+              <%= link_to  ownedcurrency_path(currency), :class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fas fa-trash"></i>
               <% end %>
             </td>
@@ -46,7 +46,7 @@
     </div>
     <div class="item-form">
       <div class="form-container">
-        <%= simple_form_for @ownedcurrency do |f| %>
+        <%= simple_form_for [@portfolio, @ownedcurrency] do |f| %>
           <div class="element">
             <%= f.input :quantity, required: true, label: "Quantity" %>
           </div>

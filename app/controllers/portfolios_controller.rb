@@ -3,8 +3,8 @@ class PortfoliosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @portfolios = policy_scope(Portfolio)
-    @portfolio = @portfolios.find_by(user: current_user)
+    @portfolio = policy_scope(Portfolio)
+    # @portfolio = @portfolios.find_by(user: current_user)
     @ownedcurrencies = Ownedcurrency.where(portfolio: @portfolio)
 
     #create new ownedcurrency
@@ -16,7 +16,7 @@ class PortfoliosController < ApplicationController
     if @portfolio.destroy
       redirect_to home_path
     else
-      render new
+      render :new
     end
 
   end

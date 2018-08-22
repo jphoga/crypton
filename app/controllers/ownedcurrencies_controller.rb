@@ -8,20 +8,21 @@ class OwnedcurrenciesController < ApplicationController
   end
 
   def new
-    @ownedcurrency = Ownedcurrency.new
-    currencies = Cryptocurrency.all
-    @currencies = []
+    # @ownedcurrency = Ownedcurrency.new
+    # currencies = Cryptocurrency.all
+    # @currencies = []
 
-    currencies.each do |currency|
-      @currencies << currency.name
-    end
-    @currencies.sort!
+    # currencies.each do |currency|
+    #   @currencies << currency.name
+    # end
+    # @currencies.sort!
   end
 
   def create
-    @portfolio = Portfolio.find_by_user_id(current_user.id)
-    @cryptocurrency = Cryptocurrency.find(params[:ownedcurrency][:cryptocurrency_id])
-    @ownedcurrency = Ownedcurrency.new(quantity: params[:ownedcurrency][:quantity], portfolio: @portfolio, cryptocurrency: @cryptocurrency)
+
+    @portfolio = Portfolio.find(params[:portfolio_id])
+    @ownedcurrency = Ownedcurrency.new(ownedcurrency_params)
+    @ownedcurrency.portfolio = @portfolio
     authorize @ownedcurrency
 
     if @ownedcurrency.save
