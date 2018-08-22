@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @posts = policy_scope(Post).order("created_at DESC")
+    @post = Post.new
   end
 end
