@@ -1,4 +1,5 @@
 
+
 .dashboard-container {
   border: solid .5px;
   display: flex;
@@ -16,6 +17,8 @@
   border-radius: 2px;
   margin: 20px;
   padding: 2px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .prices-container {
   display: flex;
@@ -30,10 +33,11 @@
   border-radius: 2px;
   margin: 20px;
   padding: 2px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .card-prices {
   margin-top: 25px;
-  border: solid 2px;
   border-radius: 5px;
   height: 45vh;
 }
@@ -59,6 +63,8 @@
   border-radius: 2px;
   margin: 20px;
   padding: 2px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .dashboard-container h1 {
   text-align: center;
