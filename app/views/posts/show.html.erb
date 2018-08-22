@@ -1,0 +1,22 @@
+<h2><%= @post.content %> - <%= @post.created_at %> <%= @post.user.email %></h2>
+
+<% unless !current_user %>
+<h2>Add a comment:</h2>
+<div id="new_comment"><%= render 'comments/form', post: @post, comment: @comment %></div>
+<% end %>
+
+<h2>Comments</h2>
+<div id="comments"><%= render 'comments/show', post: @post %></div>
+
+
+<% if policy(@post).destroy? %>
+  <%= link_to "Delete Post", post_path,
+            method: :delete,
+            data: { confirm: "Delete Post?" }, class: 'btn btn-danger' %>
+<% end %>
+
+<% if current_user %>
+<%= link_to 'Back to Posts', posts_path %>
+<% else %>
+<%= link_to 'Back to Home', root_path %>
+<% end %>

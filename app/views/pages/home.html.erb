@@ -1,6 +1,7 @@
 <div class="dashboard-container">
   <div class="news-container">
     <div class="news-inner-container">
+      <%= render 'layouts/news' %>
     </div>
   </div>
   <div class="prices-container">
@@ -15,6 +16,7 @@
           <h2>Bitcoin Dominance:<span id="bitcoin-dominance"></span></h2>
           <h2>Cryptocurrencies: <span id="cryptocurrency-number"></span></h2>
           <h2>24 Hour Volume:    <span id="daily-volume"></span></h2>
+        <div class="prices">
         </div>
         <div class="card-prices">
           <div class="row">
@@ -200,7 +202,14 @@
   </div>
   <div class="posts-container">
     <div class="posts-inner-container">
+      <% unless !current_user %>
+      <div>
+        <%= render 'posts/form', post: @post %>
+      </div>
+      <% end %>
+      <h1>Recent Posts</h1>
+      <%= render 'posts/index', posts: @posts %>
     </div>
   </div>
 </div>
-
+</div>
