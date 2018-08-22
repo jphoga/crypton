@@ -1,7 +1,7 @@
-<% @post.comments.each do |comment| %>
+<% post.comments.order("created_at DESC").each do |comment| %>
   <p>
     <b>Commenter:</b>
-    <%= comment.user %>
+    <%= comment.user.email %>
   </p>
 
   <p>
