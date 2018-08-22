@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   resources :portfolios, only: [ :new, :create, :destroy ] do
     resources :ownedcurrencies, only: [:create]
   end
+  resources :users, only: [:show] do
+    member do
+      get '/posts', to: 'users#posts'
+    end
+  end
   resources :posts do
     resources :comments, only: [:create]
   end

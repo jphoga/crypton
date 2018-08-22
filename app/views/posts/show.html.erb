@@ -9,7 +9,7 @@
 <div id="comments"><%= render 'comments/show', post: @post %></div>
 
 
-<% unless @post.user != current_user %>
+<% if policy(@post).destroy? %>
   <%= link_to "Delete Post", post_path,
             method: :delete,
             data: { confirm: "Delete Post?" }, class: 'btn btn-danger' %>
