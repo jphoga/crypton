@@ -5,12 +5,17 @@ class PortfoliosController < ApplicationController
   def index
     @portfolio = policy_scope(Portfolio)
     # @portfolio = @portfolios.find_by(user: current_user)
-    @ownedcurrencies = Ownedcurrency.where(portfolio: @portfolio)
+    @ownedcurrencies = @portfolio.ownedcurrencies
 
     #create new ownedcurrency
     @ownedcurrency = Ownedcurrency.new
+    @piedata ={}
+    @ownedcurrencies.each do |oc|
+      @piedata[oc.cryptocurrency.name] = oc.cryptocurrency.total_owned_value(oc)
+    end
 
   end
+
 
   def destroy
     if @portfolio.destroy

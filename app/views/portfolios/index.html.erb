@@ -1,4 +1,4 @@
-<div class="wrapper">
+=<div class="wrapper">
   <div class="title">
     <h1 class="text-center">Your portfolio</h1>
   </div>
@@ -16,7 +16,7 @@
             <h4>Market Price</h4>
           </th>
           <th>
-            <h4>Owned Share</h4>
+            <h4>Total Value</h4>
           </th>
         </tr>
         <% sum = 0 %>
@@ -27,7 +27,7 @@
             </td>
             <td><%= (currency.quantity).round %></td>
             <td>$ <%= (currency.cryptocurrency.market_price).round(2) %></td>
-            <td>$ <%= (currency.cryptocurrency.market_price * currency.quantity).round(2) %></td>
+            <td>$ <%= (currency.cryptocurrency.total_owned_value(currency)) %></td>
             <td>
               <%= link_to  ownedcurrency_path(currency), :class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fas fa-trash"></i>
@@ -35,6 +35,7 @@
             </td>
             <% (sum +=(currency.cryptocurrency.market_price * currency.quantity)).round(2) %>
           </tr>
+
         <% end %>
         <tr>
           <th>  </th>
@@ -44,6 +45,9 @@
         </tr>
       </table>
     </div>
+
+     <div><%= pie_chart(@piedata) %></div>
+
     <div class="item-form">
       <div class="form-container">
         <%= simple_form_for [@portfolio, @ownedcurrency] do |f| %>

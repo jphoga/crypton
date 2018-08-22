@@ -19,6 +19,9 @@ gem 'webpacker'
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+#pie_chart_gem
+gem "chartkick"
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -1,4 +1,4 @@
 class Portfolio < ApplicationRecord
-  has_many :ownedcurrency, dependent: :destroy
+  has_many :ownedcurrencies, dependent: :destroy
   belongs_to :user
 end
