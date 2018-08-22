@@ -7,9 +7,18 @@
   <div class="prices-container">
     <div class="prices-inner-container">
       <div class="top-half">
+        <div class="static-fields">
+          <h2>Bitcoin: <span id="bitcoin-price"></span></h2>
+          <h2>Global MarketCap: <span id="marketcap"></span></h2>
+          <h2>Last Updated:     <span id="last-updated"></span></h2>
+        </div>
+         <div class="static-fields">
+          <h2>Bitcoin Dominance:<span id="bitcoin-dominance"></span></h2>
+          <h2>Cryptocurrencies: <span id="cryptocurrency-number"></span></h2>
+          <h2>24 Hour Volume:    <span id="daily-volume"></span></h2>
         <div class="prices">
         </div>
-        <div class="card-container">
+        <div class="card-prices">
           <div class="row">
             <div class="col-sm-4">
               <div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="USD" ></div>
@@ -32,6 +41,163 @@
           </div>
         </div>
       </div>
+      <div class="bottom-half">
+        <!-- Number, Name, MarketCap, Price, Volume, Supply, Change, Graph -->
+        <div class="row-prices">
+          <table>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Market Cap</th>
+              <th>Price</th>
+              <th>Volume</th>
+              <th>Circulating Supply</th>
+              <th>Change (24h)</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Market Cap</th>
+              <th>Price</th>
+              <th>Volume</th>
+              <th>Circulating Supply</th>
+              <th>Change (24h)</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Market Cap</th>
+              <th>Price</th>
+              <th>Volume</th>
+              <th>Circulating Supply</th>
+              <th>Change (24h)</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Market Cap</th>
+              <th>Price</th>
+              <th>Volume</th>
+              <th>Circulating Supply</th>
+              <th>Change (24h)</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Market Cap</th>
+              <th>Price</th>
+              <th>Volume</th>
+              <th>Circulating Supply</th>
+              <th>Change (24h)</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Market Cap</th>
+              <th>Price</th>
+              <th>Volume</th>
+              <th>Circulating Supply</th>
+              <th>Change (24h)</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Market Cap</th>
+              <th>Price</th>
+              <th>Volume</th>
+              <th>Circulating Supply</th>
+              <th>Change (24h)</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
   <div class="posts-container">
@@ -45,4 +211,5 @@
       <%= render 'posts/index', posts: @posts %>
     </div>
   </div>
+</div>
 </div>
