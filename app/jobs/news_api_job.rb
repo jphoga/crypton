@@ -6,24 +6,39 @@ class NewsApiJob < ApplicationJob
 
   def perform(*args)
     # Do something later
-    puts "Starting job searching for news"
-    url = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=9d89b4c8e6574b3685109b85a70f9fc5"
+    newsapi_url = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=9d89b4c8e6574b3685109b85a70f9fc5"
+    reddit_url = "https://www.reddit.com/r/CryptoCurrency/hot/.json"
 
     Article.destroy_all
 
-    response = open(url).read
-    articles = JSON.parse(response)
+    response_newsapi = open(newsapi_url).read
+    articles_newsapi = JSON.parse(response_newsapi)
 
-    articles["articles"].each do |article|
+    articles_newsapi["articles"].each do |article|
       Article.create(
         author: article["author"],
         image_url: article["urlToImage"],
         title: article["title"],
         description: article["description"],
         news_url: article["url"],
-        publishedAt: article["publishedAt"]
+        publishedAt: article["publishedAt"],
+        source: article["source"]["name"]
       )
-      puts "Created your articles!"
+    end
+
+    response_reddit = open(reddit_url).read
+    articles_reddit = JSON.parse(response_reddit)
+
+    articles_reddit["articles"].each do |article|
+      Article.create(
+        author: article["author"],
+        image_url: article["urlToImage"],
+        title: article["title"],
+        description: article["description"],
+        news_url: article["url"],
+        publishedAt: article["publishedAt"],
+        source: article["source"]["name"]
+      )
     end
   end
 end
