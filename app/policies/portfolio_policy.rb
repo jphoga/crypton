@@ -1,7 +1,7 @@
 class PortfolioPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.find_by(user: @user)
     end
   end
 
