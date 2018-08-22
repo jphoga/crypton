@@ -36,6 +36,11 @@
   </div>
   <div class="posts-container">
     <div class="posts-inner-container">
+      <% unless !current_user %>
+      <div>
+        <%= render 'posts/form', post: @post %>
+      </div>
+      <% end %>
       <h1>Recent Posts</h1>
       <%= render 'posts/index', posts: @posts %>
     </div>

@@ -1,10 +1,18 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "avatar.jpg", height: 50 %>
+   <div class="coin-img"> <i class="fas fa-coins" style="font-size: 25px;"></i></div>
   <% end %>
 
+  <div class="name">
+    Cool Name
+  </div>
 
+
+<!--
   <div class="profile">
     Profile
   </div>
@@ -16,7 +24,7 @@
   <div class="posts">
     Posts
   </div>
-
+ -->
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -35,7 +43,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
               <% end %>
             </li>

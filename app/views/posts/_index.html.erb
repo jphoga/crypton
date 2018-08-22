@@ -1,5 +1,11 @@
 <% @posts.each do |post| %>
-  <%= link_to post_path(post) do %>
-  <h3><%= post.content %> - <%= post.created_at %> <%= post.user.email %></h3>
-  <% end %>
+
+    <%= link_to post_path(post) do %>
+      <div class="card">
+        <div class="card-meta"><time><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
+        <article class="card-content"><p><%= post.content %></p></article>
+        <div class="card-user"> By <span class="card-username"><%= post.user.email %></span></div>
+      </div>
+    <% end %>
+
 <% end %>
