@@ -24,21 +24,24 @@ class NewsApiJob < ApplicationJob
         publishedAt: article["publishedAt"],
         source: article["source"]["name"]
       )
+      p "finished article #{article["title"]}!"
     end
 
-    response_reddit = open(reddit_url).read
-    articles_reddit = JSON.parse(response_reddit)
 
-    articles_reddit["articles"].each do |article|
-      Article.create(
-        author: article["author"],
-        image_url: article["urlToImage"],
-        title: article["title"],
-        description: article["description"],
-        news_url: article["url"],
-        publishedAt: article["publishedAt"],
-        source: article["source"]["name"]
-      )
-    end
+
+    # response_reddit = open(reddit_url).read
+    # articles_reddit = JSON.parse(response_reddit)
+
+    # articles_reddit["articles"].each do |article|
+    #   Article.create(
+    #     author: article["author"],
+    #     image_url: article["urlToImage"],
+    #     title: article["title"],
+    #     description: article["description"],
+    #     news_url: article["url"],
+    #     publishedAt: article["publishedAt"],
+    #     source: article["source"]["name"]
+    #   )
+    # end
   end
 end

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :ownedcurrencies, only: [ :index, :show, :new, :destroy ]
 
   require "sidekiq/web"
-  authenticate :user, lambda { |u| u.admin } do
+  authenticate :user, lambda { |u| u.present? } do
     mount Sidekiq::Web => '/sidekiq'
   end
 end
