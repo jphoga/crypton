@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+require 'open-uri'
+
+
 User.destroy_all if Rails.env.development?
 Post.destroy_all if Rails.env.development?
 Cryptocurrency.destroy_all if Rails.env.development?
@@ -87,69 +91,86 @@ Post.create (
 )
 
 
-p "5 posts created"
+#Seed coins
+Cryptocurrency.destroy_all
 
-Cryptocurrency.create( {
-                         name: "Bitcoin",
-                         market_price:  6342.04,
-                         abbreviation: "BTC"
-})
+coin_market_url = "https://api.coinmarketcap.com/v1/ticker/?limit=500"
 
-Cryptocurrency.create (
-  {name: "Ethereum",
-   market_price: 278.28,
-   abbreviation: "ETC"}
-)
+response_coin_market = open(coin_market_url).read
+currencies_coin_market = JSON.parse(response_coin_market)
 
-Cryptocurrency.create ( {
-                          name: "XRP",
-                          market_price: 0.327773,
-                          abbreviation: "XRP"
-})
+currencies_coin_market.each do |coin|
+  Cryptocurrency.create(
+    name: coin["name"],
+    abbreviation: coin["symbol"],
+    market_price: coin["price_usd"]
+  )
+end
 
-Cryptocurrency.create ( {
-                          name: "EOS",
-                          market_price: 4.77,
-                          abbreviation: "EOS"
-})
 
-Cryptocurrency.create ( {
-                          name: "Stellar",
-                          market_price: 0.215311,
-                          abbreviation: "XLM"
-})
+# p "5 posts created"
 
-Cryptocurrency.create ({
-                         name: "Litecoin",
-                         market_price: 54.59,
-                         abbreviation: "LTC"
-})
+# Cryptocurrency.create( {
+#                          name: "Bitcoin",
+#                          market_price:  6342.04,
+#                          abbreviation: "BTC"
+# })
 
-Cryptocurrency.create ({
-                         name: "Tether",
-                         market_price: 1.00,
-                         abbreviation: "USDT"
-})
+# Cryptocurrency.create (
+#   {name: "Ethereum",
+#    market_price: 278.28,
+#    abbreviation: "ETC"}
+# )
 
-Cryptocurrency.create ({
-                         name: "Cardano",
-                         market_price: 0.093063,
-                         abbreviation: "ADA"
-})
+# Cryptocurrency.create ( {
+#                           name: "XRP",
+#                           market_price: 0.327773,
+#                           abbreviation: "XRP"
+# })
 
-Cryptocurrency.create ({
-                         name: "Monero",
-                         market_price: 93.38,
-                         abbreviation: "XMR"
-})
+# Cryptocurrency.create ( {
+#                           name: "EOS",
+#                           market_price: 4.77,
+#                           abbreviation: "EOS"
+# })
 
-Cryptocurrency.create ({
-                         name: "IOTA",
-                         market_price: 0.503882,
-                         abbreviation: "IOTA"
-})
+# Cryptocurrency.create ( {
+#                           name: "Stellar",
+#                           market_price: 0.215311,
+#                           abbreviation: "XLM"
+# })
 
-p "10 cryptos created"
+# Cryptocurrency.create ({
+#                          name: "Litecoin",
+#                          market_price: 54.59,
+#                          abbreviation: "LTC"
+# })
+
+# Cryptocurrency.create ({
+#                          name: "Tether",
+#                          market_price: 1.00,
+#                          abbreviation: "USDT"
+# })
+
+# Cryptocurrency.create ({
+#                          name: "Cardano",
+#                          market_price: 0.093063,
+#                          abbreviation: "ADA"
+# })
+
+# Cryptocurrency.create ({
+#                          name: "Monero",
+#                          market_price: 93.38,
+#                          abbreviation: "XMR"
+# })
+
+# Cryptocurrency.create ({
+#                          name: "IOTA",
+#                          market_price: 0.503882,
+#                          abbreviation: "IOTA"
+# })
+
+# p "10 cryptos created"
 
 Comment.create ({
                   content: "Spurt Plus (SPU+) owns and operates on its own Blockchain.
