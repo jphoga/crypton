@@ -1,0 +1,5 @@
+<div class="card">
+  <div class="card-meta"><time><%= comment.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
+  <article class="card-content"><p><%= comment.content %></p></article>
+  <div class="card-user"> By <span class="card-username"><%= comment.user.email %></span></div>
+</div>

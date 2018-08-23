@@ -1,14 +1,18 @@
-<h1 class="text-center">My Posts</h1>
-<div class="container">
-  <% @posts.each do |post| %>
-    <div class="card">
-      <div class="card-meta"><time><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time>
-        <%= link_to post_path(post), method: :delete, data: { confirm: "Delete Post?" } do %>
-            <i class="fas fa-trash trash-icon"></i>
-        <% end %>
+<div class="user-posts-wrapper">
+  <h1 class="text-center">My Posts</h1>
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="card">
+        <div class="card-meta"><time><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time>
+          <% unless current_user != post.user %>
+            <%= link_to post_path(post), method: :delete, data: { confirm: "Delete Post?" } do %>
+                <i class="fas fa-trash trash-icon"></i>
+            <% end %>
+          <% end %>
+        </div>
+        <article class="card-content"><p><%= post.content %></p></article>
+        <div class="card-user"> By <span class="card-username"><%= post.user.email %></span> <%= link_to "Comments", post_path(post) %> </div>
       </div>
-      <article class="card-content"><p><%= post.content %></p></article>
-      <div class="card-user"> By <span class="card-username"><%= post.user.email %></span> <%= link_to "Comments", post_path(post) %> </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

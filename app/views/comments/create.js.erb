@@ -5,12 +5,12 @@ function refreshForm(innerHTML) {
 
 function addComment(reviewHTML) {
   const comments = document.getElementById('comments');
-  comments.insertAdjacentHTML('beforebegin', reviewHTML);
+  comments.insertAdjacentHTML('afterbegin', reviewHTML);
 }
 
 <% if @comment.errors.any? %>
   refreshForm('<%= j render "comments/form", post: @post, comment: @comment %>');
 <% else %>
-  addComment('<%= j render "comments/show", post: @post %>');
+  addComment('<%= j render "comments/individual", comment: @comment %>');
   refreshForm('<%= j render "comments/form", post: @post, comment: Comment.new %>');
 <% end %>
