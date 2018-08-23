@@ -24,6 +24,8 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 #pie_chart_gem
 gem "chartkick"
 
+# card preferences
+gem 'acts_as_favoritor'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

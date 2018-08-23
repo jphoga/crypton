@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show] do
     member do
-      get '/posts', to: 'users#posts'
+      get '/posts',     to: 'users#posts'
+      post '/favorites',  to: 'users#favorites'
     end
   end
   resources :posts do
