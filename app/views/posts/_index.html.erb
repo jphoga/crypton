@@ -1,13 +1,5 @@
 <% @posts.each do |post| %>
-    <div class="card">
-      <div class="card-meta"><time><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
-      <article class="card-content"><p><%= post.content %></p></article>
-      <div class="card-user"> By <span class="card-username"><%= post.user.email %></span> <%= link_to "View Comments", post_path(post), class: 'view-comments-link' %></div>
-      <button onclick="triggerComment(this)" class="comment-button">Comment</button>
-
-      <div class="home_post_comment"><%= render 'comments/form', post: post, comment: @comment %></div>
-
-    </div>
+  <%= render 'posts/individual', post: post %>
 <% end %>
 <script>
   function triggerComment(button) {
