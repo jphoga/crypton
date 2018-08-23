@@ -171,12 +171,13 @@
   <div class="posts-container">
     <div class="posts-inner-container">
       <% unless !current_user %>
-      <div>
-        <%= render 'posts/form', post: @post %>
-      </div>
+        <div>
+          <%= render 'posts/form', post: @post %>
+        </div>
       <% end %>
       <h1>Recent Posts</h1>
       <%= render 'posts/index', posts: @posts %>
+      <%= link_to "View all posts", posts_path, class: 'view-all-posts' %>
     </div>
   </div>
 </div>

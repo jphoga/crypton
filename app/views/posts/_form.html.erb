@@ -1,4 +1,4 @@
 <%= simple_form_for(post) do |f| %>
   <%= f.input :content, label: "Write a post..." %>
-  <%= f.submit %>
+  <%= f.submit 'Submit', class: 'post-submit-button' %>
 <% end %>
