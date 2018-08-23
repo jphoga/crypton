@@ -42,7 +42,9 @@
   font-size: 12px;
   border: none;
   background: none;
-  color: #469AE0;
+  &:hover {
+    background: gray;
+  }
 }
 
 .view-all-posts {
@@ -50,9 +52,21 @@
   text-align: center;
 }
 
-.submit-button {
+.comment-submit-button {
   font-size: 12px;
-  background: none;
   border: none;
-  color: #469AE0;
+  background: none;
+  &:hover {
+    background: gray;
+  }
+}
+
+.view-comments-link {
+  color: black;
+  text-decoration: none;
+  &:hover {
+    background: gray;
+    text-decoration: none;
+    color: black;
+  }
 }
