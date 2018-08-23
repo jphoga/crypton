@@ -27,21 +27,25 @@ class NewsApiJob < ApplicationJob
       p "finished article #{article["title"]}!"
     end
 
+    response_reddit = open(reddit_url, 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36').read
+    articles_reddit = JSON.parse(response_reddit)
+
+    reddit = []
+    articles_reddit["data"]["children"].each do |children|
+      reddit << children["data"]
+    end
 
 
-    # response_reddit = open(reddit_url).read
-    # articles_reddit = JSON.parse(response_reddit)
-
-    # articles_reddit["articles"].each do |article|
-    #   Article.create(
-    #     author: article["author"],
-    #     image_url: article["urlToImage"],
-    #     title: article["title"],
-    #     description: article["description"],
-    #     news_url: article["url"],
-    #     publishedAt: article["publishedAt"],
-    #     source: article["source"]["name"]
-    #   )
-    # end
+    reddit.each do |article|
+      Article.create(
+        xauthor: article["author"],
+        ximage_url: article["urlToImage"],
+        title: article["title"],
+        xdescription: article["description"],
+        xnews_url: article["url"],
+        xpublishedAt: article["publishedAt"],
+        xsource: article["source"]["name"]
+      )
+    end
   end
 end
