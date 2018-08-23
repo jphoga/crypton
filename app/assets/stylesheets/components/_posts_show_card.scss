@@ -1,12 +1,10 @@
 .card {
   background-color: #fff;
-  margin-top: 3px;
   margin-bottom: 3px;
   position: relative;
   padding: 3px;
   color: black;
   border-radius: 3px;
-  box-shadow: 1px 1px 1px gray;
 }
 
 .card-meta {
@@ -72,16 +70,4 @@
 
 .user-posts-wrapper {
   height: calc(100vh - 140px)
-}
-
-.post-show-card-top {
-  background-color: #fff;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  position: relative;
-  padding: 3px;
-  color: black;
-  border-radius: 3px;
-  box-shadow: 1px 1px 1px gray;
-  margin-top: 30px;
 }

@@ -1,11 +1,3 @@
 <% post.comments.order("created_at DESC").each do |comment| %>
-  <p>
-    <b>Commenter:</b>
-    <%= comment.user.email %>
-  </p>
-
-  <p>
-    <b>Comment:</b>
-    <%= comment.content %>
-  </p>
+  <%= render 'comments/individual', comment: comment %>
 <% end %>
