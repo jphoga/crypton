@@ -9,8 +9,18 @@
 
     </div>
 <% end %>
-      <script>
-        function triggerComment(button) {
-          button.nextElementSibling.classList.toggle("home_post_comment");
-        }
-      </script>
+<script>
+  function triggerComment(button) {
+   button.nextElementSibling.classList.toggle("home_post_comment");
+    let form = button.nextElementSibling;
+    console.log(22, form);
+   form.style.display == "none" ? "block" : "none";
+  }
+
+  function formGone(form) {
+  console.log('works');
+  console.log(form.parentNode);
+  let parent = form.parentNode;
+    parent.style.display="none";
+  }
+</script>
