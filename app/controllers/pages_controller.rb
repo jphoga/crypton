@@ -5,5 +5,6 @@ class PagesController < ApplicationController
     @posts = policy_scope(Post).order("created_at DESC")
     @post = Post.new
     @articles = Article.all
+    @comment = Comment.new
   end
 end
