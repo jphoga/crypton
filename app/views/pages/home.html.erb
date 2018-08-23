@@ -20,7 +20,12 @@
         <div class="prices">
         </div>
         <div class="card-prices">
+          <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
+          <%= f.input :crypto, collection: @cryptocurrencies %>
+          <%= f.submit "add to favorites" %>
+          <% end %>
           <div class="row">
+
             <div class="col-sm-4">
               <div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="USD" ></div>
             </div>

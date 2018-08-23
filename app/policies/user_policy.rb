@@ -12,4 +12,8 @@ class UserPolicy < ApplicationPolicy
   def posts?
     true
   end
+
+  def favorites?
+    true
+  end
 end
