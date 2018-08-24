@@ -10,6 +10,18 @@
             <i class="fas fa-trash trash-icon"></i>
         <% end %>
       <% end %>
+
+      <%= link_to upvote_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Upvote
+        <%= @post.get_upvotes.size %>
+      <% end %>
+      <%= link_to downvote_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-down">
+        Downvote
+        <%= @post.get_downvotes.size %>
+      <% end %>
+
     </div>
 
     <% unless !current_user %>
