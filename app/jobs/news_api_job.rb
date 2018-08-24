@@ -11,21 +11,21 @@ class NewsApiJob < ApplicationJob
 
     Article.destroy_all
 
-    response_newsapi = open(newsapi_url).read
-    articles_newsapi = JSON.parse(response_newsapi)
+    # response_newsapi = open(newsapi_url).read
+    # articles_newsapi = JSON.parse(response_newsapi)
 
-    articles_newsapi["articles"].each do |article|
-      Article.create(
-        author: article["author"],
-        image_url: article["urlToImage"],
-        title: article["title"],
-        description: article["description"],
-        news_url: article["url"],
-        publishedAt: article["publishedAt"],
-        source: article["source"]["name"]
-      )
-      p "finished article #{article["title"]}!"
-    end
+    # articles_newsapi["articles"].each do |article|
+    #   Article.create(
+    #     author: article["author"],
+    #     image_url: article["urlToImage"],
+    #     title: article["title"],
+    #     description: article["description"],
+    #     news_url: article["url"],
+    #     publishedAt: article["publishedAt"],
+    #     source: article["source"]["name"]
+    #   )
+    #   p "finished article #{article["title"]}!"
+    # end
 
     response_reddit = open(reddit_url, 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36').read
     articles_reddit = JSON.parse(response_reddit)
@@ -37,15 +37,20 @@ class NewsApiJob < ApplicationJob
 
 
     reddit.each do |article|
-      Article.create(
-        xauthor: article["author"],
-        ximage_url: article["urlToImage"],
+      new_article = Article.new(
+        author: article["author"],
+        thumbnail: article["thumbnail"],
         title: article["title"],
-        xdescription: article["description"],
-        xnews_url: article["url"],
-        xpublishedAt: article["publishedAt"],
-        xsource: article["source"]["name"]
+        description: "",
+        news_url: "https://www.reddit.com" + article["permalink"],
+        publishedAt: Time.at(article["created_utc"]).strftime("%b %e, %Y - %l:%M %p"),
+        source: "Reddit",
+        ups: article["ups"]
       )
+      unless article["preview"] == nil
+        new_article.image_url = article["preview"]["images"][0]["source"]["url"]
+      end
+      new_article.save!
     end
   end
 end
