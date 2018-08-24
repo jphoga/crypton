@@ -1,18 +1,13 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-
-
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-   <div class="coin-img"> <i class="fas fa-coins" style="font-size: 25px;"></i></div>
+    <div class="coin-img"> <i class="fas fa-coins" style="font-size: 25px;"></i></div>
   <% end %>
-
   <div class="name">
     Cool Name
   </div>
-
-
-<!--
+  <!--
   <div class="profile">
     Profile
   </div>
@@ -25,11 +20,11 @@
     Posts
   </div>
  -->
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <!-- Links when logged in -->
+      <%= link_to "News Page", news_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Write a post", new_post_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My Portfolio", portfolio_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
