@@ -16,4 +16,8 @@ class UserPolicy < ApplicationPolicy
   def favorites?
     true
   end
+
+  def remove_favorites?
+    true
+  end
 end

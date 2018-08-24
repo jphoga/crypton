@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show] do
     member do
-      get '/posts',     to: 'users#posts'
-      post '/favorites',  to: 'users#favorites'
+      get     '/posts',     to: 'users#posts'
+      post    '/favorites',  to: 'users#favorites'
+      get     '/favorites', to: 'users#favorites'
+      delete  '/favorites',  to: 'users#remove_favorites'
     end
   end
   resources :posts do
