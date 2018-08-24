@@ -1,0 +1,16 @@
+function refreshForm(innerHTML) {
+  const newCommentForm = document.getElementById('new_post');
+  newCommentForm.innerHTML = innerHTML;
+}
+
+function addPost(reviewHTML) {
+  const posts = document.getElementById('posts');
+  posts.insertAdjacentHTML('afterbegin', reviewHTML);
+}
+console.log("im inside create js");
+<% if @post.errors.any? %>
+  refreshForm('<%= j render "posts/form", post: @post %>');
+<% else %>
+  addPost('<%= j render "posts/individual", post: @post %>');
+  refreshForm('<%= j render "posts/form", post: Post.new %>');
+<% end %>
