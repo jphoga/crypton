@@ -1,8 +1,4 @@
-<div class="col-sm-4 col-sm-offset-8">
-<div class = "post-box">
 <%= simple_form_for(post, remote: true) do |f| %>
-<div class="label-for-header"><%= f.input :content, label: "Write a post..." %></div>
-<%= f.submit 'Submit', class: 'post-submit-button' %>
+  <%= f.input :content, label: "Write a post..." %>
+  <%= f.submit 'Submit', class: 'post-submit-button' %>
 <% end %>
-</div>
-</div>
