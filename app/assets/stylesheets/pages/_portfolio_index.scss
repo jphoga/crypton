@@ -4,39 +4,140 @@
 .form-container {
   display: flex;
   padding: 50px 0;
+  justify-content: center;
+  font-family: "Guardian Text Egyptian Web",Georgia,serif;
+  text-align: center;
+
+
 }
 
-.title {
+.form-container h2{
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+
+}
+
+.title-for-port {
+  background: center center no-repeat;
   margin-bottom: 80px;
+  text-shadow: 2px 2px white;
+  font-family: "Guardian Text Egyptian Web",Georgia,serif;
+  margin-top: -26px;
+  height: 150px;
+  padding-top: 60px;
+
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 10% 10% 10% 10% 10% 50%;
+  grid-template-columns: 10% 10% 10% 5% 5% 60%;
   grid-template-rows: 50% 40% 10%;
 }
 
 .item-table {
   grid-column-start: 2;
-  grid-column-end: 6;
+  grid-column-end: 5;
+  color: white;
+  border-radius: 20px;
+  padding-right: 10px;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
 }
 
 .item-form {
-  grid-column-start: 2;
-  grid-column-end: 6;
-  grid-row-start: 2;
-  grid-row-start: 2;
+  grid-column-start: 5;
+  grid-column-end: 7;
+  text-align: center;
 }
 
-.item-pie {
-  grid-column-start: 2;
-  grid-column-end: 2;
+.text-left {
+    text-align: left;
+    color: white;
+    text-shadow: 2px 2px black;
+    padding-left: 200px;
 }
+
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .fa-trash {
   color: lightgrey;
+}
+
+.item-table th{
+  padding: 10px;
+
+
+}
+.piepie{
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 5;
+  grid-column-end: 7;
+
+}
+
+.item-form h2 {
+  text-shadow: 2px 2px white;
+  font-family: "Guardian Text Egyptian Web",Georgia,serif;
+
+}
+
+.item-table td {
+    padding-left: 10px;
+
+}
+
+.item-table table {
+  color: black;
+  padding: 20px;
+  width: 500px;
+  height: 600px;
+}
+
+.currency-name{
+  background-color: #283242;
+  color: white;
+  border-style: solid;
+  border-color:  white;
+  border-width: 1px;
+}
+
+.first-row{
+  background-color: #283242;
+  color: white;
+  border-style: solid;
+  border-color:  white;
+  border-width: 1px;
+
+}
+
+.first-row h4{
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-style: normal;
+  font-size: 18px;
+}
+
+.title-for-port h1{
+    margin-top: 4px;
+   text-shadow: 10px 10px black;
+
+}
+
+.cajas-restantes{
+  background-color: #7f8da3;
+  border-style: solid;
+  border-color:  white;
+  border-width: 1px;
+}
+.total-sum{
+  background-color:#c0cde0
+}
+
+.btn-black input{
+  padding: 10px;
+  color: white;
+  background-color: #231f20;
 }
