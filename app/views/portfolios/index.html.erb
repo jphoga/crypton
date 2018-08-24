@@ -1,4 +1,5 @@
-=<div class="wrapper">
+=
+<div class="wrapper">
   <div class="title-for-port" style=" background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://www.fxbtrading.com/wp-content/uploads/2018/01/LP-banner-cryptocurrency.jpg'); background-size: cover;text-align: center;">
     <h1 class="text-center">Your portfolio</h1>
   </div>
@@ -26,44 +27,46 @@
               <%= currency.cryptocurrency.name %>
             </td>
             <td class ="cajas-restantes"><%= (currency.quantity).round %></td>
-            <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.market_price).round(2) %></td>
-            <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.total_owned_value(currency)) %></td>
-            <td >
-              <%= link_to  ownedcurrency_path(currency), :class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
-              <div class="trash">  <i class="fas fa-trash"></i></div>
-              <% end %>
-            </td>
-            <% (sum +=(currency.cryptocurrency.market_price * currency.quantity)).round(2) %>
+            <% if currency.cryptocurrency.market_price == nil %>
+              <td class ="cajas-restantes">$ 0 </td>
+              <td class ="cajas-restantes">$ 0 </td>
+              <td >
+              <% else %>
+                <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.market_price).round(2) %></td>
+                <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.total_owned_value(currency)) %></td>
+                <td >
+                  <%= link_to  ownedcurrency_path(currency), :class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <div class="trash">  <i class="fas fa-trash"></i></div>
+                  <% end %>
+                </td>
+                <% (sum +=(currency.cryptocurrency.market_price * currency.quantity)).round(2) %>
+              </tr>
+            <% end %>
+          <% end %>
+          <tr>
+            <th class= "currency-name"> Total  </th>
+            <th class="cajas-restantes">  </th>
+            <th class="cajas-restantes"></th>
+            <th class="total-sum">$ <%= sum %>   </th>
           </tr>
-
-        <% end %>
-        <tr>
-          <th class= "currency-name"> Total  </th>
-          <th class="cajas-restantes">  </th>
-          <th class="cajas-restantes"></th>
-          <th class="total-sum">$ <%= sum %>   </th>
-        </tr>
-      </table>
-    </div>
-
-     <div class= "piepie"><%= pie_chart(@piedata) %></div>
-
-    <div class="item-form">
-      <div class="form-container">
-        <%= simple_form_for [@portfolio, @ownedcurrency] do |f| %>
-          <h2> Add more coins</h2>
-
-          <div class="element">
-            <%= f.association :cryptocurrency, required: true, label: "Currency" %>
-          </div>
-          <div class="element">
-            <%= f.input :quantity, required: true, label: "Quantity" %>
-          </div>
-          <div class="element">
-            <div class= "btn-black"><%= f.submit "Add coin"%></div>
-          </div>
-        <% end %>
+        </table>
+      </div>
+      <div class= "piepie"><%= pie_chart(@piedata) %></div>
+      <div class="item-form">
+        <div class="form-container">
+          <%= simple_form_for [@portfolio, @ownedcurrency] do |f| %>
+            <h2> Add more coins</h2>
+            <div class="element">
+              <%= f.association :cryptocurrency, required: true, label: "Currency" %>
+            </div>
+            <div class="element">
+              <%= f.input :quantity, required: true, label: "Quantity" %>
+            </div>
+            <div class="element">
+              <div class= "btn-black"><%= f.submit "Add coin"%></div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
