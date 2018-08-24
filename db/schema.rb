@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_08_23_081338) do
     t.string "abbreviation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "website_slug"
   end
 
   create_table "favorites", force: :cascade do |t|

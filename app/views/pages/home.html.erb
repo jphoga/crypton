@@ -20,30 +20,18 @@
         <div class="prices">
         </div>
         <div class="card-prices">
-          <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
-          <%= f.input :crypto, collection: @cryptocurrencies %>
-          <%= f.submit "add to favorites" %>
+          <% if current_user %>
+            <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
+              <%= f.input :crypto, collection: @cryptocurrencies %>
+              <%= f.submit "add to favorites" %>
+            <% end %>
           <% end %>
           <div class="row">
-
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="USD" ></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="ethereum" data-base="USD" ></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="eos" data-base="USD" ></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="stellar" data-base="USD" ></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="vechain" data-base="USD" ></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="cardano" data-base="USD" ></div>
-            </div>
+            <% current_user.favorited_by_type('Cryptocurrency').each do |cryptocurrency| %>
+              <div class="col-sm-4">
+                <div class="coinmarketcap-currency-widget" data-currency="<%=cryptocurrency.website_slug%>" data-base="USD" ></div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -81,6 +69,58 @@
               <th>Circulating Supply</th>
               <th>Change (24h)</th>
             </tr>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
             <tr>
               <td>1</td>
               <td>Bitcoin</td>
