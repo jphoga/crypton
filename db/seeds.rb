@@ -8,13 +8,12 @@
 require 'json'
 require 'open-uri'
 
-
+Portfolio.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 Post.destroy_all if Rails.env.development?
 Cryptocurrency.destroy_all if Rails.env.development?
 Comment.destroy_all if Rails.env.development?
 Ownedcurrency.destroy_all if Rails.env.development?
-Portfolio.destroy_all if Rails.env.development?
 
 
 
@@ -94,16 +93,29 @@ Post.create (
 #Seed coins
 Cryptocurrency.destroy_all
 
-coin_market_url = "https://api.coinmarketcap.com/v1/ticker/?limit=500"
+# coin_market_url = "https://api.coinmarketcap.com/v1/ticker/?limit=1500"
 
-response_coin_market = open(coin_market_url).read
-currencies_coin_market = JSON.parse(response_coin_market)
+# response_coin_market = open(coin_market_url).read
+# currencies_coin_market = JSON.parse(response_coin_market)
 
-currencies_coin_market.each do |coin|
+# currencies_coin_market.each do |coin|
+#   Cryptocurrency.create(
+#     name: coin["name"],
+#     abbreviation: coin["symbol"],
+#     market_price: coin["price_usd"]
+#   )
+# end
+
+coin_market_cap_listings = "https://api.coinmarketcap.com/v2/listings/"
+
+response_coin_market_listings = open(coin_market_cap_listings).read
+currencies_coin_market_listings = JSON.parse(response_coin_market_listings)
+
+currencies_coin_market_listings["data"].each do |coin|
   Cryptocurrency.create(
     name: coin["name"],
     abbreviation: coin["symbol"],
-    market_price: coin["price_usd"]
+    website_slug: coin["website_slug"]
   )
 end
 
