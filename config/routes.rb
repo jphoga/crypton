@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     end
   end
   resources :posts do
+    member do
+      put '/upvote', to: 'posts#upvote'
+      put '/downvote', to: 'posts#downvote'
+    end
     resources :comments, only: [:create]
   end
   resources :comments, only: [:destroy]

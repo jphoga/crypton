@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :destroy]
+  before_action :set_post, only: [:show, :destroy, :upvote, :downvote]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -39,6 +39,18 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to posts_path
+  end
+
+  def upvote
+    @post.upvote_by current_user
+
+    redirect_back(fallback_location: post_path(@post))
+
+  end
+
+  def downvote
+    @post.downvote_from current_user
+    redirect_back(fallback_location: post_path(@post))
   end
 
   private

@@ -41,3 +41,4 @@ group :development, :test do
 end
 
 gem "pundit"
+gem 'acts_as_votable', '~> 0.11.1'
