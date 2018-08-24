@@ -20,10 +20,12 @@
         <div class="prices">
         </div>
         <div class="card-prices">
+          <%if current_user%>
           <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
           <%= f.input :crypto, collection: @cryptocurrencies %>
           <%= f.submit "add to favorites" %>
           <% end %>
+          <%end%>
           <div class="row">
 
             <div class="col-sm-4">
