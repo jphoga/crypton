@@ -4,7 +4,7 @@ require 'open-uri'
 class MarketPriceJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
+  def perform
 
     coin_market_url = "https://api.coinmarketcap.com/v1/ticker/?limit=2000"
 
@@ -17,7 +17,8 @@ class MarketPriceJob < ApplicationJob
       market_prices.each do |market_price|
         if coin.name ==  market_price["name"]
           coin.market_price = market_price["price_usd"]
-          p "updated #{coin.name}!"
+          # p "updated #{coin.name}!"
+          coin.save!
         end
       end
     end
