@@ -6,7 +6,6 @@
   padding: 3px;
   color: black;
   border-radius: 3px;
-  box-shadow: 1px 1px 1px gray;
 }
 
 .card-meta {
@@ -76,12 +75,24 @@
 
 .post-show-card-top {
   background-color: #fff;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  position: relative;
-  padding: 3px;
+  padding: 5px;
   color: black;
-  border-radius: 3px;
-  box-shadow: 1px 1px 1px gray;
+  flex-grow: 1;
+}
+
+.post-show {
+  display: flex;
   margin-top: 30px;
+}
+
+.home-post-card {
+  background-color: #fff;
+  color: black;
+  flex-grow: 1;
+}
+
+.home-post-show {
+  display: flex;
+  margin: 3px;
+  border-radius: 3px;
 }

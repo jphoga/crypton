@@ -20,12 +20,14 @@
         <div class="prices">
         </div>
         <div class="card-prices">
-          <%if current_user%>
+
+          <% if current_user %>
             <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
-              <%= f.input :crypto, collection: @cryptocurrencies %>
-              <%= f.submit "add to favorites" %>
+            <%= f.input :crypto, collection: @cryptocurrencies %>
+            <%= f.submit "add to favorites" %>
             <% end %>
           <% end %>
+
           <div class="row">
             <% if current_user %>
               <% current_user.favorited_by_type('Cryptocurrency').each do |cryptocurrency| %>
