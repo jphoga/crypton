@@ -1,27 +1,34 @@
 <div class="posts-show-wrapper">
   <div class="container">
 
-    <div class="post-show-card-top">
-      <div class="card-meta"><time><%= @post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
-      <article class="card-content"><p><%= @post.content %></p></article>
-      <div class="card-user"> By <span class="card-username"><%= @post.user.email %></span></div>
-      <% if policy(@post).destroy? %>
-        <%= link_to post_path, method: :delete, data: { confirm: "Delete Post?" } do %>
-            <i class="fas fa-trash trash-icon"></i>
+    <div class="post-show">
+        <div class="vote-card">
+
+          <%= link_to upvote_post_path(@post), method: :put do %>
+            <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
+          <% end %>
+
+          <div class="vote-weighted"><%= @post.weighted_score %></div>
+
+          <%= link_to downvote_post_path(@post), method: :put do %>
+            <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
+          <% end %>
+
+        </div>
+
+      <div class="post-show-card-top">
+        <div class="card-meta"><time><%= @post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
+        <article class="card-content"><p><%= @post.content %></p></article>
+        <div class="card-user"> By <span class="card-username"><%= @post.user.email %></span></div>
+        <% if policy(@post).destroy? %>
+          <%= link_to post_path, method: :delete, data: { confirm: "Delete Post?" } do %>
+              <i class="fas fa-trash trash-icon"></i>
+          <% end %>
         <% end %>
-      <% end %>
 
-      <%= link_to upvote_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-up"></span>
-        Upvote
-        <%= @post.get_upvotes.size %>
-      <% end %>
-      <%= link_to downvote_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-down">
-        Downvote
-        <%= @post.get_downvotes.size %>
-      <% end %>
 
+
+      </div>
     </div>
 
     <% unless !current_user %>
