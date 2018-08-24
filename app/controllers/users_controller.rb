@@ -34,4 +34,10 @@ class UsersController < ApplicationController
     @user.remove_favorite(@crypto)
     redirect_back(fallback_location: root_path)
   end
+
+  private
+
+  def article_params
+      params.require(:user).permit(:password, :email, :photo)
+  end
 end

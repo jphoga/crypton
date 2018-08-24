@@ -14,4 +14,6 @@ class User < ApplicationRecord
   def create_portfolio
     Portfolio.create(user: self)
   end
+
+  mount_uploader :photo, PhotoUploader
 end

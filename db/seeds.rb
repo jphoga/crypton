@@ -15,31 +15,40 @@ Cryptocurrency.destroy_all if Rails.env.development?
 Comment.destroy_all if Rails.env.development?
 Ownedcurrency.destroy_all if Rails.env.development?
 
-
+urldemi = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535059286/demi.jpg"
+urltania = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058557/tania.jpg"
+urlhiroki ="https://res.cloudinary.com/deqvblsv6/image/upload/v1535058962/hiroki.jpg"
+urldavid = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058874/david.png"
+urljan = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058999/jan.jpg"
 
 Demi = User.create (
   {email: "demi.lovato@gmail.com",
-   password: "123456"}
+   password: "123456",
+  remote_photo_url: urldemi}
 )
 
 Jan = User.create (
   {email: "jan@gmail.com",
-   password: "123456"}
+   password: "123456",
+   remote_photo_url: urljan}
 )
 
 Hiroki = User.create (
   {email: "hiroki@gmail.com",
-   password: "123456"}
+   password: "123456",
+  remote_photo_url: urlhiroki}
 )
 
 David = User.create (
   {email: "david@gmail.com",
-   password: "123456"}
+   password: "123456",
+  remote_photo_url: urldavid}
 )
 
 Tania = User.create (
   {email: "tania@gmail.com",
-   password: "123456"}
+   password: "123456",
+  remote_photo_url:urltania}
 )
 
 p "created 5 users"
