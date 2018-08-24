@@ -12,7 +12,7 @@
           <h2>Global MarketCap: <span id="marketcap"></span></h2>
           <h2>Last Updated:     <span id="last-updated"></span></h2>
         </div>
-         <div class="static-fields">
+        <div class="static-fields">
           <h2>Bitcoin Dominance:<span id="bitcoin-dominance"></span></h2>
           <h2>Cryptocurrencies: <span id="cryptocurrency-number"></span></h2>
           <h2>24 Hour Volume:    <span id="daily-volume"></span></h2>
@@ -20,30 +20,22 @@
         <div class="prices">
         </div>
         <div class="card-prices">
-          <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
-          <%= f.input :crypto, collection: @cryptocurrencies %>
-          <%= f.submit "add to favorites" %>
-          <% end %>
-          <div class="row">
 
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="USD" ></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="ethereum" data-base="USD" ></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="eos" data-base="USD" ></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="stellar" data-base="USD" ></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="vechain" data-base="USD" ></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="coinmarketcap-currency-widget" data-currency="cardano" data-base="USD" ></div>
-            </div>
+          <%if current_user%>
+            <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
+              <%= f.input :crypto, collection: @cryptocurrencies %>
+              <%= f.submit "add to favorites" %>
+            <% end %>
+          <% end %>
+          
+          <div class="row">
+            <% if current_user %>
+              <% current_user.favorited_by_type('Cryptocurrency').each do |cryptocurrency| %>
+                <div class="col-sm-4">
+                  <div class="coinmarketcap-currency-widget" data-currency="<%=cryptocurrency.website_slug%>" data-base="USD" ></div>
+                </div>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -55,21 +47,18 @@
             <div class="tradingview-widget-container__widget"></div>
             <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> by TradingView</div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-            {
-            "width": 1000,
-            "height": 490,
-            "defaultColumn": "overview",
-            "screener_type": "crypto_mkt",
-            "displayCurrency": "USD",
-            "locale": "en"
-          }
+              {
+              "width": 1000,
+              "height": 490,
+              "defaultColumn": "overview",
+              "screener_type": "crypto_mkt",
+              "displayCurrency": "USD",
+              "locale": "en"
+                        }
             </script>
+          </div>
+          <!-- TradingView Widget END -->
         </div>
-<!-- TradingView Widget END -->
-
-        </div>
-
-
         <div class="row-prices">
           <table>
             <tr>
@@ -81,6 +70,58 @@
               <th>Circulating Supply</th>
               <th>Change (24h)</th>
             </tr>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td>$200,000,000</td>
+              <td>$6,700</td>
+              <td>$4,200,000</td>
+              <td>17,223,912 BTC</td>
+              <td>4.6%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-prices">
+          <table>
             <tr>
               <td>1</td>
               <td>Bitcoin</td>
@@ -183,7 +224,7 @@
       <% end %>
       <h4>Recent Posts</h4>
       <div id="posts">
-          <%= render 'posts/index', posts: @posts %>
+        <%= render 'posts/index', posts: @posts %>
       </div>
       <%= link_to "View all posts", posts_path, class: 'view-all-posts' %>
     </div>

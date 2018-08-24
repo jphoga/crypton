@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2018_08_24_022443) do
     t.datetime "updated_at", null: false
     t.string "image_url"
     t.string "source"
+    t.string "thumbnail"
+    t.integer "ups"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_08_24_022443) do
     t.string "abbreviation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "website_slug"
   end
 
   create_table "favorites", force: :cascade do |t|
