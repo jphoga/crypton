@@ -19,12 +19,19 @@ class UsersController < ApplicationController
     unless params[:favorite][:crypto].empty?
       @crypto = Cryptocurrency.find(params[:favorite][:crypto].to_i)
     end
-    if @crypto && @user.favorite(@crypto)
-      redirect_back(fallback_location: root_path)
+    if @crypto && @user.favorites_count < 6 && @user.favorite(@crypto)
       flash[:notice] = "Successfully favorited #{@crypto.name}"
     else
       flash[:alert] = "Something went wrong"
     end
+    redirect_back(fallback_location: root_path)
   end
 
+  def remove_favorites
+    @user = current_user
+    authorize @user
+    @crypto = Cryptocurrency.find(params[:cryptocurrency_id])
+    @user.remove_favorite(@crypto)
+    redirect_back(fallback_location: root_path)
+  end
 end
