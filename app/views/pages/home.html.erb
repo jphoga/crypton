@@ -216,12 +216,15 @@
   <div class="posts-container">
     <div class="posts-inner-container">
       <% unless !current_user %>
-        <div>
+        <h4>Add a Post</h4>
+        <div id="new_post">
           <%= render 'posts/form', post: @post %>
         </div>
       <% end %>
-      <h1>Recent Posts</h1>
-      <%= render 'posts/index', posts: @posts %>
+      <h4>Recent Posts</h4>
+      <div id="posts">
+          <%= render 'posts/index', posts: @posts %>
+      </div>
       <%= link_to "View all posts", posts_path, class: 'view-all-posts' %>
     </div>
   </div>

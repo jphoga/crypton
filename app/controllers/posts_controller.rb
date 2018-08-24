@@ -19,13 +19,20 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    authorize @post
-
     @post.user = current_user
+    authorize @post
     if @post.save
-      redirect_to post_path(@post)
+      @posts = policy_scope(Post).order("created_at DESC").take(10)
+      @comment = Comment.new
+      respond_to do |format|
+        format.js
+        # format.html { redirect_to root_path }
+      end
     else
-      render :new
+      respond_to do |format|
+        format.js
+        # format.html { render :new }
+      end
     end
   end
 

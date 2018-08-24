@@ -1,9 +1,9 @@
 <div class="news-header" style="background-color: #AC2C25; color: white">
   <h4 style="text-align: center; padding: 15px 0; margin:0"><strong> Crypto-News</strong></h4>
 </div>
-<% @articles.first(10).each do |article|  %>
+<% @articles.each do |article|  %>
   <div class="card" style="width: 350px; padding: 20px; border: solid lightgray 1 1 1;">
-    <% unless article.image_url == nil %>
+    <% unless article.image_url == nil || article.image_url == "self" %>
       <img class="card-img-top" src=<%= article.image_url %> alt="Card image cap" style=" width: 310px; ">
     <% end %>
     <div class="card-body" style="text-align: justify;">
