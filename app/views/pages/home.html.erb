@@ -21,17 +21,20 @@
         </div>
         <div class="card-prices">
 
-          <%if current_user%>
+          <% if current_user %>
             <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
-              <%= f.input :crypto, collection: @cryptocurrencies %>
-              <%= f.submit "add to favorites" %>
+            <%= f.input :crypto, collection: @cryptocurrencies %>
+            <%= f.submit "add to favorites" %>
             <% end %>
           <% end %>
-          
+
           <div class="row">
             <% if current_user %>
               <% current_user.favorited_by_type('Cryptocurrency').each do |cryptocurrency| %>
                 <div class="col-sm-4">
+                  <%= link_to favorites_user_path(current_user, cryptocurrency_id: cryptocurrency), method: :delete do %>
+                    <i class="far fa-times-circle"></i>
+                  <% end %>
                   <div class="coinmarketcap-currency-widget" data-currency="<%=cryptocurrency.website_slug%>" data-base="USD" ></div>
                 </div>
               <% end %>
@@ -217,7 +220,7 @@
   <div class="posts-container">
     <div class="posts-inner-container">
       <% unless !current_user %>
-        <h4>Add a Post</h4>
+        <h4 style="text-align: center; padding: 15px 0; margin:0"><strong> Posts</strong></h4>
         <div id="new_post">
           <%= render 'posts/form', post: @post %>
         </div>
