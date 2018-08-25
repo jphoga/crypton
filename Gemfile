@@ -47,3 +47,4 @@ end
 
 gem "pundit"
 gem 'acts_as_votable', '~> 0.11.1'
+gem 'dotenv-rails', groups: [:development, :test]
