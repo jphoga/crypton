@@ -8,13 +8,11 @@
   border-radius: 3px;
 }
 
-.card-meta {
+.post-card-header {
   font-size: 12px;
   color: #bbb
 }
 
-.card-content {
-}
 
 .card-user {
   display: inline-block;
@@ -85,14 +83,64 @@
   margin-top: 30px;
 }
 
-.home-post-card {
+.home-post-show-first {
+  border-top: .0625rem solid #e5e5e5;
+  transition: .25s ease-in-out;
   background-color: #fff;
+}
+
+.home-post-show-second{
+  min-height: 100px;
+}
+
+.home-post-show-third {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 12px;
+  margin: 3px;
+  border-radius: 3px;
+}
+
+.home-post-card {
+  background-color: white;
   color: black;
   flex-grow: 1;
 }
 
-.home-post-show {
+.user-profile-link-container {
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+
+.user-profile-link {
+  color: #272727;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color .2s ease-in-out;
+}
+
+.post-created-at {
+  color: #929292;
+  float: right;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.post-card-content {
+  font-size: 12px;
+  margin: .25rem 0 0;
+}
+
+.post-card-footer {
   display: flex;
-  margin: 3px;
-  border-radius: 3px;
+  justify-content: space-between;
+  padding: 10px 0 0;
+}
+
+.post-card-footer-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
 }
