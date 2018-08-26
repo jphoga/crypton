@@ -1,9 +1,12 @@
 .post-submit-button {
   font-size: 12px;
-  color: black;
   border: none;
-  background: none;
+  background-color: black;
+  padding: 8px;
+  color: white;
+  border-radius: 10px;
   &:hover {
     background: gray;
   }
 }
+
