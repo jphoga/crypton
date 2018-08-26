@@ -2,14 +2,22 @@
   <article class="home-post-show-second">
     <div class="home-post-show-third">
       <div class="vote-card">
-        <% if policy(post).upvote? %>
+        <% if current_user %>
           <%= link_to upvote_post_path(post), method: :put do %>
+            <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path, method: :get do %>
             <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
           <% end %>
         <% end %>
           <div class="vote-weighted"><%= post.weighted_score %></div>
-        <% if policy(post).downvote? %>
+        <% if current_user %>
           <%= link_to downvote_post_path(post), method: :put do %>
+            <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path, method: :get do %>
             <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
           <% end %>
         <% end %>
@@ -29,7 +37,7 @@
         </div>
         <div class="post-card-footer">
           <ul class="post-card-footer-list">
-            <li><%= link_to "View", post_path(post), class: 'view-comments-link' %> <%= post.comments.count %></li>
+            <li><%= link_to "View", post_path(post), class: 'view-comments-link' %> <span class="post-comment-count"><%= post.comments.count %></span> </li>
             <li><button onclick="triggerComment(this)" class="comment-button">Comment</button></li>
           </ul>
         </div>

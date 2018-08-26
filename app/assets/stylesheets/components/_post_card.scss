@@ -39,7 +39,7 @@
   border: none;
   background: none;
   &:hover {
-    background: gray;
+    color: gray;
   }
 }
 
@@ -61,9 +61,8 @@
   color: black;
   text-decoration: none;
   &:hover {
-    background: gray;
     text-decoration: none;
-    color: black;
+    color: gray;
   }
 }
 
@@ -96,7 +95,7 @@
 .home-post-show-third {
   display: flex;
   flex-direction: row;
-  padding: 10px 12px;
+  padding: 5px;
   margin: 3px;
   border-radius: 3px;
 }
@@ -114,7 +113,7 @@
 }
 
 .user-profile-link {
-  color: #272727;
+  color: black;
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
@@ -136,11 +135,18 @@
 .post-card-footer {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0 0;
+  font-size: 12px;
 }
 
 .post-card-footer-list {
   display: flex;
   flex-direction: row;
   list-style: none;
+  margin-bottom: 0px;
+  padding: 10px 0px 0px;
+}
+
+
+.post-comment-count {
+  color: gray;
 }
