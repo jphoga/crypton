@@ -4,6 +4,7 @@ class CreateCryptocurrencies < ActiveRecord::Migration[5.2]
       t.string :name
       t.float :market_price
       t.string :abbreviation
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
