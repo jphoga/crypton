@@ -24,7 +24,7 @@ urljan = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058999/jan.jpg"
 Demi = User.create (
   {email: "demi.lovato@gmail.com",
    password: "123456",
-  remote_photo_url: urldemi}
+   remote_photo_url: urldemi}
 )
 
 Jan = User.create (
@@ -36,19 +36,19 @@ Jan = User.create (
 Hiroki = User.create (
   {email: "hiroki@gmail.com",
    password: "123456",
-  remote_photo_url: urlhiroki}
+   remote_photo_url: urlhiroki}
 )
 
 David = User.create (
   {email: "david@gmail.com",
    password: "123456",
-  remote_photo_url: urldavid}
+   remote_photo_url: urldavid}
 )
 
 Tania = User.create (
   {email: "tania@gmail.com",
    password: "123456",
-  remote_photo_url:urltania}
+   remote_photo_url:urltania}
 )
 
 p "created 5 users"
@@ -122,6 +122,7 @@ currencies_coin_market_listings = JSON.parse(response_coin_market_listings)
 
 currencies_coin_market_listings["data"].each do |coin|
   Cryptocurrency.create(
+    coin_id: coin["id"],
     name: coin["name"],
     abbreviation: coin["symbol"],
     website_slug: coin["website_slug"]

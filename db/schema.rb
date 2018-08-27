@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_052914) do
+ActiveRecord::Schema.define(version: 2018_08_27_060115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_052914) do
     t.float "Volume"
     t.float "Supply"
     t.float "Change"
+    t.integer "rank"
+    t.integer "coin_id"
   end
 
   create_table "favorites", force: :cascade do |t|

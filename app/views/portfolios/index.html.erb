@@ -21,7 +21,7 @@
           </th>
         </tr>
         <% sum = 0 %>
-        <% @ownedcurrencies.each do |currency| %>
+        <% @portfolio.ownedcurrencies.each do |currency| %>
           <tr>
             <td class = "currency-name">
               <%= currency.cryptocurrency.name %>
@@ -31,15 +31,19 @@
               <td class ="cajas-restantes">$ 0 </td>
               <td class ="cajas-restantes">$ 0 </td>
               <td >
-              <% else %>
+              <%  else  %>
                 <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.market_price).round(2) %></td>
-                <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.total_owned_value(currency)) %></td>
+               <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.total_owned_value(currency).round(2)) %>
+                </td>
+
                 <td >
                   <%= link_to  ownedcurrency_path(currency), :class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
                     <div class="trash">  <i class="fas fa-trash"></i></div>
                   <% end %>
                 </td>
                 <% (sum +=(currency.cryptocurrency.market_price * currency.quantity)).round(2) %>
+
+
               </tr>
             <% end %>
           <% end %>

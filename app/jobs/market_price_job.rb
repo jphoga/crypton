@@ -17,6 +17,11 @@ class MarketPriceJob < ApplicationJob
       market_prices.each do |market_price|
         if coin.name ==  market_price["name"]
           coin.market_price = market_price["price_usd"]
+          coin.Marketcap = market_price["market_cap_usd"]
+          coin.Volume = market_price["24h_volume_usd"]
+          coin.Supply = market_price["total_supply"]
+          coin.Change = market_price["percent_change_24h"]
+          coin.rank = market_price["rank"]
           # p "updated #{coin.name}!"
           coin.save!
         end
