@@ -17,31 +17,26 @@
           <h2>Cryptocurrencies: <span id="cryptocurrency-number"></span></h2>
           <h2>24 Hour Volume:    <span id="daily-volume"></span></h2>
         </div>
-        <div class="prices">
-        </div>
-        <div class="card-prices">
-          <% if current_user %>
-            <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
+        <% if current_user %>
+          <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
             <%= f.input :crypto, collection: @cryptocurrencies %>
             <div class="favorite-btn">
               <%= f.submit "Add Card" %>
             </div>
+          <% end %>
+        <% end %>
+        <div class="card-prices">
+          <% if current_user %>
+            <% current_user.favorited_by_type('Cryptocurrency').each do |cryptocurrency| %>
+              <div class="coinmarketcap-currency-widget widget-card" data-currency="<%=cryptocurrency.website_slug%>" data-base="USD" data-statsticker="false">
+                <div class="remove-button">
+                  <%= link_to favorites_user_path(current_user, cryptocurrency_id: cryptocurrency), method: :delete do %>
+                    <i class="far fa-times-circle"></i>
+                  <% end %>
+                </div>
+              </div>
             <% end %>
           <% end %>
-          <div class="row">
-            <% if current_user %>
-              <% current_user.favorited_by_type('Cryptocurrency').each do |cryptocurrency| %>
-                <div class="col-sm-4">
-                  <div class="remove-button">
-                    <%= link_to favorites_user_path(current_user, cryptocurrency_id: cryptocurrency), method: :delete do %>
-                      <i class="far fa-times-circle"></i>
-                    <% end %>
-                  </div>
-                  <div class="coinmarketcap-currency-widget" data-currency="<%=cryptocurrency.website_slug%>" data-base="USD" data-statsticker="false"></div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
         </div>
       </div>
       <div class="bottom-half">
