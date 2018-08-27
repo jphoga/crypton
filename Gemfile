@@ -32,6 +32,9 @@ gem 'acts_as_favoritor'
  # cloudinary
 gem 'cloudinary'
 
+#sweetalert
+gem 'sweetify'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
