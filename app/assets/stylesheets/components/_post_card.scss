@@ -53,7 +53,7 @@
   border: none;
   background: none;
   &:hover {
-    background: gray;
+    color: gray;
   }
 }
 
@@ -117,7 +117,10 @@
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
-  transition: color .2s ease-in-out;
+  &:hover {
+    color: gray;
+    text-decoration: none;
+  }
 }
 
 .post-created-at {

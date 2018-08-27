@@ -5,13 +5,17 @@
 }
 
 .upvote-icon {
-
   color: black;
+  &:hover {
+    color: gray;
+  }
 }
 
 .downvote-icon {
-
   color: black;
+  &:hover {
+    color: gray;
+  }
 }
 
 .vote-weighted {

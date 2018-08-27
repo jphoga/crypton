@@ -3,10 +3,11 @@
 <% end %>
 <script>
   function triggerComment(button) {
-    button.parentNode.parentNode.nextElementSibling.classList.toggle("home_post_comment");
-    let form = button.parentNode.parentNode.nextElementSibling;
+    console.log(button.parentNode.parentNode.parentNode.nextElementSibling)
+    button.parentNode.parentNode.parentNode.nextElementSibling.classList.toggle("home_post_comment");
+    let form = button.parentNode.parentNode.parentNode.nextElementSibling;
     console.log(22, form);
-   form.style.display == "none" ? "block" : "none";
+    form.style.display == "none" ? "block" : "none";
   }
 
   function formGone(form) {
