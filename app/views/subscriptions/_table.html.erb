@@ -10,6 +10,7 @@
           <th class="cell100 column5">Volume</th>
           <th class="cell100 column6">Circulating Supply</th>
           <th class="cell100 column7">Change (24h)</th>
+          <th class="cell100 column8">Remove Coin</th>
         </tr>
       </thead>
     </table>
@@ -19,15 +20,22 @@
     <table>
       <tbody>
         <% if current_user %>
-          <% current_user.cryptocurrencies.each do |cryptocurrency| %>
+          <% current_user.subscriptions.each do |subscription| %>
             <tr class="row100 body">
-              <td class="cell100 column1">1</td>
-              <td class="cell100 column2">Bitcoin</td>
-              <td class="cell100 column3">$200,000,000</td>
-              <td class="cell100 column4">$6,700</td>
-              <td class="cell100 column5">$4,200,000</td>
-              <td class="cell100 column6">17,223,912 BTC</td>
-              <td class="cell100 column7">4.6%</td>
+              <td class="cell100 column1"><%=subscription.cryptocurrency.rank%> </td>
+              <td class="cell100 column2"><%=subscription.cryptocurrency.name%></td>
+              <td class="cell100 column3">$<%=subscription.cryptocurrency.Marketcap%></td>
+              <td class="cell100 column4">$<%=subscription.cryptocurrency.market_price %></td>
+              <td class="cell100 column5">$<%=subscription.cryptocurrency.Volume %></td>
+              <td class="cell100 column6"><%=subscription.cryptocurrency.Supply%></td>
+              <td class="cell100 column7"><%=subscription.cryptocurrency.Change%>%</td>
+              <td class="cell100 column7">
+                 <div class="col-sm-4">
+                  <%= link_to subscription_path(subscription), method: :delete do %>
+                    <i class="far fa-times-circle"></i>
+                  <% end %>
+                </div>
+              </td>
             </tr>
           <% end %>
         <% end %>
