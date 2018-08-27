@@ -8,13 +8,11 @@
   border-radius: 3px;
 }
 
-.card-meta {
+.post-card-header {
   font-size: 12px;
   color: #bbb
 }
 
-.card-content {
-}
 
 .card-user {
   display: inline-block;
@@ -41,7 +39,7 @@
   border: none;
   background: none;
   &:hover {
-    background: gray;
+    color: gray;
   }
 }
 
@@ -55,7 +53,7 @@
   border: none;
   background: none;
   &:hover {
-    background: gray;
+    color: gray;
   }
 }
 
@@ -63,9 +61,8 @@
   color: black;
   text-decoration: none;
   &:hover {
-    background: gray;
     text-decoration: none;
-    color: black;
+    color: gray;
   }
 }
 
@@ -74,7 +71,7 @@
 }
 
 .post-show-card-top {
-  background-color: #fff;
+  background-color: white;
   padding: 5px;
   color: black;
   flex-grow: 1;
@@ -85,14 +82,74 @@
   margin-top: 30px;
 }
 
+.home-post-show-first {
+  border-top: .0625rem solid #e5e5e5;
+  transition: .25s ease-in-out;
+  background-color: white;
+}
+
+.home-post-show-second{
+  min-height: 100px;
+}
+
+.home-post-show-third {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 3px;
+}
+
 .home-post-card {
-  background-color: #fff;
+  background-color: white;
   color: black;
   flex-grow: 1;
 }
 
-.home-post-show {
+.user-profile-link-container {
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+
+.user-profile-link {
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  &:hover {
+    color: gray;
+    text-decoration: none;
+  }
+}
+
+.post-created-at {
+  color: #929292;
+  float: right;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.post-card-content {
+  font-size: 12px;
+  margin: .25rem 0 0;
+}
+
+.post-card-footer {
   display: flex;
-  margin: 3px;
-  border-radius: 3px;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.post-card-footer-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-bottom: 0px;
+  padding: 10px 0px 0px;
+}
+
+
+.post-comment-count {
+  color: gray;
 }

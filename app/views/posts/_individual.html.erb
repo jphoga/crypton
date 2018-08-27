@@ -1,25 +1,51 @@
-<div class="home-post-show">
-  <div class="vote-card">
-    <% if policy(post).upvote? %>
-      <%= link_to upvote_post_path(post), method: :put do %>
-        <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
-      <% end %>
-    <% end %>
-      <div class="vote-weighted"><%= post.weighted_score %></div>
-    <% if policy(post).downvote? %>
-      <%= link_to downvote_post_path(post), method: :put do %>
-        <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
-      <% end %>
-    <% end %>
-  </div>
+<div class="home-post-show-first">
+  <article class="home-post-show-second">
+    <div class="home-post-show-third">
+      <div class="vote-card">
+        <% if current_user %>
+          <%= link_to upvote_post_path(post), method: :put do %>
+            <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path, method: :get do %>
+            <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
+          <% end %>
+        <% end %>
+          <div class="vote-weighted"><%= post.weighted_score %></div>
+        <% if current_user %>
+          <%= link_to downvote_post_path(post), method: :put do %>
+            <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path, method: :get do %>
+            <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
+          <% end %>
+        <% end %>
+      </div>
 
-  <div class="home-post-card">
-    <div class="card-meta"><time><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
-    <article class="card-content"><p><%= post.content %></p></article>
-    <div class="card-user"> By <span class="card-username"><%= post.user.email %></span> <%= link_to "View Comments", post_path(post), class: 'view-comments-link' %></div>
-    <button onclick="triggerComment(this)" class="comment-button">Comment</button>
+      <div class="home-post-card">
+        <div class="post-card-header">
+          <span class="user-profile-link-container">
+            <%= link_to user_path(post.user), class: 'user-profile-link' do %>
+              <span><%= post.user.email %></span>
+            <% end %>
+          </span>
+          <span class="post-created-at"><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></span>
+        </div>
+        <div class="post-card-content">
+          <span><%= post.content %></span>
+        </div>
+        <div class="post-card-footer">
+          <ul class="post-card-footer-list">
+            <li><%= link_to "View", post_path(post), class: 'view-comments-link' %> <span class="post-comment-count"><%= post.comments.count %></span> </li>
+            <li><button onclick="triggerComment(this)" class="comment-button">Comment</button></li>
+          </ul>
+        </div>
 
-    <div class="home_post_comment"><%= render 'comments/form', post: post, comment: @comment %></div>
 
-  </div>
+        <div class="home_post_comment"><%= render 'comments/form', post: post, comment: @comment %></div>
+
+      </div>
+    </div>
+  </article>
 </div>

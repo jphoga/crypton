@@ -1,42 +1,56 @@
-
-
-.dashboard-container {
-  border: solid .5px;
+// Posts Section
+.posts-container {
   display: flex;
+  flex-direction: column;
+  flex: 25%;
+  min-height: calc(150vh - 60px);
 }
+.posts-inner-container{
+  min-height: 1500px;
+  border-radius: 2px;
+  margin: 10px;
+  padding: 10px;
+  color: gray;
+}
+
+// News Section
 .news-container {
   display: flex;
   flex-direction: column;
   flex: 20%;
   min-height: calc(150vh - 60px);
-  background-color: #e3e4e5;
 }
 .news-inner-container {
   min-height: 1500px;
   overflow-y: scroll;
   height: 100vh;
-  background-color: #f7f9f9;
   border-radius: 2px;
   margin: 10px;
   padding: 10px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.news-header {
+  color: gray;
+}
+
+// Middle Section
+.dashboard-container {
+  border: solid .5px;
+  display: flex;
 }
 .prices-container {
   display: flex;
   flex-direction: column;
   flex: 55%;
   min-height: calc(150vh - 60px);
-  background-color: #e3e4e5;
+  background-color: white;
 }
 .prices-inner-container {
   min-height: 1500px;
-  background-color: #f7f9f9;
+  background-color: white;
   border-radius: 2px;
   margin: 10px;
   padding: 10px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .card-prices {
@@ -52,22 +66,6 @@
   font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
-}
-.posts-container {
-  display: flex;
-  flex-direction: column;
-  flex: 25%;
-  min-height: calc(150vh - 60px);
-  background-color: #e3e4e5;
-}
-.posts-inner-container{
-  min-height: 1500px;
-  background-color: #f7f9f9;
-  border-radius: 2px;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .dashboard-container h1 {
   text-align: center;
@@ -99,3 +97,4 @@
 td {
   padding: 15px;
 }
+
