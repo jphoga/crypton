@@ -1,7 +1,8 @@
 /* Main navbar */
 .navbar-wagon {
-  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
   background-color: white;
   color: black;
   transition: all 0.3s ease;
@@ -51,6 +52,7 @@
 /* Navbar link */
 .navbar-wagon-link {
   color: black;
+  font-weight: bold;
   font-size: 18px;
   font-family: "Raleway", "Helvetica", "sans-serif";
   border-right: solid black;

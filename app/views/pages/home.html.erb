@@ -6,7 +6,7 @@
   </div>
   <div class="prices-container">
     <div class="prices-inner-container">
-      <div class="top-half">
+      <div class="static-box">
         <div class="static-fields">
           <h2>Bitcoin: <span id="bitcoin-price"></span></h2>
           <h2>Global MarketCap: <span id="marketcap"></span></h2>
@@ -17,6 +17,8 @@
           <h2>Cryptocurrencies: <span id="cryptocurrency-number"></span></h2>
           <h2>24 Hour Volume:    <span id="daily-volume"></span></h2>
         </div>
+      </div>
+      <div class="cards-box">
         <% if current_user %>
           <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
             <%= f.input :crypto, collection: @cryptocurrencies %>
@@ -39,8 +41,8 @@
           <% end %>
         </div>
       </div>
-      <div class="bottom-half">
-        <!-- Number, Name, MarketCap, Price, Volume, Supply, Change, Graph -->
+      <!-- Number, Name, MarketCap, Price, Volume, Supply, Change, Graph -->
+      <div class="list-box">
         <div class="row-form">
           <%= render 'subscriptions/form', subscription: @subscription %>
           <%= render 'subscriptions/table' %>
