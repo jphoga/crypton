@@ -1,6 +1,4 @@
-<div class="wrapper-for-post-page">
 <%= simple_form_for(post, remote: true) do |f| %>
  <div class="post-title-form"> <%= f.input :content, label: "Write a post..." %></div>
   <%= f.submit 'Submit', class: 'post-submit-button' %>
 <% end %>
-</div>
