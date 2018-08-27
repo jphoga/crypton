@@ -44,7 +44,7 @@ class NewsApiJob < ApplicationJob
         description: "",
         news_url: "https://www.reddit.com" + article["permalink"],
         publishedAt: Time.at(article["created_utc"]).strftime("%b %e, %Y - %l:%M %p"),
-        source: "Reddit",
+        source: article["url"],
         ups: article["ups"]
       )
       unless article["preview"] == nil
