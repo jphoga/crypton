@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_065821) do
+ActiveRecord::Schema.define(version: 2018_08_27_052549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,9 @@ ActiveRecord::Schema.define(version: 2018_08_24_065821) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "website_slug"
+    t.float "Marketcap"
+    t.float "Volume"
+    t.float "Supply"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -93,6 +96,15 @@ ActiveRecord::Schema.define(version: 2018_08_24_065821) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "cryptocurrency_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cryptocurrency_id"], name: "index_subscriptions_on_cryptocurrency_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -126,4 +138,6 @@ ActiveRecord::Schema.define(version: 2018_08_24_065821) do
   add_foreign_key "ownedcurrencies", "portfolios"
   add_foreign_key "portfolios", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "subscriptions", "cryptocurrencies"
+  add_foreign_key "subscriptions", "users"
 end

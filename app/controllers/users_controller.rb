@@ -35,6 +35,18 @@ class UsersController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+
+  def subscriptions
+    @user = current_user
+    authorize @user
+    @crypto_subscription = Cryptocurrency.find(params[:crypto].to_i)
+  end
+
+
+  def remove_subscriptions
+
+  end
+
   private
 
   def article_params

@@ -7,5 +7,6 @@ class PagesController < ApplicationController
     @articles = Article.all
     @cryptocurrencies = Cryptocurrency.all.order("name")
     @comment = Comment.new
+    @subscription = Subscription.new
   end
 end
