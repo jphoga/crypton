@@ -1,43 +1,37 @@
-<div class="limiter">
-  <div class="container-table100">
-    <div class="wrap-table100">
-      <div class="table100 ver5 m-b-110">
-        <div class="table100-head">
-          <table>
-            <thead>
-              <tr class="row100 head">
-                <th class="cell100 column1">#</th>
-                <th class="cell100 column2">Name</th>
-                <th class="cell100 column3">Market Cap</th>
-                <th class="cell100 column4">Price</th>
-                <th class="cell100 column5">Volume</th>
-                <th class="cell100 column6">Circulating Supply</th>
-                <th class="cell100 column7">Change (24h)</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
+<div class="table100 ver5 m-b-110">
+  <div class="table100-head">
+    <table>
+      <thead>
+        <tr class="row100 head">
+          <th class="cell100 column1">#</th>
+          <th class="cell100 column2">Name</th>
+          <th class="cell100 column3">Market Cap</th>
+          <th class="cell100 column4">Price</th>
+          <th class="cell100 column5">Volume</th>
+          <th class="cell100 column6">Circulating Supply</th>
+          <th class="cell100 column7">Change (24h)</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
 
-        <div class="table100-body js-pscroll">
-          <table>
-            <tbody>
-              <% if current_user %>
-                <% current_user.cryptocurrencies.each do |cryptocurrency| %>
-                  <tr class="row100 body">
-                    <td class="cell100 column1">1</td>
-                    <td class="cell100 column2">Bitcoin</td>
-                    <td class="cell100 column3">$200,000,000</td>
-                    <td class="cell100 column4">$6,700</td>
-                    <td class="cell100 column5">$4,200,000</td>
-                    <td class="cell100 column6">17,223,912 BTC</td>
-                    <td class="cell100 column7">4.6%</td>
-                  </tr>
-                <% end %>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+  <div class="table100-body js-pscroll ps ps--active-y">
+    <table>
+      <tbody>
+        <% if current_user %>
+          <% current_user.cryptocurrencies.each do |cryptocurrency| %>
+            <tr class="row100 body">
+              <td class="cell100 column1">1</td>
+              <td class="cell100 column2">Bitcoin</td>
+              <td class="cell100 column3">$200,000,000</td>
+              <td class="cell100 column4">$6,700</td>
+              <td class="cell100 column5">$4,200,000</td>
+              <td class="cell100 column6">17,223,912 BTC</td>
+              <td class="cell100 column7">4.6%</td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
