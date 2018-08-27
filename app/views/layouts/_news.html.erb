@@ -3,7 +3,7 @@
 </div>
 <% @articles.each do |article|  %>
   <%= link_to "#{article.source}", target: :_blank, :class => "news-link" do %>
-    <div class="card" style="width: 320px; padding: 20px; border: solid lightgray 1 1 1;">
+    <div class="card" style=" padding: 20px; border: solid lightgray 1 1 1;">
       <% unless article.image_url == nil || article.image_url == "self" %>
         <img class="card-img-left" src=<%= article.image_url %> alt="Card image cap" style=" width: 150px; margin-left: calc(100vh / 12); ">
       <% end %>

@@ -1,6 +1,9 @@
 body {
-  width: 100%;
-  max-width: 1920px; /* YOUR BG MAX SIZE */
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
 }
 
 // Posts Section
@@ -50,10 +53,7 @@ body {
 }
 
 // Middle Section
-.dashboard-container {
-  display: flex;
-  flex-direction: row;
-}
+
 .prices-container {
   display: flex;
   flex-direction: column;
@@ -70,11 +70,19 @@ body {
 }
 
 .card-prices {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 25px;
   // border: solid 2px;
   border-radius: 5px;
-  height: 45vh;
 }
+
+.widget-card {
+  flex: 1;
+  position: relative;
+}
+
+
 .row-prices {
   margin: 10px;
   border-bottom: solid 1px;
