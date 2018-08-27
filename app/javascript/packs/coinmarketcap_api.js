@@ -7,9 +7,9 @@ fetch('https://api.coinmarketcap.com/v2/global/')
   const marketCapValue    = data.data.quotes.USD.total_market_cap;
   marketCap.innerText     = "$" + marketCapValue;
 
-  const lastUpdated       = document.getElementById("last-updated");
-  const lastUpdatedValue  = data.data.last_updated;
-  lastUpdated.innerText   = lastUpdatedValue;
+  // const lastUpdated       = document.getElementById("last-updated");
+  // const lastUpdatedValue  = data.data.last_updated;
+  // lastUpdated.innerText   = lastUpdatedValue;
 
   const btcDominance      = document.getElementById("bitcoin-dominance");
   const btcDominanceValue = data.data.bitcoin_percentage_of_market_cap;

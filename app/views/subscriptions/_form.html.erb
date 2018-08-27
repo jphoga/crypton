@@ -1,4 +1,4 @@
 <%= simple_form_for @subscription do |f| %>
-  <%= f.association :cryptocurrency %>
-  <%= f.submit "Add to list", :class => "btn btn-primary" %>
+  <%= f.association :cryptocurrency, label: false %>
+  <%= f.submit "Add a coin to list", :class => "btn btn-primary" %>
 <% end %>
