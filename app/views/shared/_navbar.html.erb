@@ -1,25 +1,11 @@
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <div class="coin-img"> <i class="fas fa-coins" style="font-size: 25px;"></i></div>
   <% end %>
-  <div class="name">
-    Cool Name
+  <div class="navbar-name">
+    CoinCobra
   </div>
-  <!--
-  <div class="profile">
-    Profile
-  </div>
-
-  <div class="portfolio">
-    Portfolio
-  </div>
-
-  <div class="posts">
-    Posts
-  </div>
- -->
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
