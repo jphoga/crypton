@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     member do
       get     '/posts',         to: 'users#posts'
 
+      post '/follow', to: 'users#follow', as: :user_follow
+      post '/unfollow', to: 'users#unfollow', as: :user_unfollow
+
       post    '/favorites',     to: 'users#favorites'
       get     '/favorites',     to: 'users#favorites'
       delete  '/favorites',     to: 'users#remove_favorites'
