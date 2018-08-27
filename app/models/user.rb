@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   acts_as_favoritor
   acts_as_voter
+  acts_as_followable
+  acts_as_follower
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
