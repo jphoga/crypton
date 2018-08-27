@@ -18,9 +18,17 @@ body {
   border-radius: 2px;
   margin: 10px;
   padding: 10px;
+  margin-top: 0;
+  padding-top: 0;
   color: gray;
 }
 
+#new_post {
+  background-color: white;
+  box-shadow: 1px 1px 8px lightgray;
+
+
+}
 // News Section
 .news-container {
   display: flex;
@@ -35,6 +43,8 @@ body {
   border-radius: 2px;
   margin: 10px;
   padding: 10px;
+  margin-top: 0;
+  padding-top: 0;
   .card:hover {
     opacity: 0.7;
   }
@@ -54,19 +64,18 @@ body {
 
 // Middle Section
 
+
 .prices-container {
   display: flex;
   flex-direction: column;
   flex: 50%;
   min-height: calc(150vh - 60px);
-  background-color: white;
 }
 .prices-inner-container {
   min-height: 1500px;
-  background-color: white;
   border-radius: 2px;
-  margin: 10px;
-  padding: 10px;
+  // margin: 10px;
+  // padding: 10px;
 }
 
 .card-prices {
@@ -75,6 +84,28 @@ body {
   margin-top: 25px;
   // border: solid 2px;
   border-radius: 5px;
+}
+
+.static-box {
+  box-shadow: 1px 1px 8px lightgray;
+  background-color: white;
+  margin-top: 60px;
+  margin-bottom: 5px;
+  padding: 20px;
+}
+
+.cards-box {
+  box-shadow: 1px 1px 8px lightgray;
+  background-color: white;
+  margin-bottom: 5px;
+  padding: 20px;
+}
+
+.list-box {
+  box-shadow: 1px 1px 8px lightgray;
+  background-color: white;
+  margin-bottom: 5px;
+  padding: 20px;
 }
 
 .widget-card {
