@@ -33,7 +33,7 @@
                   <%= link_to favorites_user_path(current_user, cryptocurrency_id: cryptocurrency), method: :delete do %>
                     <i class="far fa-times-circle"></i>
                   <% end %>
-                  <div class="coinmarketcap-currency-widget" data-currency="<%=cryptocurrency.website_slug%>" data-base="USD" ></div>
+                  <div class="coinmarketcap-currency-widget" data-currency="<%=cryptocurrency.website_slug%>" data-base="USD" data-statsticker="false"></div>
                 </div>
               <% end %>
             <% end %>
