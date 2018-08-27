@@ -12,11 +12,9 @@ class SubscriptionsController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    authorize @user
-    @crypto = Cryptocurrency.find(params[:cryptocurrency_id])
-    @crypto.subscription = @subscription
-
+    @subscription = Subscription.find(params[:id])
+    authorize @subscription
+    @subscription.destroy
     redirect_back(fallback_location: root_path)
   end
 
