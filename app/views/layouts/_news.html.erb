@@ -3,14 +3,14 @@
 </div>
 <% @articles.each do |article|  %>
   <%= link_to "#{article.source}", target: :_blank, :class => "news-link" do %>
-    <div class="card" style="width: 350px; padding: 20px; border: solid lightgray 1 1 1;">
+    <div class="card" style="width: 320px; padding: 20px; border: solid lightgray 1 1 1;">
       <% unless article.image_url == nil || article.image_url == "self" %>
-        <img class="card-img-left" src=<%= article.image_url %> alt="Card image cap" style=" width: 200px; margin-left: calc(100vh / 15); ">
+        <img class="card-img-left" src=<%= article.image_url %> alt="Card image cap" style=" width: 150px; margin-left: calc(100vh / 12); ">
       <% end %>
       <div class="card-body" style="text-align: justify;">
-        <h5 class="card-title"><strong><%= article.title %></strong> </h5>
+        <h5 class="card-title"><%= article.title %> </h5>
         <p class="card-text" style="font-size: 16px;"><%= article.description %></p>
-        <p class="card-text"><small class="text-muted">Published on <%= article.publishedAt.strftime("%b %e, %Y - %l:%M %p") %></small></p>
+        <p class="card-text" style="font-size: 14px; padding-top:10px; padding: padding-bottom: 0"><small class="text-muted">Published on <%= article.publishedAt.strftime("%b %e, %Y - %l:%M %p") %></small></p>
       </div>
     </div>
   <% end %>
