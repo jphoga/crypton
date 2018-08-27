@@ -54,6 +54,7 @@ body {
 
 // Middle Section
 
+
 .prices-container {
   display: flex;
   flex-direction: column;
@@ -76,6 +77,11 @@ body {
   // border: solid 2px;
   border-radius: 5px;
 }
+
+.static-box {
+
+}
+
 
 .widget-card {
   flex: 1;

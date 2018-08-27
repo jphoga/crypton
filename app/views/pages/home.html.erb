@@ -21,7 +21,7 @@
           <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
             <%= f.input :crypto, collection: @cryptocurrencies %>
             <div class="favorite-btn">
-              <%= f.submit "Add Card" %>
+              <%= f.submit "Add Card", :class => "btn btn-primary" %>
             </div>
           <% end %>
         <% end %>
