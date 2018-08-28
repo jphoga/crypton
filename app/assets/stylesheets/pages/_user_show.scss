@@ -1,0 +1,18 @@
+.user-show-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-show-container-profile-container {
+  display: flex;
+  flex-direction: column;
+  flex: 50%
+}
+
+
+
+.user-show-container-posts-container {
+  display: flex;
+  flex-direction: column;
+  flex: 50%
+}

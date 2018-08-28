@@ -1,8 +1,52 @@
-<h1 class="text-center">My Profile</h1>
+<h1 class="text-center"><%= @user.email %></h1>
 
 <div id="followButton">
   <%= render 'users/follow_button' %>
 </div>
 
-<h2>My Top Posts</h2>
+
+<div class="user-show-container">
+  <div class="user-show-container-profile-container">
+    <h1>hello</h1>
+  </div>
+
+  <div class="user-show-container-posts-container">
+    <h2 class="text-center">My Top Posts</h2>
+    <div class="container">
+    <% @user.posts.each do |post| %>
+      <div class="home-post-show-first">
+        <article class="home-post-show-second">
+          <div class="home-post-show-third">
+            <div class="vote-card">
+              <%= render 'posts/vote_buttons', post: post %>
+            </div>
+
+            <div class="home-post-card">
+              <div class="post-card-header">
+                <span class="user-profile-link-container">
+                  <%= link_to user_path(post.user), class: 'user-profile-link' do %>
+                    <span><%= post.user.email %></span>
+                  <% end %>
+                </span>
+                <span class="post-created-at"><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></span>
+              </div>
+              <div class="post-card-content">
+                <span><%= post.content %></span>
+              </div>
+              <div class="post-card-footer">
+                <ul class="post-card-footer-list">
+                  <li><%= link_to "View", post_path(post), class: 'view-comments-link' %> <span class="post-comment-count"><%= post.comments.count %></span></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </article>
+      </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>
+
 <%= link_to "See recent posts", posts_user_path(current_user.id) %>

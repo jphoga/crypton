@@ -1,0 +1,40 @@
+.top-post-show {
+  border-top: .0625rem solid #e5e5e5;
+  transition: .25s ease-in-out;
+  background-color: white;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 3px;
+}
+
+.top-post-score-card {
+  position: relative;
+  background-color: white;
+  margin-right: 5px;
+}
+
+.top-post-card {
+  background-color: white;
+  color: black;
+  flex-grow: 1;
+}
+
+.top-post-card-header {
+  font-size: 12px;
+  color: #bbb
+}
+
+.top-post-created-at {
+  color: #929292;
+  float: right;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.top-post-card-content {
+  font-size: 12px;
+  margin: .25rem 0 0;
+}
