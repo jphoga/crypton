@@ -1,4 +1,4 @@
 import "bootstrap";
-import "currency";
+import "currency.js";
 
 import '../components/select2';
