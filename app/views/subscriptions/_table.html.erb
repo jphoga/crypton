@@ -3,14 +3,14 @@
     <table>
       <thead>
         <tr class="row100 head">
-          <th class="cell100 column1">#</th>
-          <th class="cell100 column2">Name</th>
-          <th class="cell100 column3">Market Cap</th>
-          <th class="cell100 column4">Price</th>
-          <th class="cell100 column5">Volume</th>
-          <th class="cell100 column6">Circulating Supply</th>
-          <th class="cell100 column7">Change (24h)</th>
-          <th class="cell100 column8">Remove Coin</th>
+          <th class="cell100 column1"><strong>#</strong></th>
+          <th class="cell100 column2"><strong>Name</strong></th>
+          <th class="cell100 column3"><strong>Market Cap</strong></th>
+          <th class="cell100 column4"><strong>Price</strong></th>
+          <th class="cell100 column5"><strong>Volume</strong></th>
+          <th class="cell100 column6"><strong>Circulating Supply</strong></th>
+          <th class="cell100 column7"><strong>Change (24h)</strong></th>
+          <th class="cell100 column8"></th>
         </tr>
       </thead>
     </table>
@@ -23,7 +23,7 @@
           <% current_user.subscriptions.each do |subscription| %>
             <tr class="row100 body">
               <td class="cell100 column1"><%=subscription.cryptocurrency.rank%> </td>
-              <td class="cell100 column2"><%=subscription.cryptocurrency.name%></td>
+              <td class="cell100 column2"><strong><%=subscription.cryptocurrency.name%></strong></td>
               <td class="cell100 column3">$<%=subscription.cryptocurrency.Marketcap%></td>
               <td class="cell100 column4">$<%=subscription.cryptocurrency.market_price %></td>
               <td class="cell100 column5">$<%=subscription.cryptocurrency.Volume %></td>
