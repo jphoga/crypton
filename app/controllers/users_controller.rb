@@ -49,12 +49,15 @@ class UsersController < ApplicationController
 
   def follow
     @user = User.find(params[:id])
+    authorize @user
     current_user.follow(@user)
     @follow = Follow.find_by(follower: @current_user, followable: @user)
     respond_to :js
   end
 
   def unfollow
+    @user = User.find(params[:id])
+    authorize @user
     current_user.stop_following(@user)
     respond_to :js
   end

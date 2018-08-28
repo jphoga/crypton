@@ -1,13 +1,8 @@
 <h1 class="text-center">My Profile</h1>
-<span>
-  <% if current_user.following?(@user) %>
-  <%= button_to "Following", {action: 'unfollow', id: @user.id}, method: 'post',
-  class: 'btn btn-secondary btn-unfollow header-align', remote: true %>
-  <% elsif current_user != @user %>
-  <%= button_to 'Follow', {action: 'follow', id: @user.id}, method: 'post',
-  class: 'btn btn-primary btn-follow header-align', remote: true %>
-  <% end %>
-</span>
+
+<div id="followButton">
+  <%= render 'users/follow_button' %>
+</div>
 
 <h2>My Top Posts</h2>
 <%= link_to "See recent posts", posts_user_path(current_user.id) %>
