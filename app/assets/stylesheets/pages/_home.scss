@@ -170,7 +170,6 @@
 .static-fields {
   display: flex;
   justify-content: space-between;
-  height: 80px;
 }
 .tradingview-widget {
   margin-top: 50px;
@@ -198,7 +197,12 @@ td {
   position: relative;
   flex-grow: 33%;
 }
-
-body {
-  font-family: "Raleway", "Helvetica", "sans-serif";
+  //TOP DASHBOARD BANNER
+.bitcoin-logo{
+  width: 85px;
+  margin-bottom: 5px;
+}
+.globe-logo {
+  width: 90px;
+  margin-bottom: 5px;
 }
