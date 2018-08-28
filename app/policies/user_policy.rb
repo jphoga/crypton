@@ -20,4 +20,13 @@ class UserPolicy < ApplicationPolicy
   def remove_favorites?
     true
   end
+
+  def follow?
+    @record != @user
+  end
+
+  def unfollow?
+    @record != @user
+  end
+
 end

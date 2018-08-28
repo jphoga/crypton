@@ -1,0 +1,5 @@
+function refreshFollowButton(innerHTML) {
+  const followButton = document.getElementById('followButton');
+  followButton.innerHTML = innerHTML;
+}
+refreshFollowButton('<%= j render "users/follow_button", user: @user %>');
