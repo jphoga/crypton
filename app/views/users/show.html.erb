@@ -11,41 +11,24 @@
   </div>
 
   <div class="user-show-container-posts-container">
-    <h2 class="text-center">My Top Posts</h2>
-    <div class="container">
-    <% @user.posts.each do |post| %>
-      <div class="home-post-show-first">
-        <article class="home-post-show-second">
-          <div class="home-post-show-third">
-            <div class="vote-card">
-              <%= render 'posts/vote_buttons', post: post %>
-            </div>
-
-            <div class="home-post-card">
-              <div class="post-card-header">
-                <span class="user-profile-link-container">
-                  <%= link_to user_path(post.user), class: 'user-profile-link' do %>
-                    <span><%= post.user.email %></span>
-                  <% end %>
-                </span>
-                <span class="post-created-at"><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></span>
-              </div>
-              <div class="post-card-content">
-                <span><%= post.content %></span>
-              </div>
-              <div class="post-card-footer">
-                <ul class="post-card-footer-list">
-                  <li><%= link_to "View", post_path(post), class: 'view-comments-link' %> <span class="post-comment-count"><%= post.comments.count %></span></li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </article>
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#top-posts">Top Posts</a></li>
+      <li><a data-toggle="tab" href="#following">Following</a></li>
+      <li><a data-toggle="tab" href="#followers">Followers</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="top-posts" class="tab-pane fade in active">
+        <%= render 'users/top_posts' %>
       </div>
-    <% end %>
+      <div id="following" class="tab-pane fade">
+        <%= render 'users/following' %>
+      </div>
+      <div id="followers" class="tab-pane fade">
+        <%= render 'users/followers' %>
+      </div>
 
     </div>
+
   </div>
 </div>
 

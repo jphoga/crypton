@@ -1,0 +1,6 @@
+<h2 class="text-center">Following</h2>
+<div class="container">
+<% @user.following_users.each do |following| %>
+  <%= following.email %>
+<% end %>
+</div>
