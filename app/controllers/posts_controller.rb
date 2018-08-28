@@ -42,13 +42,15 @@ class PostsController < ApplicationController
   end
 
   def upvote
+    authorize @post
     @post.upvote_by current_user
-    redirect_back(fallback_location: post_path(@post))
+    respond_to :js
   end
 
   def downvote
+    authorize @post
     @post.downvote_from current_user
-    redirect_back(fallback_location: post_path(@post))
+    respond_to :js
   end
 
   private
