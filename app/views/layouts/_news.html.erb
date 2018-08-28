@@ -4,9 +4,9 @@
   </div>
   <% @articles.each do |article|  %>
     <%= link_to "#{article.source}", target: :_blank, :class => "news-link" do %>
-      <div class="card" style=" padding: 20px; border-bottom: solid #F3F3F3 ">
+      <div class="card" style=" padding: 20px; border-bottom: solid #F3F3F3; display: flex; flex-direction: column; align-items: center; ">
         <% unless article.image_url == nil || article.image_url == "self" %>
-          <img class="card-img-left" src=<%= article.image_url %> alt="Card image cap" style=" width: 150px; margin-left: calc(100vh / 12); ">
+          <img class="card-img-left" src=<%= article.image_url %> alt="Card image cap" style=" width: 150px; ">
         <% end %>
         <div class="card-body" style="text-align: justify;">
           <p class="card-title" style="font-size: 13px; padding-top: 10px; " ><%= article.title %> </p>
