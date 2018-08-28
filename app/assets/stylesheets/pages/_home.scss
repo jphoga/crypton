@@ -9,10 +9,9 @@
   display: flex;
   flex-direction: column;
   flex: 25%;
-  min-height: calc(150vh - 60px);
+  height: calc(150vh - 60px);
 }
 .posts-inner-container{
-  min-height: 1500px;
   border-radius: 2px;
   margin: 10px;
   padding: 10px;
@@ -26,19 +25,19 @@
   display: flex;
   flex-direction: column;
   flex: 20%;
-  min-height: calc(150vh - 60px);
+  height: calc(150vh - 60px);
 }
 .news-inner-container {
   min-height: 1500px;
   overflow-y: scroll;
-  height: 100vh;
   border-radius: 2px;
   margin: 10px;
   padding: 10px;
   margin-top: 0;
   padding-top: 0;
-  .card:hover {
+  .btn:hover {
     opacity: 0.7;
+    color: lightgray;
   }
 }
 
@@ -65,9 +64,7 @@
 
 }
 
-.news-link:hover {
-  text-decoration: none;
-}
+
 
 .news-link {
   text-decoration: none;
@@ -137,6 +134,7 @@
   // box-shadow: 1px 1px 8px lightgray;
   // background-color: white;
   margin-bottom: 5px;
+  margin-top: 20px;
   padding: 10px;
 }
 
@@ -225,7 +223,7 @@ td {
 }
 .globe-logo {
   width: 90px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .static-box{
   margin-bottom: -10px;
