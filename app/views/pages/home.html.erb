@@ -9,10 +9,10 @@
       <div class="all-price-boxes">
         <div class="static-box">
           <div class="static-fields">
-            <h2><strong> Bitcoin: </strong>
+            <h2><img class="bitcoin-logo" src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png">
               <p style="color: #5186DF"><strong><span id="bitcoin-price"></span></strong> </p>
             </h2>
-            <h2><strong>Global Market Cap: </strong>
+            <h2><img class="globe-logo" src="https://cdn.icon-icons.com/icons2/1154/PNG/512/1486564415-globe_81515.png">
               <p style="color: #5186DF"><strong><span id="marketcap"></span></strong> </p>
             </h2>
           </div>
@@ -42,13 +42,14 @@
           <div class="card-prices">
             <% if current_user %>
               <% current_user.favorited_by_type('Cryptocurrency').each do |cryptocurrency| %>
-                    <%= link_to favorites_user_path(current_user, cryptocurrency_id: cryptocurrency), method: :delete do %>
-                <% end %>
+
                 <div class="crypto-card-container">
                   <div class="coinmarketcap-currency-widget widget-card" data-currency="<%=cryptocurrency.website_slug%>" data-base="USD" data-statsticker="false">
                   </div>
                   <div class="remove-button">
-                    <i class="far fa-times-circle" ></i>
+                    <%= link_to favorites_user_path(current_user, cryptocurrency_id: cryptocurrency), method: :delete do %>
+                      <i class="far fa-times-circle" ></i>
+                    <% end %>
                   </div>
                 </div>
 
