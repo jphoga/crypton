@@ -1,12 +1,11 @@
-=
+
 <div class="wrapper">
-  <div class="title-for-port" style=" background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://www.fxbtrading.com/wp-content/uploads/2018/01/LP-banner-cryptocurrency.jpg'); background-size: cover;text-align: center;">
-    <h1 class="text-center">Your portfolio</h1>
+  <div class="title-for-port">Your portfolio</h1>
   </div>
   <div class="grid">
     <div class="item-table">
       <table>
-        <tr>
+        <tr class="first-row-bordered-corners">
           <th class="first-row">
             <h4>Currency Name</h4>
           </th>
@@ -23,6 +22,7 @@
         <% sum = 0 %>
         <% @portfolio.ownedcurrencies.each do |currency| %>
           <tr>
+            <div class="table-columns">
             <td class = "currency-name">
               <%= currency.cryptocurrency.name %>
             </td>
@@ -35,7 +35,9 @@
                 <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.market_price).round(2) %></td>
                 <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.total_owned_value(currency).round(2)) %>
                 </td>
-                <td >
+              </div>
+
+                <td  class = "trash-bin">
                   <%= link_to  ownedcurrency_path(currency), :class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
                     <div class="trash">  <i class="fas fa-trash"></i></div>
                   <% end %>
