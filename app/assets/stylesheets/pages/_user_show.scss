@@ -1,9 +1,9 @@
 .user-show-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-.user-show-container-profile-container {
+.user-show-container-profile {
   display: flex;
   flex-direction: column;
   flex: 50%
@@ -11,8 +11,16 @@
 
 
 
-.user-show-container-posts-container {
+.user-show-container-tabs {
   display: flex;
   flex-direction: column;
   flex: 50%
+}
+
+.profile-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
 }
