@@ -31,7 +31,9 @@
         <div class="cards-box">
           <% if current_user %>
             <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
-              <%= f.input :crypto, label: false, collection: @cryptocurrencies %>
+              <%= f.input :crypto , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' }%>
+
+
               <div class="favorite-btn">
                 <%= f.submit "Follow a coin", :class => "btn btn-primary" %>
               </div>
