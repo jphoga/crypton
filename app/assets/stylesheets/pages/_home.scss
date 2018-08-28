@@ -71,6 +71,13 @@
 
 .news-link {
   text-decoration: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
 }
 
 .news-header {
@@ -78,6 +85,19 @@
 }
 
 // Middle Section
+
+#news-main-box {
+  min-height: 100vh;
+  min-width:600px;
+}
+
+
+.all-news-container {
+  display: flex;
+  flex-direction: column;
+  flex: 55%;
+  min-height: calc(150vh - 60px);
+}
 
 
 .prices-container {
