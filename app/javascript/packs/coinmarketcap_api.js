@@ -30,6 +30,6 @@ fetch('https://api.coinmarketcap.com/v2/ticker/1/')
 })
 .then(function(data){
   const bitcoin           = document.getElementById("bitcoin-price");
-  const bitcoinValue      = data.data.quotes.USD.percent_change_24h
-  bitcoin.innerText       = bitcoinValue + "%";
+  const bitcoinValue      = data.data.quotes.USD.price
+  bitcoin.innerText       = "$" + bitcoinValue;
 });
