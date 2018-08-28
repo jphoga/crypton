@@ -56,9 +56,16 @@
         <div class="form-container">
           <%= simple_form_for [@portfolio, @ownedcurrency] do |f| %>
             <h2> Add more coins</h2>
-            <div class="element">
-              <%= f.association :cryptocurrency, required: true, label: "Currency" %>
+              <div class="element">
+              <%= f.label :cryptocurrency %>
+              <%= f.association :cryptocurrency , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' } %>
             </div>
+
+            <%#= select_tag "timezone", options_from_collection_for_select(
+      Cryptocurrency.all,
+      :id, :name),
+      class: 'select2' %>
+
             <div class="element">
               <%= f.input :quantity, required: true, label: "Quantity" %>
             </div>
