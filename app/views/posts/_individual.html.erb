@@ -2,25 +2,7 @@
   <article class="home-post-show-second">
     <div class="home-post-show-third">
       <div class="vote-card">
-        <% if current_user %>
-          <%= link_to upvote_post_path(post), method: :put do %>
-            <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
-          <% end %>
-        <% else %>
-          <%= link_to new_user_session_path, method: :get do %>
-            <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
-          <% end %>
-        <% end %>
-          <div class="vote-weighted"><%= post.weighted_score %></div>
-        <% if current_user %>
-          <%= link_to downvote_post_path(post), method: :put do %>
-            <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
-          <% end %>
-        <% else %>
-          <%= link_to new_user_session_path, method: :get do %>
-            <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
-          <% end %>
-        <% end %>
+        <%= render 'posts/vote_buttons', post: post %>
       </div>
 
       <div class="home-post-card">
