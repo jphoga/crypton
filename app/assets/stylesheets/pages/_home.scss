@@ -1,3 +1,11 @@
+body {
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+}
+
 // Posts Section
 .posts-container {
   display: flex;
@@ -10,6 +18,8 @@
   border-radius: 2px;
   margin: 10px;
   padding: 10px;
+  margin-top: 0;
+  padding-top: 0;
   color: gray;
 }
 
@@ -17,7 +27,7 @@
 .news-container {
   display: flex;
   flex-direction: column;
-  flex: 20%;
+  flex: 25%;
   min-height: calc(150vh - 60px);
 }
 .news-inner-container {
@@ -27,6 +37,42 @@
   border-radius: 2px;
   margin: 10px;
   padding: 10px;
+  margin-top: 0;
+  padding-top: 0;
+  .card:hover {
+    opacity: 0.7;
+  }
+}
+
+.all-news-box{
+  background-color:white;
+  border: solid lightgray 1 1 1;
+  box-shadow: 1px 1px 8px lightgray;
+  margin-top:20px;
+}
+
+.all-posts {
+  background-color:white;
+  border: solid lightgray 1 1 1;
+  box-shadow: 1px 1px 8px lightgray;
+  margin-top:20px;
+
+}
+
+.all-price-boxes {
+  background-color:white;
+  border: solid lightgray 1 1 1;
+  box-shadow: 1px 1px 8px lightgray;
+  margin-top:20px;
+
+}
+
+.news-link:hover {
+  text-decoration: none;
+}
+
+.news-link {
+  text-decoration: none;
 }
 
 .news-header {
@@ -34,31 +80,61 @@
 }
 
 // Middle Section
-.dashboard-container {
-  border: solid .5px;
-  display: flex;
-}
+
+
 .prices-container {
   display: flex;
   flex-direction: column;
-  flex: 55%;
+  flex: 50%;
   min-height: calc(150vh - 60px);
-  background-color: white;
 }
 .prices-inner-container {
   min-height: 1500px;
-  background-color: white;
   border-radius: 2px;
-  margin: 10px;
-  padding: 10px;
+  // margin: 10px;
+  // padding: 10px;
 }
 
 .card-prices {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 25px;
   // border: solid 2px;
   border-radius: 5px;
-  height: 45vh;
 }
+
+.static-box {
+  text-align:center;
+  border-bottom: solid #F3F3F3;
+  // box-shadow: 1px 1px 8px lightgray;
+  // background-color: white;
+  // margin-top: 60px;
+  padding-bottom:20px;
+  margin-bottom: 5px;
+}
+
+.cards-box {
+  border-bottom: solid #F3F3F3;
+  // box-shadow: 1px 1px 8px lightgray;
+  // background-color: white;
+  margin-bottom: 5px;
+  padding: 20px;
+}
+
+.list-box {
+  border-bottom: solid #F3F3F3;
+  // box-shadow: 1px 1px 8px lightgray;
+  // background-color: white;
+  margin-bottom: 5px;
+  padding: 20px;
+}
+
+.widget-card {
+  flex: 1;
+  position: relative;
+}
+
+
 .row-prices {
   margin: 10px;
   border-bottom: solid 1px;
@@ -82,7 +158,9 @@
    justify-content: space-around;
 }
 .static-fields h2{
-  font-size: 20px;
+  flex: 1;
+  font-size: 18px;
+  line-height: 20px;
   font-family: 'Roboto', sans-serif;
   margin-left: 15px;
   margin-right: 15px;
@@ -90,11 +168,24 @@
 .static-fields {
   display: flex;
   justify-content: space-between;
+  height: 80px;
 }
 .tradingview-widget {
   margin-top: 50px;
 }
 td {
   padding: 15px;
+}
+#page-content {
+  margin-top: 70px;
+}
+.remove-button {
+  margin-left: 248px;
+  margin-bottom: -38px;
+  color: #3676E8;
+}
+.favorite-btn {
+  margin-bottom: 15px;
+  color: #3676E8;
 }
 

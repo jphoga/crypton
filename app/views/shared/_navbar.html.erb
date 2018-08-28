@@ -1,33 +1,18 @@
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <div class="coin-img"> <i class="fas fa-coins" style="font-size: 25px;"></i></div>
+    <div class="coin-img"> <i class="fas fa-coins" style="font-size: 35px;"></i></div>
   <% end %>
-  <div class="name">
-    Cool Name
+  <div class="navbar-name">
+    <h4>Coin<strong> <i>Spread</i>  </strong></h4>
   </div>
-  <!--
-  <div class="profile">
-    Profile
-  </div>
-
-  <div class="portfolio">
-    Portfolio
-  </div>
-
-  <div class="posts">
-    Posts
-  </div>
- -->
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to "News Page", news_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Write a post", new_post_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My Portfolio", portfolio_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My Posts", posts_user_path(current_user.id), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Write a post", new_post_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -38,8 +23,7 @@
                 <%= link_to user_path(current_user.id) do %>
                   <i class="fa fa-user"></i>  <%= "Profile" %>
                 <% end %>
-          <% end %>
-
+              <% end %>
             </li>
             <li>
               <%= link_to edit_user_registration_path do %>

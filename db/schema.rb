@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_065821) do
+ActiveRecord::Schema.define(version: 2018_08_27_083037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(version: 2018_08_24_065821) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "website_slug"
+    t.float "Marketcap"
+    t.float "Volume"
+    t.float "Supply"
+    t.float "Change"
+    t.integer "rank"
+    t.integer "coin_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -64,6 +70,20 @@ ActiveRecord::Schema.define(version: 2018_08_24_065821) do
     t.index ["favoritor_id", "favoritor_type"], name: "fk_favorites"
     t.index ["favoritor_type", "favoritor_id"], name: "index_favorites_on_favoritor_type_and_favoritor_id"
     t.index ["scope"], name: "index_favorites_on_scope"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.string "followable_type", null: false
+    t.bigint "followable_id", null: false
+    t.string "follower_type", null: false
+    t.bigint "follower_id", null: false
+    t.boolean "blocked", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followable_id", "followable_type"], name: "fk_followables"
+    t.index ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id"
+    t.index ["follower_id", "follower_type"], name: "fk_follows"
+    t.index ["follower_type", "follower_id"], name: "index_follows_on_follower_type_and_follower_id"
   end
 
   create_table "ownedcurrencies", force: :cascade do |t|
@@ -91,6 +111,15 @@ ActiveRecord::Schema.define(version: 2018_08_24_065821) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "cryptocurrency_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cryptocurrency_id"], name: "index_subscriptions_on_cryptocurrency_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -126,4 +155,6 @@ ActiveRecord::Schema.define(version: 2018_08_24_065821) do
   add_foreign_key "ownedcurrencies", "portfolios"
   add_foreign_key "portfolios", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "subscriptions", "cryptocurrencies"
+  add_foreign_key "subscriptions", "users"
 end

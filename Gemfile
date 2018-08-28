@@ -32,6 +32,9 @@ gem 'acts_as_favoritor'
  # cloudinary
 gem 'cloudinary'
 
+#sweetalert
+gem 'sweetify'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
@@ -48,3 +51,6 @@ end
 gem "pundit"
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'dotenv-rails', groups: [:development, :test]
+
+#follows
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'

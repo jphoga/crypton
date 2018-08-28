@@ -1,3 +1,8 @@
 <h1 class="text-center">My Profile</h1>
+
+<div id="followButton">
+  <%= render 'users/follow_button' %>
+</div>
+
 <h2>My Top Posts</h2>
 <%= link_to "See recent posts", posts_user_path(current_user.id) %>

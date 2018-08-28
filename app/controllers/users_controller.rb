@@ -35,6 +35,33 @@ class UsersController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+
+  def subscriptions
+    @user = current_user
+    authorize @user
+    @crypto_subscription = Cryptocurrency.find(params[:crypto].to_i)
+  end
+
+
+  def remove_subscriptions
+
+  end
+
+  def follow
+    @user = User.find(params[:id])
+    authorize @user
+    current_user.follow(@user)
+    @follow = Follow.find_by(follower: @current_user, followable: @user)
+    respond_to :js
+  end
+
+  def unfollow
+    @user = User.find(params[:id])
+    authorize @user
+    current_user.stop_following(@user)
+    respond_to :js
+  end
+
   private
 
   def article_params

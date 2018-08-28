@@ -12,14 +12,12 @@
 
 .simple_form.new_post {
   justify: center;
-    font-family: "Open Sans", "Helvetica", "sans-serif";
-
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  padding: 20px;
 }
 
-.wrapper-for-post{
-  padding-bottom: 860px;
-
-
+.wrapper-for-post-page {
+  height: calc(100vh - 140px)
 }
 
 .label-for-header{

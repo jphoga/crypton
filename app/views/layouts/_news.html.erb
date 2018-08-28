@@ -1,25 +1,19 @@
-<div class="news-header">
-  <h4 style="text-align: center; padding: 15px 0; margin:0"><strong> Crypto-News</strong></h4>
-</div>
-<% @articles.each do |article|  %>
-  <div class="card" style="width: 350px; padding: 20px; border: solid lightgray 1 1 1;">
-    <% unless article.image_url == nil || article.image_url == "self" %>
-      <img class="card-img-top" src=<%= article.image_url %> alt="Card image cap" style=" width: 310px; ">
-    <% end %>
-    <div class="card-body" style="text-align: justify;">
-      <h5 class="card-title"><strong><%= article.title %></strong> </h5>
-      <p class="card-text" style="font-size: 16px;"><%= article.description %></p>
-      <p class="card-text" style=" font-size: 16px; overflow-wrap: break-word;"><i><%= link_to "Link (#{article.source})", "#{article.news_url}", target: :_blank %></i> </p>
-      <p class="card-text"><small class="text-muted">Published on <%= article.publishedAt.strftime("%b %e, %Y - %l:%M %p") %></small></p>
-    </div>
+<div class="all-news-box">
+  <div class="news-header">
+    <h4 style="text-align: center; padding: 15px 0; margin:0"><strong> Crypto-News</strong></h4>
   </div>
-<% end %>
-<!-- t.string "author"
-t.string "title"
-t.string "description"
-t.integer "likes"
-t.string "news_url"
-t.datetime "publishedAt"
-t.datetime "created_at", null: false
-t.datetime "updated_at", null: false
-t.string "image_url" -->
+  <% @articles.each do |article|  %>
+    <%= link_to "#{article.source}", target: :_blank, :class => "news-link" do %>
+      <div class="card" style=" padding: 20px; border-bottom: solid #F3F3F3 ">
+        <% unless article.image_url == nil || article.image_url == "self" %>
+          <img class="card-img-left" src=<%= article.image_url %> alt="Card image cap" style=" width: 150px; margin-left: calc(100vh / 12); ">
+        <% end %>
+        <div class="card-body" style="text-align: justify;">
+          <p class="card-title" style="font-size: 13px; padding-top: 10px; " ><%= article.title %> </p>
+          <p class="card-text" style="font-size: 12px;"><%= article.description %></p>
+          <p class="card-text" style="font-size: 12px; padding-top:10px; padding: padding-bottom: 0"><small class="text-muted">Published on <%= article.publishedAt.strftime("%b %e, %Y - %l:%M %p") %></small></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,45 @@
+<div class="table100 ver5 m-b-110">
+  <div class="table100-head">
+    <table>
+      <thead>
+        <tr class="row100 head">
+          <th class="cell100 column1">#</th>
+          <th class="cell100 column2">Name</th>
+          <th class="cell100 column3">Market Cap</th>
+          <th class="cell100 column4">Price</th>
+          <th class="cell100 column5">Volume</th>
+          <th class="cell100 column6">Circulating Supply</th>
+          <th class="cell100 column7">Change (24h)</th>
+          <th class="cell100 column8">Remove Coin</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <div class="table100-body js-pscroll ps ps--active-y">
+    <table>
+      <tbody>
+        <% if current_user %>
+          <% current_user.subscriptions.each do |subscription| %>
+            <tr class="row100 body">
+              <td class="cell100 column1"><%=subscription.cryptocurrency.rank%> </td>
+              <td class="cell100 column2"><%=subscription.cryptocurrency.name%></td>
+              <td class="cell100 column3">$<%=subscription.cryptocurrency.Marketcap%></td>
+              <td class="cell100 column4">$<%=subscription.cryptocurrency.market_price %></td>
+              <td class="cell100 column5">$<%=subscription.cryptocurrency.Volume %></td>
+              <td class="cell100 column6"><%=subscription.cryptocurrency.Supply%></td>
+              <td class="cell100 column7"><%=subscription.cryptocurrency.Change%>%</td>
+              <td class="cell100 column7">
+                 <div class="col-sm-4">
+                  <%= link_to subscription_path(subscription), method: :delete do %>
+                    <i class="far fa-times-circle"></i>
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

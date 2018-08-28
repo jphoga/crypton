@@ -7,12 +7,17 @@ Rails.application.routes.draw do
   resources :portfolios, only: [ :new, :create, :destroy ] do
     resources :ownedcurrencies, only: [:create]
   end
+  resources :subscriptions, only: [:create, :destroy ]
   resources :users, only: [:show] do
     member do
-      get     '/posts',     to: 'users#posts'
-      post    '/favorites',  to: 'users#favorites'
-      get     '/favorites', to: 'users#favorites'
-      delete  '/favorites',  to: 'users#remove_favorites'
+      get     '/posts',         to: 'users#posts'
+
+      post '/follow', to: 'users#follow', as: :user_follow
+      post '/unfollow', to: 'users#unfollow', as: :user_unfollow
+
+      post    '/favorites',     to: 'users#favorites'
+      get     '/favorites',     to: 'users#favorites'
+      delete  '/favorites',     to: 'users#remove_favorites'
     end
   end
   resources :posts do
@@ -23,6 +28,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   resources :comments, only: [:destroy]
+
   resources :ownedcurrencies, only: [ :index, :show, :new, :destroy ]
 
   require "sidekiq/web"

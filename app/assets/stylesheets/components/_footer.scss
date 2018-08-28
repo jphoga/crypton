@@ -6,8 +6,8 @@
   height: 70px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-
-
+  flex-grow: 1;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 .footer-links {
   display: flex;
@@ -22,7 +22,4 @@
 }
 .footer-links a:hover {
   opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
 }
