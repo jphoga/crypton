@@ -1,5 +1,6 @@
 
 <div class="wrapper">
+  <div class="whole-container">
   <div class="title-for-port">Your portfolio</h1>
   </div>
   <div class="grid">
@@ -21,12 +22,12 @@
         </tr>
         <% sum = 0 %>
         <% @portfolio.ownedcurrencies.each do |currency| %>
-          <tr>
+          <tr class="this-table">
             <div class="table-columns">
-            <td class = "currency-name">
+            <td class= "currency-name">
               <%= currency.cryptocurrency.name %>
             </td>
-            <td class ="cajas-restantes"><%= (currency.quantity).round %></td>
+            <td class ="cajas-restantes", id="cajas-de-zero-padding"><%= (currency.quantity).round %></td>
             <% if currency.cryptocurrency.market_price == nil %>
               <td class ="cajas-restantes">$ 0 </td>
               <td class ="cajas-restantes">$ 0 </td>
@@ -72,4 +73,5 @@
         </div>
       </div>
     </div>
+  </div>
   </div>

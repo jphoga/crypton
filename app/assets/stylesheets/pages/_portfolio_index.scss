@@ -7,7 +7,8 @@
   justify-content: center;
   font-family: "Guardian Text Egyptian Web",Georgia,serif;
   text-align: center;
-
+  width: 300px;
+  margin-left: -50px;
 
 }
 
@@ -23,7 +24,6 @@
     text-align: center;
     font-weight: bold;
     font-size: 50px;
-    text-shadow: 2px 2px black;
 }
 
 .grid {
@@ -33,12 +33,8 @@
 }
 
 .item-table {
-  padding: 20px;
   grid-column-start: 2;
   grid-column-end: 5;
-  color: white;
-  border-radius: 20px;
-  padding-right: 10px;
   grid-row-start: 1;
   grid-row-end: 1;
 
@@ -69,17 +65,17 @@
 }
 
 .item-table th{
-  padding: 10px;
 
 
 }
 .piepie{
   grid-row-start: 3;
   grid-row-end: 4;
-  grid-column-start: 4;
-  grid-column-end: 5;
+  grid-column-start: 3;
+  grid-column-end: 6;
   padding: 57px;
-  margin-left: -60px;
+  margin-left: -10px;
+  margin-top: 25px;
 }
 
 .item-form h2 {
@@ -94,23 +90,19 @@
 }
 
 .item-table table {
-  color: black;
-  padding: 20px;
   width: 800px;
   height: 150px;
   margin-bottom: 20px;
+  margin-left: -50px;
+
 }
 
 .currency-name{
-  background-color: #808080;
-  color: white;
-
 }
 
 .first-row{
-  background-color: #808080;
-  color: white;
-
+  background-color: #afafaf ;
+  font-weight:bold;
 
 }
 
@@ -125,15 +117,13 @@
     color: white;
     text-shadow: 4px 4px black;
     margin-left: -900px;
-
-
 }
 
-.cajas-restantes{
-  background-color: transparent;
+.cajas-restantes {
+  padding: 0px;
 }
 .total-sum{
-  background-color:#c0cde0
+  background-color:#c0cde0;
 }
 
 .btn-black input{
@@ -158,6 +148,26 @@ tr:nth-of-type(odd) {
 // }
 
 .first-row-bordered-corners{
-  border: 2px solid blue;
+  border: 2px solid white;
   border-radius:20px;
+}
+
+.td.currency-name {
+  padding: 0;
+}
+
+#cajas-de-zero-padding td{
+  padding: 0;
+}
+
+.whole-container {
+    background-color: white;
+    width: 1050px;
+    margin: 0px 50px 0px 200px;
+    border: 2px solid #efefef
+;
+  }
+
+.this-table td{
+  padding: 0;
 }
