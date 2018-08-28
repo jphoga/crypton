@@ -29,12 +29,10 @@
               <td class="cell100 column5">$<%=subscription.cryptocurrency.Volume %></td>
               <td class="cell100 column6"><%=subscription.cryptocurrency.Supply%></td>
               <td class="cell100 column7"><%=subscription.cryptocurrency.Change%>%</td>
-              <td class="cell100 column7">
-                 <div class="col-sm-4">
-                  <%= link_to subscription_path(subscription), method: :delete do %>
-                    <i class="far fa-times-circle"></i>
-                  <% end %>
-                </div>
+              <td class="cell100 column8">
+                <%= link_to subscription_path(subscription), method: :delete do %>
+                  <i class="far fa-times-circle table-row-delete"></i>
+                <% end %>
               </td>
             </tr>
           <% end %>
