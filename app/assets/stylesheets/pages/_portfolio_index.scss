@@ -7,7 +7,8 @@
   justify-content: center;
   font-family: "Guardian Text Egyptian Web",Georgia,serif;
   text-align: center;
-
+  width: 300px;
+  margin-left: -50px;
 
 }
 
@@ -17,37 +18,34 @@
 }
 
 .title-for-port {
-  background: center center no-repeat;
-  margin-bottom: 80px;
-  font-family: "Guardian Text Egyptian Web",Georgia,serif;
-  margin-top: -26px;
-  height: 150px;
-  padding-top: 60px;
-
-
+    padding: 50px 0px 40px 0px;
+    line-height: 1.1;
+    color: gray;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 10% 10% 10% 5% 5% 60%;
-  grid-template-rows: 50% 40% 10%;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 30% 30% 40%;
 }
 
 .item-table {
   grid-column-start: 2;
   grid-column-end: 5;
-  color: white;
-  border-radius: 20px;
-  padding-right: 10px;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 1;
 
 }
 
 .item-form {
-  grid-column-start: 5;
-  grid-column-end: 7;
+  grid-column-start: 2;
+  grid-column-end: 3;
   text-align: center;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
 .text-left {
@@ -67,16 +65,17 @@
 }
 
 .item-table th{
-  padding: 10px;
 
 
 }
 .piepie{
-  grid-row-start: 1;
-  grid-row-end: 1;
-  grid-column-start: 5;
-  grid-column-end: 7;
-
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 6;
+  padding: 57px;
+  margin-left: -10px;
+  margin-top: 25px;
 }
 
 .item-form h2 {
@@ -91,26 +90,19 @@
 }
 
 .item-table table {
-  color: black;
-  padding: 20px;
-  width: 500px;
-  height: 600px;
+  width: 800px;
+  height: 150px;
+  margin-bottom: 20px;
+  margin-left: -50px;
+
 }
 
 .currency-name{
-  background-color: #283242;
-  color: white;
-  border-style: solid;
-  border-color:  white;
-  border-width: 1px;
 }
 
 .first-row{
-  background-color: #283242;
-  color: white;
-  border-style: solid;
-  border-color:  white;
-  border-width: 1px;
+  background-color: #afafaf ;
+  font-weight:bold;
 
 }
 
@@ -125,18 +117,13 @@
     color: white;
     text-shadow: 4px 4px black;
     margin-left: -900px;
-
-
 }
 
-.cajas-restantes{
-  background-color: #7f8da3;
-  border-style: solid;
-  border-color:  white;
-  border-width: 1px;
+.cajas-restantes {
+  padding: 0px;
 }
 .total-sum{
-  background-color:#c0cde0
+  background-color:#c0cde0;
 }
 
 .btn-black input{
@@ -145,4 +132,41 @@
   background-color: #231f20;
 }
 
+tr:nth-of-type(odd) {
+  background-color:#ccc;
+}
 
+.trash-bin{
+  background-color: #F4F4F4;
+}
+
+// .table-columns{
+//   border-style: solid;
+//   border-color: red;
+//   border-width: 1px;
+//   border-radius:10px;
+// }
+
+.first-row-bordered-corners{
+  border: 2px solid white;
+  border-radius:20px;
+}
+
+.td.currency-name {
+  padding: 0;
+}
+
+#cajas-de-zero-padding td{
+  padding: 0;
+}
+
+.whole-container {
+    background-color: white;
+    width: 1050px;
+    margin: 0px 50px 0px 200px;
+    border: 2px solid #efefef;
+  }
+
+.this-table td{
+  padding: 0;
+}
