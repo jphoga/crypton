@@ -4,6 +4,12 @@
       <%= render 'layouts/news' %>
     </div>
   </div>
+  <div class="all-news-container"  style="display: none">
+    <div class="prices-inner-container">
+      <div id="news-main-box">
+      </div>
+    </div>
+  </div>
   <div class="prices-container">
     <div class="prices-inner-container">
       <div class="all-price-boxes">
@@ -39,8 +45,6 @@
           <% if current_user %>
             <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
               <%= f.input :crypto , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' }%>
-
-
               <div class="favorite-btn">
                 <%= f.submit "Follow a coin", :class => "btn btn-primary" %>
               </div>
@@ -49,7 +53,6 @@
           <div class="card-prices">
             <% if current_user %>
               <% current_user.favorited_by_type('Cryptocurrency').each do |cryptocurrency| %>
-
                 <div class="crypto-card-container">
                   <div class="coinmarketcap-currency-widget widget-card" data-currency="<%=cryptocurrency.website_slug%>" data-base="USD" data-statsticker="false">
                   </div>
@@ -59,8 +62,6 @@
                     <% end %>
                   </div>
                 </div>
-
-
               <% end %>
             <% end %>
           </div>
