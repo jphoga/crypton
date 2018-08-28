@@ -37,20 +37,22 @@ class NewsApiJob < ApplicationJob
 
 
     reddit.each do |article|
-      new_article = Article.new(
-        author: article["author"],
-        thumbnail: article["thumbnail"],
-        title: article["title"],
-        description: "",
-        news_url: "https://www.reddit.com" + article["permalink"],
-        publishedAt: Time.at(article["created_utc"]).strftime("%b %e, %Y - %l:%M %p"),
-        source: article["url"],
-        ups: article["ups"]
-      )
-      unless article["preview"] == nil
-        new_article.image_url = article["preview"]["images"][0]["source"]["url"]
+      unless article["author"] == "CryptoCurrencyMod"
+        new_article = Article.new(
+          author: article["author"],
+          thumbnail: article["thumbnail"],
+          title: article["title"],
+          description: "",
+          news_url: "https://www.reddit.com" + article["permalink"],
+          publishedAt: Time.at(article["created_utc"]).strftime("%b %e, %Y - %l:%M %p"),
+          source: article["url"],
+          ups: article["ups"]
+        )
+        unless article["preview"] == nil
+          new_article.image_url = article["preview"]["images"][0]["source"]["url"]
+        end
+        new_article.save!
       end
-      new_article.save!
     end
   end
 end
