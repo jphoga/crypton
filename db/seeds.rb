@@ -353,32 +353,32 @@ puts "30 ownedcurrencies created"
 
 Follow.create ( {
   followable: Demi,
-  follower: User.all.sample
+  follower: Tania
 })
 
 
 
 Follow.create ( {
   followable: Hiroki,
-  follower: User.all.sample
+  follower: David
 })
 
 
 Follow.create ( {
   followable: David,
-  follower: User.all.sample
+  follower: Demi
 })
 
 
 Follow.create ( {
   followable: Tania,
-  follower: User.all.sample
+  follower: Demi
 })
 
 
 Follow.create ( {
   followable: Jan,
-  follower: User.all.sample
+  follower: Hiroki
 })
 
 
