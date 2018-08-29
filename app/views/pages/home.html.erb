@@ -4,40 +4,38 @@
       <%= render 'layouts/news' %>
     </div>
   </div>
-  <div class="all-news-container"  style="display: none">
+  <div class="all-news-container" style="display: none;" >
     <div class="prices-inner-container">
       <div id="news-main-box">
       </div>
     </div>
   </div>
-  <div class="prices-container">
+  <div class="prices-container" style="display: block;">
     <div class="prices-inner-container">
       <div class="all-price-boxes">
         <div class="static-box">
           <div class="static-fields">
             <div class="top-row">
               <div class="bitcoin-container">
-                <h2><img class="bitcoin-logo" src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png">
+                <h2><img class="bitcoin-logo" src="https://en.bitcoin.it/w/images/en/c/cb/BC_Logotype.png">
                   <p style="color: #5186DF"><span id="bitcoin-price"></span></p>
                 </h2>
               </div>
               <div class="global-container">
-                <h2><img class="globe-logo" src="https://png.icons8.com/metro/1600/globe.png">
+                <h2><img class="globe-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Globe_icon.svg/1024px-Globe_icon.svg.png">
                   <p style="color: #5186DF"><span id="marketcap"></span></p>
                 </h2>
               </div>
+              <h2><strong>Cryptocurrencies: </strong>
+                <p style="color: #5186DF"><strong><span id="cryptocurrency-number"></span></strong> </p>
+              </h2>
+              <h2><strong>24h Volume: </strong>
+                <p style="color: #5186DF"><strong><span id="daily-volume"></span></strong> </p>
+              </h2>
+               <h2><strong>BTC Dominance: </strong>
+                <p style="color: #5186DF"><strong><span id="bitcoin-dominance"></span></strong> </p>
+              </h2>
             </div>
-          </div>
-          <div class="static-fields">
-            <h2><strong>BTC Dominance: </strong>
-              <p style="color: #5186DF"><strong><span id="bitcoin-dominance"></span></strong> </p>
-            </h2>
-            <h2><strong>Cryptocurrencies: </strong>
-              <p style="color: #5186DF"><strong><span id="cryptocurrency-number"></span></strong> </p>
-            </h2>
-            <h2><strong>24h Volume: </strong>
-              <p style="color: #5186DF"><strong><span id="daily-volume"></span></strong> </p>
-            </h2>
           </div>
         </div>
         <div class="cards-box">
@@ -84,10 +82,22 @@
             <%= render 'posts/form', post: @post %>
           </div>
         <% end %>
-        <h4 style="padding-left: 10px">Recent Posts</h4>
-        <div id="posts">
-          <%= render 'posts/index', posts: @posts %>
-        </div>
+
+        <ul class="nav nav-tabs ">
+          <li class="active"><a data-toggle="tab" href="#posts">Recent</a></li>
+          <li><a data-toggle="tab" href="#hot-posts">Hot</a></li>
+          <li><a data-toggle="tab" href="#following-posts">Following</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="posts" class="tab-pane fade in active">
+            <%= render 'posts/index', posts: @posts %>
+          </div>
+          <div id="hot-posts" class="tab-pane fade">
+            <%= render 'posts/hot_index' %>
+          </div>
+          <div id="following-posts" class="tab-pane fade">
+            <%= render 'posts/following_index' %>
+          </div>
         <%= link_to "View all posts", posts_path, class: 'view-all-posts' %>
       </div>
     </div>

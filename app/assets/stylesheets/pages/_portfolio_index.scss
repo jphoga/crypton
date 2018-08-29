@@ -5,8 +5,7 @@
   display: flex;
   padding: 50px 0;
   justify-content: center;
-  font-family: "Guardian Text Egyptian Web",Georgia,serif;
-  text-align: center;
+  font-family: "Raleway", "Helvetica", "sans-serif";  text-align: center;
   width: 300px;
   margin-left: -50px;
 
@@ -18,6 +17,7 @@
 }
 
 .title-for-port {
+    font-family: "Raleway", "Helvetica", "sans-serif";  text-align: center;
     padding: 50px 0px 40px 0px;
     line-height: 1.1;
     color: gray;
@@ -80,7 +80,7 @@
 
 .item-form h2 {
   text-shadow: 2px 2px white;
-  font-family: "Guardian Text Egyptian Web",Georgia,serif;
+  font-family: "Raleway", "Helvetica", "sans-serif";  text-align: center;
 
 }
 
@@ -98,18 +98,21 @@
 }
 
 .currency-name{
+  font-weight: bold;
 }
 
 .first-row{
   background-color: #afafaf ;
   font-weight:bold;
+  padding: 0px 0px 0px 10px;
 
 }
 
 .first-row h4{
-  font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-family: "Raleway", "Helvetica", "sans-serif";  text-align: center;
   font-style: normal;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .title-for-port h1{
@@ -133,24 +136,13 @@
 }
 
 tr:nth-of-type(odd) {
-  background-color:#ccc;
+  background-color:#f7f7f7;
 }
 
 .trash-bin{
-  background-color: #F4F4F4;
+  background-color: white;
 }
 
-// .table-columns{
-//   border-style: solid;
-//   border-color: red;
-//   border-width: 1px;
-//   border-radius:10px;
-// }
-
-.first-row-bordered-corners{
-  border: 2px solid white;
-  border-radius:20px;
-}
 
 .td.currency-name {
   padding: 0;
@@ -164,9 +156,21 @@ tr:nth-of-type(odd) {
     background-color: white;
     width: 1050px;
     margin: 0px 50px 0px 200px;
-    border: 2px solid #efefef;
-  }
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      border: 1px solid rgba(0, 0, 0, 0.1);       /* OR subtle border */  }
 
 .this-table td{
-  padding: 0;
+      padding: 0px 0px 0px 10px;
+}
+
+.currency-name {
+    padding: 0px 0px 0px 10px;
+
+}
+
+.form-container h2{
+  font-family: "Raleway", "Helvetica", "sans-serif";  text-align: center;
+  color: gray;
+  text-align: center;
+  font-weight: bold;
 }
