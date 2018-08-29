@@ -16,12 +16,12 @@
 
 /* Logo */
 .navbar-wagon-brand {
-  color: black;
+  color: #1da1f2;
   img {
     height: 50px;
   }
   &:hover {
-    color: gray;
+    color: #0084b4;
   }
 }
 
@@ -51,18 +51,18 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: black;
+  color: #66757f;
   font-weight: bold;
   font-size: 18px;
   font-family: "Raleway", "Helvetica", "sans-serif";
-  border-right: solid black;
+  border-right: solid #66757f;
   border-width: thin;
+  &:hover {
+  color: #0996d0;
+  text-decoration: none;
+  }
 }
 
-.navbar-wagon-link:hover {
-  color: #A9927D;
-  text-decoration: none;
-}
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
@@ -72,14 +72,14 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: #66757f !important;
   font-size: 20px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: #1da1f2 !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -96,7 +96,7 @@
 .navbar-name{
   font-size: 20px;
   font-family: "Raleway", "Helvetica", "sans-serif";
-  color: black;
+  color: #1da1f2;
   margin-right: 20px;
   margin-left: 30px;
 }
