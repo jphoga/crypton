@@ -8,6 +8,7 @@
 require 'json'
 require 'open-uri'
 
+Follow.destroy_all if Rails.env.development?
 Portfolio.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 Post.destroy_all if Rails.env.development?
