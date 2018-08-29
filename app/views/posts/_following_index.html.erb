@@ -1,5 +1,7 @@
-<% @posts.each do |post| %>
-  <%= render 'posts/individual', post: post %>
+<% current_user.following_users.each do |following| %>
+  <% following.posts.order("created_at DESC").each do |post| %>
+    <%= render 'posts/individual', post: post %>
+  <% end %>
 <% end %>
 <script>
   function triggerComment(button) {
