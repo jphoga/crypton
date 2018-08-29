@@ -1,6 +1,6 @@
 <div class="all-news-box">
   <div class="news-header">
-    <h4 style="text-align: center; padding: 15px 0; margin: 0;"><strong>News</strong> </h4>
+    <h2 style="text-align: center; padding: 15px 0; margin: 0;"><strong>News</strong> </h2>
     <h5 style="text-align: center; padding-bottom: 30px; "><img class="reddit-logo" src="https://www.redditstatic.com/new-icon.png"><strong> r/Cryptocurrency</strong></h5>
   </div>
   <% @articles.each do |article|  %>
@@ -13,7 +13,7 @@
         <p class="card-text" style="font-size: 12px;"><%= article.description %></p>
         <p class="card-text" style="font-size: 12px; padding-top:10px; padding: padding-bottom: 0"><small class="text-muted">Published on <%= article.publishedAt.strftime("%b %e, %Y - %l:%M %p") %></small></p>
       </div>
-      <%= link_to "Link to reddit", article.news_url, target: :_blank, :class => "news-link" %>
+      <%= link_to "See reddit", article.news_url, target: :_blank, :class => "news-link" %>
       <button type="button" class="btn btn-dark show-news" id="show-news" data-url= "<%= article.source %>">Expand news</button>
     </div>
   <% end %>

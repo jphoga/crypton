@@ -40,15 +40,13 @@
         </div>
         <div class="cards-box">
           <% if current_user %>
-
             <div class="container-for-search-box">
               <div class="first-search-shrunk"><%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %></div>
                 <%= f.input :crypto , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' }%>
-              <div class="favorite-btn">
-                <%= f.submit "Add Card", :class => "btn btn-primary" %>
+                <div class="favorite-btn">
+                  <%= f.submit "Add Card", :class => "btn btn-primary" %>
+                </div>
               </div>
-            </div>
-
             <% end %>
           <% end %>
           <div class="card-prices">
@@ -83,7 +81,7 @@
     <div class="posts-inner-container">
       <div class="all-posts">
         <% unless !current_user %>
-          <h4 style="text-align: center; padding: 15px 0; margin:0"><strong> Posts</strong></h4>
+          <h2 style="text-align: center; padding: 15px 0; margin:0"><strong> Posts</strong></h2>
           <div id="new_post">
             <%= render 'posts/form', post: @post %>
           </div>

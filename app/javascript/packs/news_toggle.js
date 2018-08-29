@@ -3,7 +3,6 @@ const showhideNews = (url) => {
     const prices = document.querySelector(".prices-container");
     const news = document.querySelector(".all-news-container");
     const frameContainer = document.getElementById("news-main-box");
-    const buttons = document.querySelectorAll("#show-news");
     var postsContainer = document.querySelector('.post-partial-container');
 
 
