@@ -84,9 +84,22 @@
             <%= render 'posts/form', post: @post %>
           </div>
         <% end %>
-        <h4 style="padding-left: 10px">Recent Posts</h4>
-        <div id="posts">
-          <%= render 'posts/index', posts: @posts %>
+
+        <ul class="nav nav-tabs ">
+          <li class="active"><a data-toggle="tab" href="#posts">Recent</a></li>
+          <li><a data-toggle="tab" href="#hot-posts">Hot</a></li>
+          <li><a data-toggle="tab" href="#following-posts">Following</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="posts" class="tab-pane fade in active">
+            <%= render 'posts/index', posts: @posts %>
+          </div>
+          <div id="hot-posts" class="tab-pane fade">
+            <%= render 'posts/hot_index' %>
+          </div>
+          <div id="following-posts" class="tab-pane fade">
+            <%= render 'posts/following_index' %>
+          </div>
         </div>
         <%= link_to "View all posts", posts_path, class: 'view-all-posts' %>
       </div>
