@@ -40,11 +40,15 @@
         </div>
         <div class="cards-box">
           <% if current_user %>
-            <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
-              <%= f.input :crypto , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' }%>
+
+            <div class="container-for-search-box">
+              <div class="first-search-shrunk"><%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %></div>
+                <%= f.input :crypto , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' }%>
               <div class="favorite-btn">
                 <%= f.submit "Add Card", :class => "btn btn-primary" %>
               </div>
+            </div>
+
             <% end %>
           <% end %>
           <div class="card-prices">

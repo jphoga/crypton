@@ -273,3 +273,22 @@ td {
 .recent-posts {
   color: black;
 }
+
+.container-for-search-box{
+  display: flex;
+  align-items: center;
+  margin-bottom: -40px;
+}
+
+.search-box-bottom-box{
+  display: flex;
+  align-items: center;
+}
+
+.first-search-shrunk {
+  margin-right: 10px;
+}
+
+.form-for-subscription {
+  margin-right: 20px;
+}
