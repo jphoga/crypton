@@ -8,6 +8,11 @@ document.querySelectorAll(".show-news").forEach((button) => {
   button.addEventListener("click", (event) => {
     console.log(event.currentTarget.dataset.url);
     showhideNews(event.currentTarget.dataset.url);
+    if (event.currentTarget.innerHTML === "Hide news") {
+      event.currentTarget.innerHTML = "Expand news";
+    } else {
+      event.currentTarget.innerHTML = "Hide news";
+    };
   })
 })
 
