@@ -41,9 +41,9 @@
         <div class="cards-box">
           <% if current_user %>
             <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
-              <%= f.input :crypto , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' }%>
-              <div class="favorite-btn">
-                <%= f.submit "Add Card", :class => "btn btn-primary" %>
+             <div class ="col-sm-4 col-sm-offset-2" style="margin-left: 0" > <%= f.input :crypto , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' }%></div>
+                     <div class="favorite-btn">
+                <%= f.submit "Follow a coin", :class => "btn btn-primary" %>
               </div>
             <% end %>
           <% end %>
@@ -66,8 +66,8 @@
         <!-- Number, Name, MarketCap, Price, Volume, Supply, Change, Graph -->
         <div class="list-box">
           <div class="row-form">
-            <%= render 'subscriptions/form', subscription: @subscription %>
-            <%= render 'subscriptions/table' %>
+          <div class = "search-and-submit-boxes"> <%= render 'subscriptions/form', subscription: @subscription %> </div>
+           <div class="ftable"> <%= render 'subscriptions/table' %></div>
           </div>
         </div>
       </div>
