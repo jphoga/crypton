@@ -9,4 +9,9 @@
 // })
 
 var postsContainer = document.querySelector('.post-partial-container');
+var prices = document.querySelector(".prices-container");
+var back = document.querySelector("#back_to_dashboard");
+back.style.visibility = "visible";
+prices.style.display = "none";
+postsContainer.style.display = "block"
 postsContainer.innerHTML = '<%= j render 'posts/show', post: @post, comment: @comment %>';

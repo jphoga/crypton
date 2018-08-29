@@ -35,10 +35,5 @@
     <div id="comments">
       <%= render 'comments/show', post: post %>
     </div>
-    <% if current_user %>
-      <%= link_to 'Back to Posts', posts_path %>
-    <% else %>
-      <%= link_to 'Back to Home', root_path %>
-    <% end %>
   </div>
 </div>
