@@ -1,21 +1,21 @@
 <div class="user-show-container">
   <div class="user-show-container-profile">
     <div class="profile-card">
-      <div id="followButton">
-        <%= render 'users/follow_button' %>
-      </div>
-      <div>
+      <div class="user-profile-avatar">
         <%= cl_image_tag(@user.photo)  %>
       </div>
       <h1><%= @user.username %></h1>
-      <p class="title"><%= @user.email %></p>
+      <p class=".user-profile-email"><%= @user.email %></p>
       <p>Favorite Coins:</p>
-      <div style="margin: 24px 0;">
+      <div class="user-profile-links">
         <a href="#"><i class="fab fa-dribbble"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin"></i></a>
         <a href="#"><i class="fab fa-facebook"></i></a>
      </div>
+      <div id="followButton">
+        <%= render 'users/follow_button' %>
+      </div>
     </div>
   </div>
 
