@@ -6,7 +6,6 @@
           <%= render 'posts/vote_buttons', post: post %>
         </div>
       </div>
-
       <div class="home-post-card">
         <div class="post-card-header">
           <%= cl_image_tag(post.user.photo, :transformation=>[
@@ -27,14 +26,11 @@
         </div>
         <div class="post-card-footer">
           <ul class="post-card-footer-list">
-            <li><%= link_to "View", post_path(post), class: 'view-comments-link' %> <span class="post-comment-count"><%= post.comments.count %></span> </li>
+            <li><%= link_to "View", post_path(post), class: 'view-comments-link open-post-button', "data-id": post.id, remote: true %> <span class="post-comment-count"><%= post.comments.count %></span> </li>
             <li><button onclick="triggerComment(this)" class="comment-button">Comment</button></li>
           </ul>
         </div>
-
-
         <div class="home_post_comment"><%= render 'comments/form', post: post, comment: @comment %></div>
-
       </div>
     </div>
   </article>
