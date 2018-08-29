@@ -91,10 +91,13 @@
   height: 50px;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: 20px;
   text-align: center;
+  border: thin;
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
 }
 
 .follow-info {
