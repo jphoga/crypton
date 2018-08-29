@@ -181,9 +181,10 @@
 }
 .static-fields h2{
   flex: 1;
-  font-size: 20px;
-  line-height: 35px;
+  font-size: 17px;
+  line-height: 25px;
   font-family: 'Roboto', sans-serif;
+  margin-top: 15px;
   margin-left: 15px;
   margin-right: 15px;
   color: white;
@@ -224,24 +225,24 @@ td {
 }
   //TOP DASHBOARD BANNER
 .bitcoin-logo{
-  width: 250px;
-  margin-bottom: 17px;
+  width: 210px;
+  margin-bottom: 22px;
 }
 .globe-logo {
-  width: 70px;
-  margin-bottom: 8px;
-  margin-top: -10px;
+  width: 56px;
+  margin-bottom: 15px;
+  margin-top: -5px;
 }
 .static-box{
   margin-bottom: -10px;
 }
 #bitcoin-price {
   color: white;
-  font-size: 30px;
+  font-size: 27px;
 }
 #marketcap {
   color: white;
-  font-size: 30px;
+  font-size: 27px;
 }
 #bitcoin-dominance {
   color: white;
