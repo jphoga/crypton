@@ -9,7 +9,7 @@
         <div class="post-card-header">
           <span class="user-profile-link-container">
             <%= link_to user_path(post.user), class: 'user-profile-link' do %>
-              <span><%= post.user.email %></span>
+              <span><%= post.user.username %></span>
             <% end %>
           </span>
           <span class="post-created-at"><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></span>
