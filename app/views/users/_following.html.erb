@@ -7,8 +7,8 @@
         {:effect=>"cartoonify"},
         {:effect=>"outline:100", :color=>"white"},
         {:background=>"white"},
-        {:height=>50, :crop=>"scale"}
-        ]) %>
+        {:width=>50, :height=>50, :radius=>"max", :crop=>"scale"}
+        ], class: 'follow-avatar') %>
     <div class="follow-info">
       <div class="follow-username">
           <%= following.username %>
