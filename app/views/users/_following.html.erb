@@ -1,6 +1,23 @@
 <h2 class="text-center">Following</h2>
-<div class="container">
+<div class="follow-container">
 <% @user.following_users.each do |following| %>
-  <%= following.email %>
+  <%= link_to user_path(@user) do %>
+  <div class="follow-profile-card">
+    <%= cl_image_tag(following.photo, :transformation=>[
+        {:effect=>"cartoonify"},
+        {:effect=>"outline:100", :color=>"white"},
+        {:background=>"white"},
+        {:height=>50, :crop=>"scale"}
+        ]) %>
+    <div class="follow-info">
+      <div class="follow-username">
+          <%= following.username %>
+      </div>
+      <div class="follow-email">
+        <%= following.email %>
+      </div>
+    </div>
+  </div>
+  <% end %>
 <% end %>
 </div>

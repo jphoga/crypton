@@ -1,9 +1,12 @@
 <div class="user-show-container">
   <div class="user-show-container-profile">
     <div class="profile-card">
-      <div class="user-profile-avatar">
-        <%= cl_image_tag(@user.photo)  %>
-      </div>
+      <%= cl_image_tag(@user.photo, :transformation=>[
+        {:effect=>"cartoonify"},
+        {:effect=>"outline:100", :color=>"white"},
+        {:background=>"white"},
+        {:height=>300, :crop=>"scale"}
+        ]) %>
       <h1><%= @user.username %></h1>
       <p class=".user-profile-email"><%= @user.email %></p>
       <p>Favorite Coins:</p>
@@ -20,23 +23,24 @@
   </div>
 
   <div class="user-show-container-tabs">
-    <ul class="nav nav-tabs ">
-      <li class="active"><a data-toggle="tab" href="#top-posts">Top Posts</a></li>
-      <li><a data-toggle="tab" href="#following">Following</a></li>
-      <li><a data-toggle="tab" href="#followers">Followers</a></li>
-    </ul>
-    <div class="tab-content">
-      <div id="top-posts" class="tab-pane fade in active">
-        <%= render 'users/top_posts' %>
-      </div>
-      <div id="following" class="tab-pane fade">
-        <%= render 'users/following' %>
-      </div>
-      <div id="followers" class="tab-pane fade">
-        <%= render 'users/followers' %>
+    <div class="user-show-tabs-margin">
+      <ul class="nav nav-tabs ">
+        <li class="active"><a data-toggle="tab" href="#top-posts">Top Posts</a></li>
+        <li><a data-toggle="tab" href="#following">Following  <%= @user.following_users.count %></a></li>
+        <li><a data-toggle="tab" href="#followers">Followers  <%= @user.user_followers.count %></a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="top-posts" class="tab-pane fade in active">
+          <%= render 'users/top_posts' %>
+        </div>
+        <div id="following" class="tab-pane fade">
+          <%= render 'users/following' %>
+        </div>
+        <div id="followers" class="tab-pane fade">
+          <%= render 'users/followers' %>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<%= link_to "See recent posts", posts_user_path(current_user.id) %>

@@ -1,36 +1,36 @@
 .user-show-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-height: calc(150vh - 60px);
 }
 
 .user-show-container-profile {
   display: flex;
   flex-direction: column;
-  flex: 50%
+  flex: 30%;
 }
 
 .user-show-container-tabs {
   display: flex;
   flex-direction: column;
-  flex: 50%
+  flex: 70%;
+}
+
+.user-show-tabs-margin {
+  margin: 100px;
 }
 
 .profile-card {
-  width: 600px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  margin: auto;
+  max-width: 300px;
+  margin: 100px;
   text-align: center;
   font-family: arial;
 }
 
-.user-profile-avatar {
-  width:100%;
-  max-width:600px;
-}
 
 .user-profile-links {
   margin: 24px 0;
@@ -79,4 +79,27 @@
   &:hover {
     background-color: red;
   }
+}
+
+.follow-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.follow-profile-card {
+  width: 350px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 20px;
+  text-align: center;
+}
+
+.follow-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 20px;
 }
