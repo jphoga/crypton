@@ -2,7 +2,9 @@
   <article class="home-post-show-second">
     <div class="home-post-show-third">
       <div class="vote-card">
-        <%= render 'posts/vote_buttons', post: post %>
+        <div class="voteButtons-<%= post.id %>">
+          <%= render 'posts/vote_buttons', post: post %>
+        </div>
       </div>
 
       <div class="home-post-card">

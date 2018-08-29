@@ -1,5 +1,7 @@
 function refreshVoteButtons(innerHTML, id) {
-  const voteButtons = document.getElementById('voteButtons-' + id);
-  voteButtons.innerHTML = innerHTML;
+  const voteButtons = document.querySelectorAll('.voteButtons-' + id);
+  voteButtons.forEach((voteButton) => {
+    voteButton.innerHTML = innerHTML;
+  });
 }
 refreshVoteButtons('<%= j render "vote_buttons", post: @post %>', '<%= @post.id %>');
