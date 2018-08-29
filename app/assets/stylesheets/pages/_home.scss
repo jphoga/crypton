@@ -64,9 +64,9 @@
 
 }
 
-
-
 .news-link {
+  color: blue;
+  font-size: 15px;
   text-decoration: none;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -76,6 +76,7 @@
   /* Instead use this non-standard one: */
   word-break: break-word;
 }
+
 
 .news-header {
   color: gray;
