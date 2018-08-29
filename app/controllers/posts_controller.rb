@@ -15,6 +15,10 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments
+    respond_to do |format|
+      format.js
+      # format.html { render :new }
+    end
   end
 
   def create
