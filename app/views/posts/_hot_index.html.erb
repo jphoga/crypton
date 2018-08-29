@@ -1,4 +1,4 @@
-<% @posts.order("created_at DESC").take(10).each do |post| %>
+<% @posts.order("likes DESC").take(10).each do |post| %>
   <%= render 'posts/individual', post: post %>
 <% end %>
 <script>
