@@ -348,5 +348,38 @@ puts "10 portfolios created"
      }
   )
 end
-
 puts "30 ownedcurrencies created"
+
+
+Follow.create ( {
+  followable: Demi,
+  follower: User.all.sample
+})
+
+
+
+Follow.create ( {
+  followable: Hiroki,
+  follower: User.all.sample
+})
+
+
+Follow.create ( {
+  followable: David,
+  follower: User.all.sample
+})
+
+
+Follow.create ( {
+  followable: Tania,
+  follower: User.all.sample
+})
+
+
+Follow.create ( {
+  followable: Jan,
+  follower: User.all.sample
+})
+
+
+p "created 5 followers"
