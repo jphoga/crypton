@@ -7,6 +7,12 @@
 
       <div class="home-post-card">
         <div class="post-card-header">
+          <%= cl_image_tag(post.user.photo, :transformation=>[
+            {:effect=>"cartoonify"},
+            {:effect=>"outline:100", :color=>"white"},
+            {:background=>"white"},
+            {:height=>30, :crop=>"scale"}
+            ]) %>
           <span class="user-profile-link-container">
             <%= link_to user_path(post.user), class: 'user-profile-link' do %>
               <span><%= post.user.username %></span>
