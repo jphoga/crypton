@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
 
-    @posts = @user.posts
+    @posts = @user.posts.order("likes DESC").take(10)
   end
 
   def posts
