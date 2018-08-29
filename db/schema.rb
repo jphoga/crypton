@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_041211) do
     t.string "name"
     t.float "market_price"
     t.string "abbreviation"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "website_slug"
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_041211) do
     t.float "Change"
     t.integer "rank"
     t.integer "coin_id"
+    t.index ["user_id"], name: "index_cryptocurrencies_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -160,6 +162,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_041211) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "cryptocurrencies", "users"
   add_foreign_key "ownedcurrencies", "cryptocurrencies"
   add_foreign_key "ownedcurrencies", "portfolios"
   add_foreign_key "portfolios", "users"
