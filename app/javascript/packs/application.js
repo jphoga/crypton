@@ -18,7 +18,7 @@ button.addEventListener("click", (event) => {
   var prices = document.querySelector(".prices-container");
   postsContainer.style.display = "none"
   prices.style.display = "block";
-  back.style.visibility = "hidden";
+  back.style.display = "none";
 
 })
 
