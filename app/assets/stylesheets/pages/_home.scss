@@ -203,6 +203,8 @@ td {
   margin-top: 10px;
   margin-bottom: 25px;
   color: #3676E8;
+  border-radius: 20px;
+
 }
 .remove-button {
   position: absolute;
@@ -254,4 +256,20 @@ td {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.btn-primary {
+    border-radius: 20px;
+    margin-top: -5px;
+    padding: 5px;
+
+}
+
+.favorite-btn-margin {
+      border-radius: 20px;
+      margin-left: -50px;
+}
+
+.ftable{
+  padding: 20px;
 }

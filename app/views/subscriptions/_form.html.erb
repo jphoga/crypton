@@ -1,4 +1,7 @@
 <%= simple_form_for @subscription do |f| %>
-  <%= f.association :cryptocurrency, collection:Cryptocurrency.all.order(:name) , label: false , input_html: {class: "select2"} %>
-  <%= f.submit "Add a coin to list", :class => "btn btn-primary" %>
+
+  <div class ="col-sm-4" ><%= f.association :cryptocurrency, collection:Cryptocurrency.all.order(:name) , label: false , input_html: {class: "select2"} %></div>
+  <div class="submit-subs-button">
+    <%= f.submit "Add a coin to list", :class => "btn btn-primary" %>
+  </div>
 <% end %>
