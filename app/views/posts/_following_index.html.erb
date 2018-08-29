@@ -1,8 +1,6 @@
 <% @posts.order("created_at DESC").each do |post| %>
-  <% if current_user %>
-    <% if current_user.following_users.include?(post.user) %>
-      <%= render 'posts/individual', post: post %>
-    <% end %>
+  <% if current_user && current_user.following_users.include?(post.user) %>
+    <%= render 'posts/individual', post: post %>
   <% end %>
 <% end %>
 <script>
