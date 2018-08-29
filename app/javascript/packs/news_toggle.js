@@ -11,6 +11,7 @@ const showhideNews = (url) => {
 
     if (prices.style.display === "none") {
         prices.style.display = "block";
+        // console.log("YOPO");
         news.style.display = "none";
         buttons.forEach(function(button) {
           button.innerHTML = "Expand news";
@@ -18,6 +19,8 @@ const showhideNews = (url) => {
     } else {
         prices.style.display = "none";
         news.style.display = "block";
+        // console.log("YYYOOOO");
+        // news.style.transform = "scale(1)";
         buttons.innerHTML = "Hide news";
         buttons.forEach(function(button) {
           button.innerHTML = "Hide news";
