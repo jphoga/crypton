@@ -8,6 +8,7 @@
 require 'json'
 require 'open-uri'
 
+Follow.destroy_all if Rails.env.development?
 Portfolio.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 Post.destroy_all if Rails.env.development?
@@ -348,5 +349,38 @@ puts "10 portfolios created"
      }
   )
 end
-
 puts "30 ownedcurrencies created"
+
+
+Follow.create ( {
+  followable: Demi,
+  follower: Tania
+})
+
+
+
+Follow.create ( {
+  followable: Hiroki,
+  follower: David
+})
+
+
+Follow.create ( {
+  followable: David,
+  follower: Demi
+})
+
+
+Follow.create ( {
+  followable: Tania,
+  follower: Demi
+})
+
+
+Follow.create ( {
+  followable: Jan,
+  follower: Hiroki
+})
+
+
+p "created 5 followers"
