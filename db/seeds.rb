@@ -25,31 +25,41 @@ urljan = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058999/jan.jpg"
 Demi = User.create (
   {email: "demi.lovato@gmail.com",
    password: "123456",
-   remote_photo_url: urldemi}
+   username: "Demi",
+   remote_photo_url: urldemi
+ }
 )
 
 Jan = User.create (
   {email: "jan@gmail.com",
    password: "123456",
-   remote_photo_url: urljan}
+   username: "Jan",
+   remote_photo_url: urljan
+ }
 )
 
 Hiroki = User.create (
   {email: "hiroki@gmail.com",
    password: "123456",
-   remote_photo_url: urlhiroki}
+   username: "Hiroki",
+   remote_photo_url: urlhiroki
+ }
 )
 
 David = User.create (
   {email: "david@gmail.com",
    password: "123456",
-   remote_photo_url: urldavid}
+   username: "David",
+   remote_photo_url: urldavid
+ }
 )
 
 Tania = User.create (
   {email: "tania@gmail.com",
    password: "123456",
-   remote_photo_url:urltania}
+   username: "Tania",
+   remote_photo_url:urltania
+ }
 )
 
 p "created 5 users"
