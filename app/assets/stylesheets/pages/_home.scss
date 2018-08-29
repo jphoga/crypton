@@ -180,12 +180,13 @@
 }
 .static-fields h2{
   flex: 1;
-  font-size: 20px;
-  line-height: 35px;
+  font-size: 17px;
+  line-height: 25px;
   font-family: 'Roboto', sans-serif;
+  margin-top: 15px;
   margin-left: 15px;
   margin-right: 15px;
-  color: black;
+  color: white;
 }
 .static-fields {
   display: flex;
@@ -203,7 +204,11 @@ td {
 .favorite-btn {
   margin-top: 10px;
   margin-bottom: 25px;
+  margin-left: 20px;
   color: #3676E8;
+}
+.add-coin-button {
+  margin-bottom: 20px;
 }
 .remove-button {
   position: absolute;
@@ -219,34 +224,35 @@ td {
 }
   //TOP DASHBOARD BANNER
 .bitcoin-logo{
-  width: 85px;
-  margin-bottom: 15px;
+  width: 210px;
+  margin-bottom: 22px;
 }
 .globe-logo {
-  width: 90px;
-  margin-bottom: 10px;
+  width: 56px;
+  margin-bottom: 15px;
+  margin-top: -5px;
 }
 .static-box{
   margin-bottom: -10px;
 }
 #bitcoin-price {
   color: white;
-  font-size: 30px;
+  font-size: 27px;
 }
 #marketcap {
   color: white;
-  font-size: 30px;
+  font-size: 27px;
 }
 #bitcoin-dominance {
-  color: black;
+  color: white;
   font-size: 20px;
 }
 #cryptocurrency-number {
-  color: black;
+  color: white;
   font-size: 20px;
 }
 #daily-volume {
-  color: black;
+  color: white;
   font-size: 20px;
 }
 .top-row {
@@ -255,4 +261,15 @@ td {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: -20px;
+}
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: -5px;
+  margin-bottom: -40px;
+}
+.recent-posts {
+  color: black;
 }

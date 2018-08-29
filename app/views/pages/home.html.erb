@@ -17,27 +17,25 @@
           <div class="static-fields">
             <div class="top-row">
               <div class="bitcoin-container">
-                <h2><img class="bitcoin-logo" src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png">
+                <h2><img class="bitcoin-logo" src="https://en.bitcoin.it/w/images/en/c/cb/BC_Logotype.png">
                   <p style="color: #5186DF"><span id="bitcoin-price"></span></p>
                 </h2>
               </div>
               <div class="global-container">
-                <h2><img class="globe-logo" src="https://png.icons8.com/metro/1600/globe.png">
+                <h2><img class="globe-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Globe_icon.svg/1024px-Globe_icon.svg.png">
                   <p style="color: #5186DF"><span id="marketcap"></span></p>
                 </h2>
               </div>
+              <h2><strong>Cryptocurrencies: </strong>
+                <p style="color: #5186DF"><strong><span id="cryptocurrency-number"></span></strong> </p>
+              </h2>
+              <h2><strong>24h Volume: </strong>
+                <p style="color: #5186DF"><strong><span id="daily-volume"></span></strong> </p>
+              </h2>
+               <h2><strong>BTC Dominance: </strong>
+                <p style="color: #5186DF"><strong><span id="bitcoin-dominance"></span></strong> </p>
+              </h2>
             </div>
-          </div>
-          <div class="static-fields">
-            <h2><strong>BTC Dominance: </strong>
-              <p style="color: #5186DF"><strong><span id="bitcoin-dominance"></span></strong> </p>
-            </h2>
-            <h2><strong>Cryptocurrencies: </strong>
-              <p style="color: #5186DF"><strong><span id="cryptocurrency-number"></span></strong> </p>
-            </h2>
-            <h2><strong>24h Volume: </strong>
-              <p style="color: #5186DF"><strong><span id="daily-volume"></span></strong> </p>
-            </h2>
           </div>
         </div>
         <div class="cards-box">
@@ -45,7 +43,7 @@
             <%= simple_form_for :favorite, url: favorites_user_path(current_user) do |f| %>
               <%= f.input :crypto , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' }%>
               <div class="favorite-btn">
-                <%= f.submit "Follow a coin", :class => "btn btn-primary" %>
+                <%= f.submit "Add Card", :class => "btn btn-primary" %>
               </div>
             <% end %>
           <% end %>
@@ -100,7 +98,6 @@
           <div id="following-posts" class="tab-pane fade">
             <%= render 'posts/following_index' %>
           </div>
-        </div>
         <%= link_to "View all posts", posts_path, class: 'view-all-posts' %>
       </div>
     </div>
