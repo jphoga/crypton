@@ -1,5 +1,5 @@
-<% current_user.following_users.each do |following| %>
-  <% following.posts.order("created_at DESC").each do |post| %>
+<% @posts.order("created_at DESC").each do |post| %>
+  <% if current_user.following_users.include?(post.user) %>
     <%= render 'posts/individual', post: post %>
   <% end %>
 <% end %>
@@ -19,3 +19,4 @@
     parent.style.display="none";
   }
 </script>
+
