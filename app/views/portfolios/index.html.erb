@@ -1,13 +1,13 @@
 
 <div class="wrapper">
   <div class="whole-container">
-  <div class="title-for-port">Your portfolio</h1>
+  <div class="title-for-port">Your Portfolio</h1>
   </div>
   <div class="grid">
     <div class="item-table">
       <table>
-        <tr class="first-row-bordered-corners">
-          <th class="first-row">
+        <tr id="first-row-bordered-corners">
+          <th class="first-row" style = "border-radius: 10px 0px 0px 10px">
             <h4>Currency Name</h4>
           </th>
           <th class="first-row">
@@ -16,7 +16,7 @@
           <th class="first-row">
             <h4>Market Price</h4>
           </th class="first-row">
-          <th class="first-row">
+          <th class="first-row" style="border-radius: 0px 10px 10px 0px">
             <h4>Total Value</h4>
           </th>
         </tr>
@@ -24,34 +24,35 @@
         <% @portfolio.ownedcurrencies.each do |currency| %>
           <tr class="this-table">
             <div class="table-columns">
-            <td class= "currency-name">
-              <%= currency.cryptocurrency.name %>
-            </td>
-            <td class ="cajas-restantes", id="cajas-de-zero-padding"><%= (currency.quantity).round %></td>
+              <td class= "currency-name" style = "border-radius: 10px 0px 0px 10px">
+               <%= currency.cryptocurrency.name %>
+              </td>
+             <td class ="cajas-restantes", id="cajas-de-zero-padding"><%= (currency.quantity).round %></td>
             <% if currency.cryptocurrency.market_price == nil %>
               <td class ="cajas-restantes">$ 0 </td>
               <td class ="cajas-restantes">$ 0 </td>
               <td >
               <%  else  %>
                 <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.market_price).round(2) %></td>
-                <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.total_owned_value(currency).round(2)) %>
+                <td class ="cajas-restantes" style="border-radius: 0px 10px 10px 0px">$ <%= (currency.cryptocurrency.total_owned_value(currency).round(2)) %>
                 </td>
               </div>
 
                 <td  class = "trash-bin">
                   <%= link_to  ownedcurrency_path(currency), :class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
-                    <div class="trash">  <i class="fas fa-trash"></i></div>
+                    <div class="trash">  <i class="far fa-times-circle table-row-delete"></i></div>
                   <% end %>
+
                 </td>
                 <% (sum +=(currency.cryptocurrency.market_price * currency.quantity)).round(2) %>
               </tr>
             <% end %>
           <% end %>
           <tr>
-            <th class= "currency-name"> Total  </th>
+            <th class= "currency-name" style = "border-radius: 10px 0px 0px 10px"> Total  </th>
             <th class="cajas-restantes">  </th>
             <th class="cajas-restantes"></th>
-            <th class="total-sum">$ <%= sum %>   </th>
+            <th class="total-sum" style="border-radius: 0px 10px 10px 0px">$ <%= sum %>   </th>
           </tr>
         </table>
       </div>
