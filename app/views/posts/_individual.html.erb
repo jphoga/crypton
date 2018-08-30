@@ -26,11 +26,10 @@
         </div>
         <div class="post-card-footer">
           <ul class="post-card-footer-list">
-            <li><%= link_to "View", post_path(post), class: 'view-comments-link', "data-id": post.id, remote: true %> <span class="post-comment-count"><%= post.comments.count %></span> </li>
-            <li><button onclick="triggerComment(this)" class="comment-button">Comment</button></li>
+            <li><%= link_to "Comment", post_path(post), class: 'view-comments-link', "data-id": post.id, remote: true %> <span class="post-comment-count"><%= post.comments.count %></span> </li>
           </ul>
         </div>
-        <div class="home_post_comment"><%= render 'comments/form_small', post: post, comment: @comment %></div>
+        <div class="home_post_comment"><%= render 'comments/form', post: post, comment: @comment %></div>
       </div>
     </div>
   </article>
