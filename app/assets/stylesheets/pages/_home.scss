@@ -273,6 +273,14 @@ td {
   color: #0084b4;
   font-size: 20px;
 }
+.highlight-red{
+  color: rgb(158, 17, 17) !important;
+  font-style: bold;
+}
+.highlight-green{
+  color: green !important;
+  font-style: bold;
+}
 .top-row {
   background-color: white;
   // background-color: gray;
@@ -291,22 +299,18 @@ td {
 .recent-posts {
   color: black;
 }
-
 .container-for-search-box{
   display: flex;
   align-items: center;
   margin-bottom: -40px;
 }
-
 .search-box-bottom-box{
   display: flex;
   align-items: center;
 }
-
 .first-search-shrunk {
   margin-right: 10px;
 }
-
 .form-for-subscription {
   margin-right: 20px;
 }
