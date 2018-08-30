@@ -31,11 +31,15 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <div id="page-content">
-      <%= yield %>
+    <div class="body-container">
+      <%= render 'shared/navbar' %>
+      <div id="page-content">
+        <%= yield %>
+      </div>
     </div>
-    <%= render 'shared/footer' %>
+    <div class="footer-container">
+      <%= render 'shared/footer' %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'coinmarketcap_api' %>
