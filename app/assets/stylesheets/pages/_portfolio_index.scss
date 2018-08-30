@@ -1,4 +1,5 @@
 .wrapper {
+  background-color:white;
 }
 
 .form-container {
@@ -38,12 +39,12 @@
     width: 1140px;
     text-align: center;
     font-weight: bold;
-    background-color: #f7f7f7;
+    // background-color: #f7f7f7;
     margin-top: 50px;
     font-size: 50px;
     margin-left: 142px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    // border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .grid {
@@ -58,9 +59,10 @@
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 5;
-  padding:50px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding-right: 100px;
+  // padding:50px;
+  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  // border: 1px solid rgba(0, 0, 0, 0.1);
 
 }
 
@@ -70,9 +72,9 @@
   grid-column-end: 7;
   grid-row-start: 2;
   grid-row-end: 3;
-  padding: 50px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  // padding-left: 50px;
+  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  // border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .third-box{
@@ -81,9 +83,9 @@
   grid-column-end: 6;
   grid-row-start: 3;
   grid-row-end: 5;
-  padding: 50px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border: 1px solid rgba(0, 0, 0, 0.1);
+   // padding-left: 50px;
+  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  // border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .fourth-box{
@@ -92,9 +94,9 @@
   grid-column-end: 7;
   grid-row-start: 3;
   grid-row-end: 5;
-  padding: 10px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  // padding: 10px;
+  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  // border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .text-left {
@@ -158,9 +160,9 @@
 }
 
 .title-for-port h1{
-    margin-top: 4px;
-    color: white;
-    text-shadow: 4px 4px black;
+  margin-top: 4px;
+  color: white;
+  text-shadow: 4px 4px black;
     // margin-left: -900px;
 }
 
@@ -191,11 +193,11 @@ tr:nth-of-type(odd) {
 
 
 .this-table td{
-      padding: 0px 0px 0px 10px;
+  padding: 0px 0px 0px 10px;
 }
 
 .currency-name {
-    padding: 0px 0px 0px 10px;
+  padding: 0px 0px 0px 10px;
 
 }
 
@@ -212,10 +214,21 @@ tr:nth-of-type(odd) {
 
 .first-box img{
   width: 220px;
-  border-radius: 10%;
+  // border-radius: 10%;
   margin-left: -15px;
 }
 
 .first-box-content{
+  text-align: center;
   padding-bottom: 350px;
+  // width: 300px;
+  // display: flex;
+  // flex-direction: column;
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  // max-width: 300px;
+  // margin: 40px 40px 40px 80px;
+  // text-align: center;
+  // font-family: arial;
+
 }
+
