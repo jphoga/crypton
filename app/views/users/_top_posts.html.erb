@@ -1,41 +1,38 @@
-<h2 class="text-center">Top Posts</h2>
-<div class="container">
-<% @user.posts.each do |post| %>
-  <div class="home-post-show-first">
-    <article class="home-post-show-second">
-      <div class="home-post-show-third">
-        <div class="vote-card">
-          <%= render 'posts/vote_buttons', post: post %>
-        </div>
-
-        <div class="home-post-card">
-          <div class="post-card-header">
-            <span class="user-profile-link-container">
-              <%= link_to user_path(post.user), class: 'user-profile-link' do %>
-                <span><%= post.user.email %></span>
-              <% end %>
-            </span>
-            <span class="post-created-at"><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %>
-              <% if policy(post).destroy? %>
-                <%= link_to post_path(post), method: :delete, data: { confirm: "Delete Post?" } do %>
-                  <i class="fas fa-trash trash-icon"></i>
+<h2 class="text-center"></h2>
+<div class="profile-container">
+  <% @user.posts.each do |post| %>
+    <div class="home-post-show-first" style="width: 800px;">
+      <article class="home-post-show-second">
+        <div class="home-post-show-third">
+          <div class="vote-card">
+            <%= render 'posts/vote_buttons', post: post %>
+          </div>
+          <div class="home-post-card">
+            <div class="post-card-header">
+              <span class="user-profile-link-container">
+                <%= link_to user_path(post.user), class: 'user-profile-link' do %>
+                  <span><%= post.user.email %></span>
                 <% end %>
-              <% end %>
-            </span>
-
+              </span>
+              <span class="post-created-at"><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %>
+                <% if policy(post).destroy? %>
+                  <%= link_to post_path(post), method: :delete, data: { confirm: "Delete Post?" } do %>
+                    <i class="fas fa-trash trash-icon"></i>
+                  <% end %>
+                <% end %>
+              </span>
+            </div>
+            <div class="post-card-content">
+              <span><%= post.content %></span>
+            </div>
+            <div class="post-card-footer">
+              <ul class="post-card-footer-list">
+                <li><%= link_to "View", post_path(post), class: 'view-comments-link' %> <span class="post-comment-count"><%= post.comments.count %></span></li>
+              </ul>
+            </div>
           </div>
-          <div class="post-card-content">
-            <span><%= post.content %></span>
-          </div>
-          <div class="post-card-footer">
-            <ul class="post-card-footer-list">
-              <li><%= link_to "View", post_path(post), class: 'view-comments-link' %> <span class="post-comment-count"><%= post.comments.count %></span></li>
-            </ul>
-          </div>
-
         </div>
-      </div>
-    </article>
-  </div>
-<% end %>
+      </article>
+    </div>
+  <% end %>
 </div>
