@@ -32,7 +32,14 @@ class OwnedcurrenciesController < ApplicationController
     end
     authorize @ownedcurrency
     if @ownedcurrency.save
-      redirect_to portfolio_path
+      @piedata ={}
+      @portfolio.ownedcurrencies.each do |oc|
+        @piedata[oc.cryptocurrency.name] = oc.cryptocurrency.total_owned_value(oc)
+      end
+      @ownedcurrency = Ownedcurrency.new
+      respond_to do |format|
+        format.js { render template: "portfolios/index"}
+      end
     else
       @piedata ={}
       @portfolio.ownedcurrencies.each do |oc|

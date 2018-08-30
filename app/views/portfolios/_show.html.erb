@@ -62,7 +62,7 @@
     <div class= "piepie"><%= pie_chart(@piedata) %></div>
     <div class="item-form">
       <div class="form-container">
-        <%= simple_form_for [@portfolio, @ownedcurrency] do |f| %>
+        <%= simple_form_for([@portfolio, @ownedcurrency], remote: true) do |f| %>
           <h2> Add more coins</h2>
             <div class="element">
             <%= f.label :cryptocurrency %>
