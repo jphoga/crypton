@@ -6,9 +6,24 @@ function triggerComment(button) {
   form.style.display == "none" ? "block" : "none";
 }
 
-function refreshForm(innerHTML) {
-  const newCommentForm = document.getElementById('new_comment');
+function refreshFormSmall(innerHTML, id) {
+  const newCommentForms = document.querySelectorAll('.new_comment_small' + id);
+  newCommentForms.forEach((newCommentForm) => {
   newCommentForm.innerHTML = innerHTML;
+  });
 }
+
+function addComment(reviewHTML) {
+  const comments = document.getElementById('comments');
+  comments.insertAdjacentHTML('afterbegin', reviewHTML);
+}
+
+<% if @comment.errors.any? %>
+  refreshForm('<%= j render "comments/form", post: @post, comment: @comment %>');
+<% else %>
+  addComment('<%= j render "comments/individual", comment: @comment %>');
+  refreshForm('<%= j render "comments/form", post: @post, comment: Comment.new %>');
+<% end %>
+
 
 export default triggerComment(button);
