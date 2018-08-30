@@ -1,7 +1,7 @@
 <% @posts.order("created_at DESC").take(10).each do |post| %>
   <%= render 'posts/individual', post: post %>
 <% end %>
-<script>
+<!-- <script>
   function triggerComment(button) {
     console.log(button.parentNode.parentNode.parentNode.nextElementSibling)
     button.parentNode.parentNode.parentNode.nextElementSibling.classList.toggle("home_post_comment");
@@ -17,3 +17,4 @@
     parent.style.display="none";
   }
 </script>
+ -->
