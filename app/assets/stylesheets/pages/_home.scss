@@ -237,6 +237,7 @@ td {
   flex-direction: row;
   position: relative;
   flex-grow: 33%;
+  flex-wrap: wrap;
 }
   //TOP DASHBOARD BANNER
 .bitcoin-logo{
@@ -285,14 +286,14 @@ td {
   font-style: bold;
   background-color: #870209;
   border-color: #870209;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .highlight-green{
   color: white !important;
   font-style: bold;
   background-color: #256b00;
   border-color: #256b00;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .top-row {
   background-color: white;
