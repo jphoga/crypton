@@ -13,11 +13,6 @@ class PortfoliosController < ApplicationController
       @piedata[oc.cryptocurrency.name] = oc.cryptocurrency.total_owned_value(oc)
     end
 
-    respond_to do |format|
-      format.js
-      # format.html { render :new }
-    end
-
   end
 
 
