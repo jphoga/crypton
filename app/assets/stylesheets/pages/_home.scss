@@ -314,18 +314,17 @@ td {
   width: 260px;
 }
 
+.bitcoin-container h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
 
-// .bitcoin-container h2 {
-//   display: flex;
-//   justify-content: center;
-//   font-size: 25px;
-//   font-family: 'Roboto', sans-serif;
-// }
-
-// .global-container h2 {
-//   display: flex;
-//   justify-content: center;
-//   font-size: 25px;
-//   margin-left: 70px;
-//   font-family: 'Roboto', sans-serif;
-// }
+.global-container h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-left: 70px;
+  font-family: 'Roboto', sans-serif;
+}
