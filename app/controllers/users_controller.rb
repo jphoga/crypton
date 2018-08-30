@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     unless params[:favorite][:crypto].empty?
       @crypto = Cryptocurrency.find(params[:favorite][:crypto].to_i)
     end
-    if @crypto && @user.favorites_count < 6 && @user.favorite(@crypto)
+    if @crypto && @user.favorites_count < 12 && @user.favorite(@crypto)
       flash[:notice] = "Successfully favorited #{@crypto.name}"
     else
       flash[:alert] = "Something went wrong"
