@@ -13,12 +13,13 @@ var prices = document.querySelector(".prices-container");
 var back = document.querySelector("#back_to_dashboard");
 var news = document.querySelector(".all-news-container");
 
-back.style.visibility = "visible";
+back.style.display = "block";
 if (prices.style.display === "none") {
   news.style.display = "none";
 }
 else {
   prices.style.display = "none";
 }
+
 postsContainer.style.display = "block"
 postsContainer.innerHTML = '<%= j render 'posts/show', post: @post, comment: @comment %>';
