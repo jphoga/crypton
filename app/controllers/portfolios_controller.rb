@@ -15,7 +15,6 @@ class PortfoliosController < ApplicationController
 
     respond_to do |format|
       format.js
-      # format.html { render :new }
     end
 
   end
