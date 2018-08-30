@@ -66,7 +66,9 @@ const fetchBitcoin = () => {
 
     const btcChange         = document.getElementById("bitcoin-change");
     const btcChangeValue    = data.data.quotes.USD.percent_change_24h
-    btcChange.innerText     =btcChangeValue + "%";
+    if(btcChange){
+      btcChange.innerText     =btcChangeValue + "%";
+    }
   });
 }
 

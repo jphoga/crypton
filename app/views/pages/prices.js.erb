@@ -1,2 +1,6 @@
-var prices = document.querySelector(".prices-container");
-prices.innerHTML = "<%= j render 'pages/prices' %>";
+var prices = document.querySelector(".prices-inner-container");
+// prices.innerHTML = "<%= j render 'pages/prices' %>";
+prices.removeAttribute("style");
+
+var temporaryContainer = document.querySelector("#temporary-container");
+temporaryContainer.innerHTML = ''
