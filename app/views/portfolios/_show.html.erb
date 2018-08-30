@@ -1,90 +1,88 @@
-
-<div class="wrapper">
-  <div class="whole-container">
-    <div class="prices-back-right">
-    <%= link_to prices_path, remote: true do %>
-      <i class="fas fa-angle-double-right"></i>
-    <% end %>
+<div class="whole-container">
+  <div class="prices-back-right">
+  <%= link_to prices_path, remote: true do %>
+    <span>Dashboard <i class="fas fa-angle-double-right"></i></span>
+  <% end %>
   </div>
-  <div class="title-for-port">Your Portfolio</h1>
-  </div>
-  <div class="grid">
-    <div class="item-table">
-      <table>
-        <tr id="first-row-bordered-corners">
-          <th class="first-row" style = "border-radius: 10px 0px 0px 10px">
-            <h4>Currency Name</h4>
-          </th>
-          <th class="first-row">
-            <h4>Owned quantity</h4>
-          </th>
-          <th class="first-row">
-            <h4>Market Price</h4>
-          </th class="first-row">
-          <th class="first-row" style="border-radius: 0px 10px 10px 0px">
-            <h4>Total Value</h4>
-          </th>
-        </tr>
-        <% sum = 0 %>
-        <% @portfolio.ownedcurrencies.each do |currency| %>
-          <tr class="this-table">
-            <div class="table-columns">
-              <td class= "currency-name" style = "border-radius: 10px 0px 0px 10px">
-               <%= currency.cryptocurrency.name %>
+<div class="title-for-port">Your Portfolio</h1>
+</div>
+<div class="grid">
+  <div class="item-table">
+    <table>
+      <tr id="first-row-bordered-corners">
+        <th class="first-row" style = "border-radius: 10px 0px 0px 10px">
+          <h4>Currency Name</h4>
+        </th>
+        <th class="first-row">
+          <h4>Owned quantity</h4>
+        </th>
+        <th class="first-row">
+          <h4>Market Price</h4>
+        </th class="first-row">
+        <th class="first-row" style="border-radius: 0px 10px 10px 0px">
+          <h4>Total Value</h4>
+        </th>
+      </tr>
+      <% sum = 0 %>
+      <% @portfolio.ownedcurrencies.each do |currency| %>
+        <tr class="this-table">
+          <div class="table-columns">
+            <td class= "currency-name" style = "border-radius: 10px 0px 0px 10px">
+             <%= currency.cryptocurrency.name %>
+            </td>
+           <td class ="cajas-restantes", id="cajas-de-zero-padding"><%= (currency.quantity).round %></td>
+          <% if currency.cryptocurrency.market_price == nil %>
+            <td class ="cajas-restantes">$ 0 </td>
+            <td class ="cajas-restantes">$ 0 </td>
+            <td >
+            <%  else  %>
+              <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.market_price).round(2) %></td>
+              <td class ="cajas-restantes" style="border-radius: 0px 10px 10px 0px">$ <%= (currency.cryptocurrency.total_owned_value(currency).round(2)) %>
               </td>
-             <td class ="cajas-restantes", id="cajas-de-zero-padding"><%= (currency.quantity).round %></td>
-            <% if currency.cryptocurrency.market_price == nil %>
-              <td class ="cajas-restantes">$ 0 </td>
-              <td class ="cajas-restantes">$ 0 </td>
-              <td >
-              <%  else  %>
-                <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.market_price).round(2) %></td>
-                <td class ="cajas-restantes" style="border-radius: 0px 10px 10px 0px">$ <%= (currency.cryptocurrency.total_owned_value(currency).round(2)) %>
-                </td>
-              </div>
+            </div>
 
-                <td  class = "trash-bin">
-                  <%= link_to  ownedcurrency_path(currency), :class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
-                    <div class="trash">  <i class="far fa-times-circle table-row-delete"></i></div>
-                  <% end %>
+              <td  class = "trash-bin">
+                <%= link_to  ownedcurrency_path(currency), :class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <div class="trash">  <i class="far fa-times-circle table-row-delete"></i></div>
+                <% end %>
 
-                </td>
-                <% (sum +=(currency.cryptocurrency.market_price * currency.quantity)).round(2) %>
-              </tr>
-            <% end %>
+              </td>
+              <% (sum +=(currency.cryptocurrency.market_price * currency.quantity)).round(2) %>
+            </tr>
           <% end %>
-          <tr>
-            <th class= "currency-name" style = "border-radius: 10px 0px 0px 10px"> Total  </th>
-            <th class="cajas-restantes">  </th>
-            <th class="cajas-restantes"></th>
-            <th class="total-sum" style="border-radius: 0px 10px 10px 0px">$ <%= sum %>   </th>
-          </tr>
-        </table>
-      </div>
-      <div class= "piepie"><%= pie_chart(@piedata) %></div>
-      <div class="item-form">
-        <div class="form-container">
-          <%= simple_form_for [@portfolio, @ownedcurrency] do |f| %>
-            <h2> Add more coins</h2>
-              <div class="element">
-              <%= f.label :cryptocurrency %>
-              <%= f.association :cryptocurrency , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' } %>
-            </div>
-
-            <%#= select_tag "timezone", options_from_collection_for_select(
-      Cryptocurrency.all,
-      :id, :name),
-      class: 'select2' %>
-
+        <% end %>
+        <tr>
+          <th class= "currency-name" style = "border-radius: 10px 0px 0px 10px"> Total  </th>
+          <th class="cajas-restantes">  </th>
+          <th class="cajas-restantes"></th>
+          <th class="total-sum" style="border-radius: 0px 10px 10px 0px">$ <%= sum %>   </th>
+        </tr>
+      </table>
+    </div>
+    <div class= "piepie"><%= pie_chart(@piedata) %></div>
+    <div class="item-form">
+      <div class="form-container">
+        <%= simple_form_for [@portfolio, @ownedcurrency] do |f| %>
+          <h2> Add more coins</h2>
             <div class="element">
-              <%= f.input :quantity, required: true, label: "Quantity" %>
-            </div>
-            <div class="element">
-              <div class= ""><%= f.submit "Add coin", :class => "btn btn-primary"%></div>
-            </div>
-          <% end %>
-        </div>
+            <%= f.label :cryptocurrency %>
+            <%= f.association :cryptocurrency , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' } %>
+          </div>
+
+          <%#= select_tag "timezone", options_from_collection_for_select(
+    Cryptocurrency.all,
+    :id, :name),
+    class: 'select2' %>
+
+          <div class="element">
+            <%= f.input :quantity, required: true, label: "Quantity" %>
+          </div>
+          <div class="element">
+            <div class= ""><%= f.submit "Add coin", :class => "btn btn-primary"%></div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-  </div>
+</div>
+
