@@ -4,7 +4,7 @@
       <%= render 'layouts/news' %>
     </div>
   </div>
-<!--   <div class="all-news-container" style="display: none;" >
+  <!--   <div class="all-news-container" style="display: none;" >
     <div class="prices-inner-container">
       <div id="news-main-box">
       </div>
@@ -13,13 +13,13 @@
   <div class="prices-container">
     <%= render 'pages/prices' %>
   </div>
-<!--   <div class="post-partial-container">
-  </div> -->
+  <div class="post-partial-container">
+  </div>
   <div class="posts-container">
     <div class="posts-inner-container">
       <div class="all-posts">
         <% unless !current_user %>
-          <h2 style="text-align: center; padding: 15px 0; margin:0"><strong> Posts</strong></h2>
+          <h2 style="text-align: center; color: #66757f; padding: 15px 0; margin:0"><strong> Posts</strong></h2>
           <div id="new_post">
             <%= render 'posts/form', post: @post %>
           </div>

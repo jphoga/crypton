@@ -12,7 +12,6 @@ class PortfoliosController < ApplicationController
     @portfolio.ownedcurrencies.each do |oc|
       @piedata[oc.cryptocurrency.name] = oc.cryptocurrency.total_owned_value(oc)
     end
-
   end
 
 
