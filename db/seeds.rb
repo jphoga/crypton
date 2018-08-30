@@ -16,19 +16,11 @@ Cryptocurrency.destroy_all if Rails.env.development?
 Comment.destroy_all if Rails.env.development?
 Ownedcurrency.destroy_all if Rails.env.development?
 
-urldemi = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535059286/demi.jpg"
 urltania = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058557/tania.jpg"
 urlhiroki ="https://res.cloudinary.com/deqvblsv6/image/upload/v1535058962/hiroki.jpg"
 urldavid = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058874/david.png"
 urljan = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058999/jan.jpg"
 
-Demi = User.create (
-  {email: "demi.lovato@gmail.com",
-   password: "123456",
-   username: "Demi",
-   remote_photo_url: urldemi
- }
-)
 
 Jan = User.create (
   {email: "jan@gmail.com",
@@ -363,13 +355,6 @@ puts "30 ownedcurrencies created"
 
 
 Follow.create ( {
-  followable: Demi,
-  follower: Tania
-})
-
-
-
-Follow.create ( {
   followable: Hiroki,
   follower: David
 })
@@ -377,13 +362,13 @@ Follow.create ( {
 
 Follow.create ( {
   followable: David,
-  follower: Demi
+  follower: Hiroki
 })
 
 
 Follow.create ( {
   followable: Tania,
-  follower: Demi
+  follower: Jan
 })
 
 
