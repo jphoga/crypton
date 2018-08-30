@@ -15,7 +15,14 @@
                 <span><%= post.user.email %></span>
               <% end %>
             </span>
-            <span class="post-created-at"><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></span>
+            <span class="post-created-at"><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %>
+              <% if policy(post).destroy? %>
+                <%= link_to post_path(post), method: :delete, data: { confirm: "Delete Post?" } do %>
+                  <i class="fas fa-trash trash-icon"></i>
+                <% end %>
+              <% end %>
+            </span>
+
           </div>
           <div class="post-card-content">
             <span><%= post.content %></span>

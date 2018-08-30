@@ -3,5 +3,11 @@
   <article class="card-content">
     <p><%= comment.content %></p>
   </article>
-  <div class="card-user"> By <span class="card-username"><%= comment.user.email %></span></div>
+  <div class="card-user"> By <span class="card-username"><%= comment.user.username %>
+  <% if policy(comment).destroy? %>
+    <%= link_to comment_path(comment), method: :delete, data: { confirm: "Delete Post?" } do %>
+      <i class="fas fa-trash trash-icon"></i>
+    <% end %>
+  <% end %></span>
+  </div>
 </div>
