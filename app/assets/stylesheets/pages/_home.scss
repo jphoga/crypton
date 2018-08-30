@@ -72,7 +72,8 @@ body {
 }
 
 .news-link {
-  color: blue;
+  color: #3880D1;
+  font-style: italic;
   font-size: 15px;
   text-decoration: none;
   overflow-wrap: break-word;
@@ -84,9 +85,15 @@ body {
   word-break: break-word;
 }
 
+.news-link:hover{
+    text-decoration:none;
+    color: gray;
+  }
+
 
 .news-header {
   color: #66757f;
+  height: 80px;
 }
 
 // Middle Section
