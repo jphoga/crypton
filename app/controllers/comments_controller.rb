@@ -18,6 +18,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    authorize @comment
+    @comment.destroy
+    redirect_to user_path(@comment.user)
+  end
+
   private
 
   def comment_params
