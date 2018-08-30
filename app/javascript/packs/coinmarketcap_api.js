@@ -1,5 +1,6 @@
 import "currency.js";
 
+// const fetchMarketCap = () => {
 fetch('https://api.coinmarketcap.com/v2/global/')
 .then(function(response){
   return response.json();
@@ -23,23 +24,48 @@ fetch('https://api.coinmarketcap.com/v2/global/')
 
   const dailyVolume       = document.getElementById("daily-volume");
   const dailyVolumeValue  = data.data.quotes.USD.total_volume_24h;
-  dailyVolume.innerText   = "$" + Number(dailyVolumeValue.toFixed(0)).toLocaleString('en');
+  dailyVolume.innerText   = "$" + Number(dailyVolumeValue.toFixed(2)).toLocaleString('en');
 });
+// }
 
-fetch('https://api.coinmarketcap.com/v2/ticker/1/')
-.then(function(response){
-  return response.json();
-})
-.then(function(data){
-  const bitcoin           = document.getElementById("bitcoin-price");
-  const bitcoinValue      = data.data.quotes.USD.price
-  bitcoin.innerText       = "$" + Number(bitcoinValue.toFixed(0)).toLocaleString('en');
+let currentValue = 0;
 
-  const btcChange         = document.getElementById("bitcoin-change");
-  const btcChangeValue    = data.data.quotes.USD.percent_change_24h
-  btcChange.innerText     =btcChangeValue + "%";
-});
+const fetchBitcoin = () => {
+  fetch('https://api.coinmarketcap.com/v2/ticker/1/')
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    var bitcoin           = document.getElementById("bitcoin-price");
+    const bitcoinValue      = Number(data.data.quotes.USD.price.toFixed(2)).toLocaleString('en');
+    const bitcoinUnformat   = parseFloat(bitcoinValue.replace(/,/g, ""), 10)
+    const bitcoinPrevValue  = parseFloat(bitcoin.innerText.substr(1).replace(/,/g, ""), 10);
 
+    console.log("old value");
+    console.log(bitcoinPrevValue);
+    console.log("new value");
+    console.log(bitcoinUnformat);
 
+    if(bitcoinUnformat > bitcoinPrevValue){
+      bitcoin.innerText  = "$" + bitcoinValue
+      bitcoin.classList.add('highlight-green');
+    }else if(bitcoinUnformat < bitcoinPrevValue){
+      bitcoin.innerText  = "$" + bitcoinValue;
+      bitcoin.classList.add('highlight-red')
+    }else{
+      bitcoin.classList.remove('highlight-green');
+      bitcoin.classList.remove('highlight-red')
+      bitcoin.innerText  = "$" + bitcoinValue;
+  }
+
+    const btcChange         = document.getElementById("bitcoin-change");
+    const btcChangeValue    = data.data.quotes.USD.percent_change_24h
+    btcChange.innerText     =btcChangeValue + "%";
+  });
+}
+
+fetchBitcoin();
+setInterval(fetchBitcoin, 10000);
+// setInterval(fetchMarketCap, 1000);
 
 // Number(10000).toLocaleString('en');  // "10,000"
