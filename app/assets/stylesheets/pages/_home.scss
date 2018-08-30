@@ -306,12 +306,21 @@ td {
 .form-for-subscription {
   margin-right: 20px;
 }
+.container-for-search-box .select2 {
+  width: 260px;
+}
+
+.search-box-bottom-box .select2{
+  width: 260px;
+}
+
 .bitcoin-container h2 {
   display: flex;
   justify-content: center;
   font-size: 25px;
   font-family: 'Roboto', sans-serif;
 }
+
 .global-container h2 {
   display: flex;
   justify-content: center;
