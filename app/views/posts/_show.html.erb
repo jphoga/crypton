@@ -19,6 +19,14 @@
           <% end %>
         <% end %>
       </div>
+      <div class="profile-foto">
+        <%= cl_image_tag(post.user.photo, :transformation=>[
+            {:effect=>"cartoonify"},
+            {:effect=>"outline:100", :color=>"white"},
+            {:background=>"white"},
+            {:height=>100, :crop=>"scale"}
+         ]) %>
+      </div>
       <div class="post-show-card-top">
         <div class="card-meta"><time style="color: gray; font-size: 12px;"><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
         <article class="card-content">

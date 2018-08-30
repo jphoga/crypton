@@ -39,15 +39,42 @@
               </div>
             </div>
           <% end %>
+        <% else %>
+         <div class="crypto-card-container">
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="bitcoin" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="ethereum" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="eos" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="stellar" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="litecoin" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="tether" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="cardano" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="iota" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="monero" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="tron" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="dash" data-base="USD" data-statsticker="false">
+            </div>
+            <div class="coinmarketcap-currency-widget widget-card" data-currency="neo" data-base="USD" data-statsticker="false">
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
     <!-- Number, Name, MarketCap, Price, Volume, Supply, Change, Graph -->
-    <div class="list-box">
+<!--     <div class="list-box">
       <div class="row-form">
-        <%= render 'subscriptions/form', subscription: @subscription %>
-        <%= render 'subscriptions/table' %>
+        #render 'subscriptions/form', subscription: @subscription
+         #render 'subscriptions/table'
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
