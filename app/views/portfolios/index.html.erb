@@ -74,7 +74,7 @@
         <div class="item-form">
           <div class="form-container">
             <%= simple_form_for [@portfolio, @ownedcurrency] do |f| %>
-              <h2> Add more coins</h2>
+              <h2> Update coins</h2>
               <div class="element">
                 <%= f.label :cryptocurrency %>
                 <%= f.association :cryptocurrency , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' } %>
