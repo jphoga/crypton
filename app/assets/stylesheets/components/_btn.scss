@@ -18,3 +18,15 @@
     background-color: #1da1f2;
   }
 }
+
+.prices-back-right {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px;
+}
+
+.prices-back-left {
+  display: flex;
+  justify-content: flex-start;
+  margin: 5px;
+}

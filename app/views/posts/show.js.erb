@@ -8,18 +8,18 @@
 //   })
 // })
 
-var postsContainer = document.querySelector('.post-partial-container');
+// var postsContainer = document.querySelector('.post-partial-container');
 var prices = document.querySelector(".prices-container");
-var back = document.querySelector("#back_to_dashboard");
-var news = document.querySelector(".all-news-container");
+// var back = document.querySelector("#back_to_dashboard");
+// var news = document.querySelector(".all-news-container");
 
-back.style.display = "block";
-if (prices.style.display === "none") {
-  news.style.display = "none";
-}
-else {
-  prices.style.display = "none";
-}
+// back.style.display = "block";
+// if (prices.style.display === "none") {
+//   news.style.display = "none";
+// }
+// else {
+//   prices.style.display = "none";
+// }
 
-postsContainer.style.display = "block"
-postsContainer.innerHTML = '<%= j render 'posts/show', post: @post, comment: @comment %>';
+// postsContainer.style.display = "block"
+prices.innerHTML = '<%= j render 'posts/show', post: @post, comment: @comment %>';
