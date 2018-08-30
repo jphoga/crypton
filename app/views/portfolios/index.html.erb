@@ -1,8 +1,21 @@
+<%#4 boxes to contain information%>
 <div class="wrapper">
-  <div class="whole-container">
-  <div class="title-for-port">Your Portfolio</h1>
-  </div>
+   <div class="title-for-port">Your Portfolio</h1>
+    </div>
+<div class="container-for-grid-portfolio">
   <div class="grid">
+  <%#first box%>
+    <div class="first-box">
+      <div class="first-box-content">
+        <%= cl_image_tag current_user.photo %>
+        <h2> <%=  current_user.username %></h2>
+        <p> Email: <%= current_user.email %></p>
+      </div>
+        <div class="copy-rigth"><p>© CoinSpread 2018</p></div>
+    </div>
+
+  <%#second box%>
+  <div class="second-box">
     <div class="item-table">
       <table>
         <tr id="first-row-bordered-corners">
@@ -56,7 +69,15 @@
           </tr>
         </table>
       </div>
+  </div>
+
+<%#third-box%>
+  <div class="third-box">
       <div class= "piepie"><%= pie_chart(@piedata) %></div>
+  </div>
+
+  <%#fourht-box %>
+  <div class="fourth-box">
       <div class="item-form">
         <div class="form-container">
           <%= simple_form_for [@portfolio, @ownedcurrency] do |f| %>
@@ -80,6 +101,9 @@
           <% end %>
         </div>
       </div>
+     </div>
     </div>
+  <%# ->%>
   </div>
+</div>
   </div>
