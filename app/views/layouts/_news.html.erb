@@ -13,9 +13,8 @@
         <p class="card-text" style="font-size: 12px;"><%= article.description %></p>
         <p class="card-text" style="font-size: 12px; padding-top:10px; padding: padding-bottom: 0"><small class="text-muted">Published on <%= article.publishedAt.strftime("%b %e, %Y - %l:%M %p") %></small></p>
       </div>
-      <%= link_to "See reddit", article.news_url, target: :_blank, :class => "news-link" %>
-
-      <button type="button" class="btn btn-dark show-news" id="show-news" data-url= "<%= article.source %>">Expand news</button>
+      <%= link_to "See on reddit", article.news_url, target: :_blank, :class => "news-link" %> <span>
+        <button type="button" class="btn btn-outline-dark show-news" id="show-news" style="line-height: 10px;font-size: 20px; margin-top: 5px; color: gray" data-url= "<%= article.source %>">Expand news <i class="fas fa-angle-double-right"></i></button></span>
     </div>
   <% end %>
 </div>
