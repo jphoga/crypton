@@ -9,4 +9,13 @@ class PagesController < ApplicationController
     @comment = Comment.new
     @subscription = Subscription.new
   end
+
+  def prices
+    @cryptocurrencies = Cryptocurrency.all.order("name")
+    @subscription = Subscription.new
+    respond_to do |format|
+      format.js
+      # format.html { render :new }
+    end
+  end
 end
