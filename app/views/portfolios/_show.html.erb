@@ -62,13 +62,17 @@
     <div class= "piepie"><%= pie_chart(@piedata) %></div>
     <div class="item-form">
       <div class="form-container">
+
         <%= simple_form_for([@portfolio, @ownedcurrency], remote: true) do |f| %>
+        <div class="dark-grey-for-upperbox">
           <h2> Add more coins</h2>
+        </div>
+
+        <div class="light-grey-for-bottom-box">
             <div class="element">
             <%= f.label :cryptocurrency %>
             <%= f.association :cryptocurrency , collection: Cryptocurrency.all.order(:name), label: false, input_html: { class: 'select2' } %>
           </div>
-
           <%#= select_tag "timezone", options_from_collection_for_select(
     Cryptocurrency.all,
     :id, :name),
@@ -80,6 +84,8 @@
           <div class="element">
             <div class= ""><%= f.submit "Add coin", :class => "btn btn-primary"%></div>
           </div>
+        </div>
+
         <% end %>
       </div>
     </div>

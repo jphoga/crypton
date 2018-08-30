@@ -3,17 +3,32 @@
 
 .form-container {
   display: flex;
-  padding: 50px 0;
+  padding: 10px 0px 30px 0px;
   justify-content: center;
   font-family: "Raleway", "Helvetica", "sans-serif";  text-align: center;
-  width: 300px;
+  width: 350px;
   margin-left: -50px;
+  border-radius: 20px;
+
+}
+
+.dark-grey-for-upperbox{
+  background-color: #ececec;
+  width: 350px;
+  padding: 5px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.light-grey-for-bottom-box {
+  background-color: #f7f7f7;
+  width: 350px;
+  padding: 15px;
+  border-radius: 0px 0px 20px 20px;
 
 }
 
 .form-container h2{
   font-family: "Open Sans", "Helvetica", "sans-serif";
-
 }
 
 .title-for-port {
