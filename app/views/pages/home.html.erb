@@ -16,23 +16,16 @@
         <div class="static-box">
           <div class="static-fields">
             <div class="top-row">
-              <div class="bitcoin-container">
-                <h2><img class="bitcoin-logo" src="https://en.bitcoin.it/w/images/en/c/cb/BC_Logotype.png">
-                  <p style="color: #5186DF"><span id="bitcoin-price"></span></p>
-                </h2>
-              </div>
-              <div class="global-container">
-                <h2><img class="globe-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Globe_icon.svg/1024px-Globe_icon.svg.png">
-                  <p style="color: #5186DF"><span id="marketcap"></span></p>
-                </h2>
-              </div>
-              <h2><strong>Cryptocurrencies: </strong>
+              <h2><strong>Bitcoin Change</strong>
+                <p style="color: #5186DF"><span id="bitcoin-change"></span></p>
+              </h2>
+              <h2><strong>Cryptocurrencies</strong>
                 <p style="color: #5186DF"><span id="cryptocurrency-number"></span></p>
               </h2>
-              <h2><strong>24h Volume: </strong>
+              <h2><strong>24h Volume</strong>
                 <p style="color: #5186DF"><span id="daily-volume"></span></p>
               </h2>
-              <h2><strong>BTC Dominance: </strong>
+              <h2><strong>BTC Dominance</strong>
                 <p style="color: #5186DF"><span id="bitcoin-dominance"></span></p>
               </h2>
             </div>
@@ -81,7 +74,7 @@
     <div class="posts-inner-container">
       <div class="all-posts">
         <% unless !current_user %>
-          <h2 style="text-align: center; padding: 15px 0; margin:0"><strong> Posts</strong></h2>
+          <h2 style="text-align: center; color: #66757f; padding: 15px 0; margin:0"><strong> Posts</strong></h2>
           <div id="new_post">
             <%= render 'posts/form', post: @post %>
           </div>

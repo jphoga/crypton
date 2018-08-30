@@ -35,7 +35,11 @@ fetch('https://api.coinmarketcap.com/v2/ticker/1/')
   const bitcoinValue      = data.data.quotes.USD.price
   bitcoin.innerText       = "$" + Number(bitcoinValue.toFixed(0)).toLocaleString('en');
 
+  const btcChange         = document.getElementById("bitcoin-change");
+  const btcChangeValue    = data.data.quotes.USD.percent_change_24h
+  btcChange.innerText     =btcChangeValue + "%";
 });
+
 
 
 // Number(10000).toLocaleString('en');  // "10,000"
