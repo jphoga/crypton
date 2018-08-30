@@ -281,12 +281,18 @@ td {
   font-size: 20px;
 }
 .highlight-red{
-  color: rgb(158, 17, 17) !important;
+  color: white !important;
   font-style: bold;
+  background-color: #870209;
+  border-color: #870209;
+  border-radius: 10px;
 }
 .highlight-green{
-  color: green !important;
+  color: white !important;
   font-style: bold;
+  background-color: #256b00;
+  border-color: #256b00;
+  border-radius: 10px;
 }
 .top-row {
   background-color: white;
