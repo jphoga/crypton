@@ -38,7 +38,7 @@ class OwnedcurrenciesController < ApplicationController
       end
       @ownedcurrency = Ownedcurrency.new
       respond_to do |format|
-        format.js { render template: "portfolios/index"}
+        format.html { render template: "portfolios/index"}
       end
     else
       @piedata ={}
