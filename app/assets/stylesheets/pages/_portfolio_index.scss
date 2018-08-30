@@ -102,6 +102,7 @@
 .item-table td {
     padding-left: 10px;
 
+
 }
 
 .item-table table {
@@ -154,11 +155,6 @@ tr:nth-of-type(odd) {
   background-color:#f7f7f7;
 }
 
-.trash-bin{
-  background-color: white;
-}
-
-
 .td.currency-name {
   padding: 0;
 }
@@ -188,4 +184,8 @@ tr:nth-of-type(odd) {
   color: gray;
   text-align: center;
   font-weight: bold;
+}
+
+#trash-bin{
+  background-color: white;
 }
