@@ -13,7 +13,8 @@ body {
   display: flex;
   flex-direction: column;
   flex: 25%;
-  height: calc(150vh - 60px);
+  // min-height: calc(150vh - 60px);
+  // min-height: 100vh;
 }
 .posts-inner-container{
   border-radius: 2px;
@@ -29,10 +30,12 @@ body {
   display: flex;
   flex-direction: column;
   flex: 20%;
-  height: calc(150vh - 60px);
+  // min-height: calc(150vh - 60px);
+  // min-height: 100vh;
 }
 .news-inner-container {
-  min-height: 1500px;
+  // min-height: 100vh;
+  height: 1500px;
   overflow-y: scroll;
   border-radius: 2px;
   margin: 10px;
@@ -89,9 +92,9 @@ body {
 // Middle Section
 
 #news-main-box {
-  min-height: 100vh;
-  min-width:600px;
+  // min-height: 100vh;
 }
+
 
 
 // .all-news-container {
@@ -106,10 +109,11 @@ body {
   display: flex;
   flex-direction: column;
   flex: 55%;
-  min-height: calc(150vh - 60px);
+  // min-height: calc(150vh - 60px);
+  // min-height: 100vh;
 }
 .prices-inner-container {
-  min-height: 1500px;
+  // min-height: 1500px;
   border-radius: 2px;
   // margin: 10px;
   // padding: 10px;
@@ -310,12 +314,21 @@ td {
 .form-for-subscription {
   margin-right: 20px;
 }
+.container-for-search-box .select2 {
+  width: 260px;
+}
+
+.search-box-bottom-box .select2{
+  width: 260px;
+}
+
 .bitcoin-container h2 {
   display: flex;
   justify-content: center;
   font-size: 25px;
   font-family: 'Roboto', sans-serif;
 }
+
 .global-container h2 {
   display: flex;
   justify-content: center;

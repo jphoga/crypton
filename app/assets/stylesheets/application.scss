@@ -16,3 +16,22 @@
 @import "pages/portfolio_index";
 
 
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.body-container {
+  flex: 1 0 auto;
+}
+
+
+.footer-container {
+  flex-shrink: 0;
+}
+
+
