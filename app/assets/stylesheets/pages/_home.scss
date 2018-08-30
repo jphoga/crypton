@@ -83,7 +83,7 @@ body {
 
 
 .news-header {
-  color: gray;
+  color: #66757f;
 }
 
 // Middle Section
@@ -178,6 +178,7 @@ body {
    margin: 5px;
    display: flex;
    justify-content: space-around;
+   padding-bottom: 20px;
 }
 .coinmarketcap-currency-widget > div {
   min-width: 260px !important;
@@ -209,7 +210,7 @@ td {
   margin-top: 10px;
   margin-bottom: 25px;
   margin-left: 20px;
-  color: #3676E8;
+  color: #00aced;
 }
 .add-coin-button {
   margin-bottom: 20px;
@@ -240,23 +241,32 @@ td {
   margin-bottom: -10px;
 }
 #bitcoin-price {
-  color: black;
-  font-size: 25px;
+  color: #0084b4;
+  font-size: 27px;
+  margin-left: 10px;
+  font-style: normal;
+  font-family: 'Roboto', sans-serif;
 }
 #marketcap {
-  color: black;
-  font-size: 25px;
+  color: #0084b4;
+  font-size: 27px;
+  margin-left: 10px;
+  font-family: 'Roboto', sans-serif;
 }
 #bitcoin-dominance {
-  color: black;
+  color: #0084b4;
   font-size: 20px;
 }
 #cryptocurrency-number {
-  color: black;
+  color: #0084b4;
   font-size: 20px;
 }
 #daily-volume {
-  color: black;
+  color: #0084b4;
+  font-size: 20px;
+}
+#bitcoin-change{
+  color: #0084b4;
   font-size: 20px;
 }
 .top-row {
@@ -296,11 +306,25 @@ td {
 .form-for-subscription {
   margin-right: 20px;
 }
-
 .container-for-search-box .select2 {
   width: 260px;
 }
 
 .search-box-bottom-box .select2{
   width: 260px;
+}
+
+.bitcoin-container h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.global-container h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-left: 70px;
+  font-family: 'Roboto', sans-serif;
 }

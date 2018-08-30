@@ -99,6 +99,18 @@
   color: #1da1f2;
   margin-right: 20px;
   margin-left: 30px;
+  &:hover {
+    color: #0084b4;
+  }
+}
+.navbar-wagon navbar-fixed-top {
+  display: flex;
+  justify-content: center;
+}
+.navbar-prices{
+  display: flex;
+  justify-content: center;
+  margin-left: 150px;
 }
 // .portfolio {
 //   font-size: 20px;
