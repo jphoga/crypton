@@ -14,7 +14,7 @@
         <p class="card-text" style="font-size: 12px; padding-top:10px; padding: padding-bottom: 0"><small class="text-muted">Published on <%= article.publishedAt.strftime("%b %e, %Y - %l:%M %p") %></small></p>
       </div>
       <%= link_to "See reddit", article.news_url, target: :_blank, :class => "news-link" %>
-      <button type="button" class="btn btn-dark show-news" id="show-news" data-url= "<%= article.source %>">Expand news</button>
+      <button type="button" class="btn btn-dark show-news" id="show-news" data-url= "<%= article.source %>">Expand/hide</button>
     </div>
   <% end %>
 </div>
