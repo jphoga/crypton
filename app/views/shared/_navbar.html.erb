@@ -7,28 +7,22 @@
     <h4><strong><i>CoinSpread</i></strong></h4>
   </div>
   <div class="navbar-prices">
-   <div class="bitcoin-container">
-    <h2>Bitcoin
-      <p style="color: #5186DF"><span id="bitcoin-price"></span></p>
-    </h2>
-  </div>
+    <div class="bitcoin-container">
+      <h2>Bitcoin
+        <p style="color: #5186DF"><span id="bitcoin-price"></span></p>
+      </h2>
+    </div>
     <div class="global-container">
       <h2>Global Marketcap
         <p style="color: #5186DF"><span id="marketcap"></span></p>
       </h2>
     </div>
   </div>
-
-
-
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <!-- Links when logged in -->
       <%= link_to "My Portfolio", portfolio_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Recent Posts", posts_user_path(current_user.id), class: "navbar-wagon-item navbar-wagon-link" %>
-
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
