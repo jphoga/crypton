@@ -135,6 +135,9 @@
   background-color: white;
   color: black;
   flex-grow: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .user-profile-link-container {
@@ -145,7 +148,7 @@
 
 .user-profile-link {
   color: black;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 700;
   text-decoration: none;
   &:hover {
@@ -163,13 +166,15 @@
 
 .post-card-content {
   font-size: 18px;
-  margin: .25rem 0 0;
+  margin-bottom: 25px;
 }
 
 .post-card-footer {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 16px;
+  position: absolute;
+  bottom: 0px;
 }
 
 .post-card-footer-list {
