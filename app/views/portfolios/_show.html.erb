@@ -10,7 +10,7 @@
   <div class="item-table">
     <table>
       <tr id="first-row-bordered-corners">
-        <th class="first-row" style = "border-radius: 10px 0px 0px 10px">
+        <th class="first-row" style = "border-radius: 10px 0px 0px 0px">
           <h4>Currency Name</h4>
         </th>
         <th class="first-row">
@@ -19,7 +19,7 @@
         <th class="first-row">
           <h4>Market Price</h4>
         </th class="first-row">
-        <th class="first-row" style="border-radius: 0px 10px 10px 0px">
+        <th class="first-row" style="border-radius: 0px 10px 0px 0px">
           <h4>Total Value</h4>
         </th>
       </tr>
@@ -27,7 +27,7 @@
       <% @portfolio.ownedcurrencies.each do |currency| %>
         <tr class="this-table">
           <div class="table-columns">
-            <td class= "currency-name" style = "border-radius: 10px 0px 0px 10px">
+            <td class= "currency-name">
              <%= currency.cryptocurrency.name %>
             </td>
            <td class ="cajas-restantes", id="cajas-de-zero-padding"><%= (currency.quantity).round %></td>
@@ -37,13 +37,13 @@
             <td >
             <%  else  %>
               <td class ="cajas-restantes">$ <%= (currency.cryptocurrency.market_price).round(2) %></td>
-              <td class ="cajas-restantes" style="border-radius: 0px 10px 10px 0px">$ <%= (currency.cryptocurrency.total_owned_value(currency).round(2)) %>
+              <td class ="cajas-restantes" style="border-radius: 0px 0px 10px 0px">$ <%= (currency.cryptocurrency.total_owned_value(currency).round(2)) %>
               </td>
             </div>
 
-              <td  class = "trash-bin">
+              <td  id = "trash-bin">
                 <%= link_to  ownedcurrency_path(currency), :class => "", method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <div class="trash">  <i class="far fa-times-circle table-row-delete"></i></div>
+                  <i class="far fa-times-circle table-row-delete"></i>
                 <% end %>
 
               </td>
@@ -52,10 +52,10 @@
           <% end %>
         <% end %>
         <tr>
-          <th class= "currency-name" style = "border-radius: 10px 0px 0px 10px"> Total  </th>
+          <th class= "currency-name" style = "border-radius: 0px 0px 0px 10px"> Total  </th>
           <th class="cajas-restantes">  </th>
           <th class="cajas-restantes"></th>
-          <th class="total-sum" style="border-radius: 0px 10px 10px 0px">$ <%= sum %>   </th>
+          <th class="total-sum" style="border-radius: 0px 0px 10px 0px">$ <%= sum %>   </th>
         </tr>
       </table>
     </div>
