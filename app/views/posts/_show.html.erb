@@ -32,7 +32,13 @@
         <article class="card-content">
           <p style="font-size:24px;"><%= post.content %></p>
         </article>
-        <div class="card-user"> By <span class="card-username"><%= post.user.email %></span></div>
+        <div class="post-and-comment-card-user">
+          <span>
+            <%= link_to user_path(post.user) do %>
+            <%= post.user.username %>
+            <% end %>
+            </span>
+        </div>
         <% if policy(post).destroy? %>
           <%= link_to post_path, method: :delete, data: { confirm: "Delete Post?" } do %>
             <i class="fas fa-trash trash-icon"></i>
