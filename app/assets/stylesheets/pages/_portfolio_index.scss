@@ -1,13 +1,10 @@
 .wrapper {
-  background-color:white;
-}
+ }
 
 .form-container {
   padding: 10px 0px 30px 0px;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
-  width: 350px;
-  margin-left: -50px;
   border-radius: 20px;
 
 }
@@ -35,22 +32,30 @@
     font-family: 'Roboto', sans-serif;
     padding: 50px 0px 40px 0px;
     line-height: 1.1;
-    color: gray;
-    width: 1140px;
+    // color: gray;
+    // width: 1140px;
     text-align: center;
     font-weight: bold;
     // background-color: #f7f7f7;
-    margin-top: 50px;
     font-size: 50px;
-    margin-left: 142px;
-    // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    // border: 1px solid rgba(0, 0, 0, 0.1);
+    // margin-left: 142px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .grid {
   display: grid;
   grid-template-columns: 10% 20% 0% 25% 15% 20% 10%;
-  grid-template-rows: 30% 10% 20% 10% 30%;
+  grid-template-rows: 30% 15% 10% 15% 30%;
+}
+
+.title-for-port{
+  background-color: white;
+  grid-column-start: 2;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin-top: 10px;
 }
 
 .first-box{
@@ -58,11 +63,11 @@
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
-  grid-row-end: 5;
+  grid-row-end: 7;
   padding-right: 100px;
-  // padding:50px;
-  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  // border: 1px solid rgba(0, 0, 0, 0.1);
+  padding:50px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
 }
 
@@ -71,32 +76,32 @@
   grid-column-start: 4;
   grid-column-end: 7;
   grid-row-start: 2;
-  grid-row-end: 3;
-  // padding-left: 50px;
-  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  // border: 1px solid rgba(0, 0, 0, 0.1);
+  grid-row-end: 4;
+  padding: 30px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .third-box{
   background-color: white;
   grid-column-start: 4;
   grid-column-end: 6;
-  grid-row-start: 3;
-  grid-row-end: 5;
-   // padding-left: 50px;
-  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  // border: 1px solid rgba(0, 0, 0, 0.1);
+  grid-row-start: 4;
+  grid-row-end: 7;
+   padding: 50px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .fourth-box{
   background-color: white;
   grid-column-start:6;
   grid-column-end: 7;
-  grid-row-start: 3;
-  grid-row-end: 5;
-  // padding: 10px;
-  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  // border: 1px solid rgba(0, 0, 0, 0.1);
+  grid-row-start: 4;
+  grid-row-end: 7;
+    padding: 30px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .text-left {
@@ -160,10 +165,8 @@
 }
 
 .title-for-port h1{
-  margin-top: 4px;
   color: white;
   text-shadow: 4px 4px black;
-    // margin-left: -900px;
 }
 
 .cajas-restantes {
@@ -214,21 +217,18 @@ tr:nth-of-type(odd) {
 
 .first-box img{
   width: 220px;
-  // border-radius: 10%;
+  border-radius: 5%;
   margin-left: -15px;
 }
 
 .first-box-content{
-  text-align: center;
   padding-bottom: 350px;
-  // width: 300px;
-  // display: flex;
-  // flex-direction: column;
-  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  // max-width: 300px;
-  // margin: 40px 40px 40px 80px;
-  // text-align: center;
-  // font-family: arial;
+  flex-direction: column;
+  text-align: center;
+  font-family: arial;
 
 }
 
+.coin-tag{
+  color: grey;
+}
