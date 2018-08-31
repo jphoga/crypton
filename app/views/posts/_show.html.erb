@@ -34,7 +34,7 @@
         </article>
         <div class="post-and-comment-card-user">
           <span>
-            <%= link_to user_path(post.user) do %>
+            <%= link_to user_path(post.user), class: 'post-and-comment-card-user-color' do %>
             <%= post.user.username %>
             <% end %>
             </span>

@@ -5,7 +5,7 @@
   </article>
   <div class="post-and-comment-card-user">
     <span>
-      <%= link_to user_path(comment.user) do %>
+      <%= link_to user_path(comment.user), class: 'post-and-comment-card-user-color' do %>
       <span><%= comment.user.username %></span>
       <% end %>
   <% if policy(comment).destroy? %>

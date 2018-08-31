@@ -21,7 +21,14 @@
   display: inline-block;
   vertical-align: middle;
   font-size: 12px;
+}
+
+.post-and-comment-card-user-color {
   color: black;
+  &:hover {
+    color: gray;
+    text-decoration: none;
+  }
 }
 
 .trash-icon {
