@@ -6,26 +6,26 @@ fetch('https://api.coinmarketcap.com/v2/global/')
   return response.json();
 })
 .then(function(data){
-  const marketCap         = document.getElementById("marketcap");
-  const marketCapValue    = data.data.quotes.USD.total_market_cap;
+  const marketCap          = document.getElementById("marketcap");
+  const marketCapValue     = data.data.quotes.USD.total_market_cap;
   if (marketCap) {
-    marketCap.innerText     = "$" + Number(marketCapValue.toFixed(0)).toLocaleString('en');
+    marketCap.innerText    = "$" + Number(marketCapValue.toFixed(0)).toLocaleString('en');
   }
 
   // const lastUpdated       = document.getElementById("last-updated");
   // const lastUpdatedValue  = data.data.last_updated;
   // lastUpdated.innerText   = lastUpdatedValue;
 
-  const btcDominance      = document.getElementById("bitcoin-dominance");
-  const btcDominanceValue = data.data.bitcoin_percentage_of_market_cap;
+  const btcDominance       = document.getElementById("bitcoin-dominance");
+  const btcDominanceValue  = data.data.bitcoin_percentage_of_market_cap;
   if (btcDominance) {
-    btcDominance.innerText  = btcDominanceValue + "%";
+    btcDominance.innerText = btcDominanceValue + "%";
   }
 
   const cryptoCount       = document.getElementById("cryptocurrency-number");
   const cryptoCountValue  = data.data.active_cryptocurrencies;
   if (cryptoCount) {
-    cryptoCount.innerText   = Number(cryptoCountValue).toLocaleString('en');
+    cryptoCount.innerText = Number(cryptoCountValue).toLocaleString('en');
   }
 
   const dailyVolume       = document.getElementById("daily-volume");
@@ -67,7 +67,7 @@ const fetchBitcoin = () => {
     const btcChange         = document.getElementById("bitcoin-change");
     const btcChangeValue    = data.data.quotes.USD.percent_change_24h
     if(btcChange){
-      btcChange.innerText     =btcChangeValue + "%";
+      btcChange.innerText   = btcChangeValue + "%";
     }
   });
 }
