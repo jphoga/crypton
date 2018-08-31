@@ -4,8 +4,10 @@ namespace :new_seed do
     posts = Post.all
     u = User.all
 
-    posts.each do |post|
-      p post.upvote_by u.sample
+    10.times do
+      posts.each do |post|
+        p post.upvote_by u.sample
+      end
     end
   end
 end
