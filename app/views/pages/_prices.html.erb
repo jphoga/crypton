@@ -3,7 +3,7 @@
     <div class="static-box">
       <div class="static-fields">
         <div class="top-row">
-             <h2><strong>Change: </strong>
+          <h2><strong>Change: </strong>
             <p style="color: #5186DF"><span id="bitcoin-change"></span></p>
           </h2>
           <h2><strong>Cryptocurrencies: </strong>
@@ -31,7 +31,7 @@
       <% end %>
       <div class="card-prices">
         <% if current_user %>
-          <% current_user.favorited_by_type('Cryptocurrency').each do |cryptocurrency| %>
+          <% current_user.favorited_by_type('Cryptocurrency').reverse.each do |cryptocurrency| %>
             <div class="crypto-card-container">
               <div class="coinmarketcap-currency-widget widget-card" data-currency="<%=cryptocurrency.website_slug%>" data-base="USD" data-statsticker="false">
               </div>
@@ -43,7 +43,7 @@
             </div>
           <% end %>
         <% else %>
-         <div class="crypto-card-container">
+          <div class="crypto-card-container">
             <div class="coinmarketcap-currency-widget widget-card" data-currency="bitcoin" data-base="USD" data-statsticker="false">
             </div>
             <div class="coinmarketcap-currency-widget widget-card" data-currency="ethereum" data-base="USD" data-statsticker="false">
@@ -73,7 +73,7 @@
       </div>
     </div>
     <!-- Number, Name, MarketCap, Price, Volume, Supply, Change, Graph -->
-<!--     <div class="list-box">
+    <!--     <div class="list-box">
       <div class="row-form">
         #render 'subscriptions/form', subscription: @subscription
          #render 'subscriptions/table'
