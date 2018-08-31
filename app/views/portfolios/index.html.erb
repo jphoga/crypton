@@ -1,15 +1,19 @@
 <%#4 boxes to contain information%>
 <div class="wrapper">
-  <div class="title-for-port">Your Portfolio</h1>
-</div>
 <div class="container-for-grid-portfolio">
   <div class="grid">
+  <div class="title-for-port">Your Portfolio</h1>
+</div>
     <%#first box%>
     <div class="first-box">
       <div class="first-box-content">
         <%= cl_image_tag current_user.photo %>
         <h2> <%=  current_user.username %></h2>
         <p> Email: <%= current_user.email %></p>
+      </div>
+
+      <div class="coin-tag">
+           © CoinSpread 2018
       </div>
     </div>
     <%#second box%>
