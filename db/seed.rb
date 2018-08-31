@@ -20,8 +20,6 @@ urltania = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058557/tania.
 urlhiroki ="https://res.cloudinary.com/deqvblsv6/image/upload/v1535058962/hiroki.jpg"
 urldavid = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058874/david.png"
 urljan = "https://res.cloudinary.com/deqvblsv6/image/upload/v1535058999/jan.jpg"
-urltimdraper =
-urlelonmusk =
 
 
 Jan = User.create (
@@ -29,7 +27,7 @@ Jan = User.create (
    password: "123456",
    username: "Jan",
    remote_photo_url: urljan
- }
+   }
 )
 
 Hiroki = User.create (
@@ -37,7 +35,7 @@ Hiroki = User.create (
    password: "123456",
    username: "Hiroki",
    remote_photo_url: urlhiroki
- }
+   }
 )
 
 David = User.create (
@@ -45,7 +43,7 @@ David = User.create (
    password: "123456",
    username: "David",
    remote_photo_url: urldavid
- }
+   }
 )
 
 Tania = User.create (
@@ -53,37 +51,10 @@ Tania = User.create (
    password: "123456",
    username: "Tania",
    remote_photo_url:urltania
- }
+   }
 )
 
-Tim= User.create (
-  {email: "timdraper@gmail.com",
-   password: "123456",
-   username: "Tim Draper",
-   remote_photo_url: urltimdraper
-)
-}
-
-ElonMusk= User.create ({
-  email: "elonmusk@gmail.com",
-  password: "123456",
-  username: "Elon Musk",
-  remote_photo_url: urlelonmusk
-}
-)
-
-100.times do
-  User.create({
-    email: Faker::Internet.email,
-    password: "123456",
-    username: Faker::Company.name,
-    remote_photo_url: Faker::Avatar.image(user_id)
-  })
-end
-
-p "created 106 users"
-
-
+p "created 5 users"
 
 Post.create (
   {content: "Sometimes you get the feeling that the Exchanges
@@ -132,6 +103,7 @@ Post.create (
 
 
 #Seed coins
+Cryptocurrency.destroy_all
 
 # coin_market_url = "https://api.coinmarketcap.com/v1/ticker/?limit=1500"
 
@@ -359,18 +331,6 @@ Comment.create ({
                   post: Post.all.sample
 })
 
-# 100.times do
-#   Comment.create (
-#   {
-#                   content: "Spurt Plus (SPU+) owns and operates on its own Blockchain.
-#    Stay tuned for our Blockchain announcement, amongst other major deals
-#     signed off by Spu+. ",
-#                   user: User.all.sample,
-#                   post: Post.all.sample
-# }
-# )
-# end
-
 puts "20 comments created"
 
 10.times do
@@ -391,37 +351,31 @@ puts "10 portfolios created"
      }
   )
 end
-
 puts "30 ownedcurrencies created"
 
-Follow.create ( {
-  followable: Hiroki,
-  follower: David
-})
-
 
 Follow.create ( {
-  followable: David,
-  follower: Hiroki
+                  followable: Hiroki,
+                  follower: David
 })
 
 
 Follow.create ( {
-  followable: Tania,
-  follower: Jan
+                  followable: David,
+                  follower: Hiroki
 })
 
 
 Follow.create ( {
-  followable: Jan,
-  follower: Hiroki
+                  followable: Tania,
+                  follower: Jan
 })
 
-100.times do
-  Follow.create ({
-  followable: User.all.sample,
-  follower: User.all.sample
-})
-end
 
-p "created 105 followers"
+Follow.create ( {
+                  followable: Jan,
+                  follower: Hiroki
+})
+
+
+p "created 5 followers"
