@@ -7,7 +7,7 @@
   background-color: #00aced;
   border: none;
   &:hover {
-    background-color: #00aced;
+    background-color: #0084b4;
   }
 }
 
@@ -29,4 +29,27 @@
   display: flex;
   justify-content: flex-start;
   margin: 5px;
+}
+
+.btn-show-news {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  user-select: none;
+  border-radius: 20px;
+  font-size: 20px;
+  margin-top: 5px;
+  line-height: 10px;
+  color: #00aced;
+  &:hover {
+    color: #0084b4;
+  }
 }
