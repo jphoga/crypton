@@ -3,7 +3,7 @@
     <div class="home-post-show-third">
       <div class="vote-card">
         <div class="post-indiv-avatar">
-        <%= cl_image_tag(post.user.photo, :transformation=>[
+          <%= cl_image_tag(post.user.photo, :transformation=>[
           {:effect=>"cartoonify"},
           {:height=>35, :width => 35, :crop=>"fill"}
           ]) %>
