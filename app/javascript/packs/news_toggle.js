@@ -1,4 +1,4 @@
-const showhideNews = (button, url) => {
+const showhideNews = (url) => {
     const prices = document.querySelector(".prices-inner-container");
     prices.setAttribute("style", "display: none;");
     const temporaryContainer = document.querySelector("#temporary-container");
@@ -8,3 +8,4 @@ const showhideNews = (button, url) => {
 }
 
 export default showhideNews;
+
