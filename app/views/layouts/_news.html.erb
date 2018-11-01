@@ -5,16 +5,13 @@
   </div>
   <% @articles.each do |article|  %>
     <div class="card" style=" padding: 20px; border-bottom: solid #F3F3F3; display: flex; flex-direction: column; align-items: center; ">
-      <% unless article.image_url == nil || article.image_url == "self" %>
-        <img class="card-img-left" src=<%= article.image_url %> alt="Card image cap" style=" width: 150px; ">
-      <% end %>
       <div class="card-body" style="text-align: justify;">
         <p class="card-title" style="font-size: 17px; padding-top: 10px; " ><%= article.title %> </p>
         <p class="card-text" style="font-size: 12px;"><%= article.description %></p>
         <p class="card-text" style="font-size: 12px; padding-top:10px; padding: padding-bottom: 0"><small class="text-muted">Published on <%= article.publishedAt.strftime("%b %e, %Y - %l:%M %p") %></small></p>
       </div>
       <%= link_to "See on reddit", article.news_url, target: :_blank, class: "news-link" %>
-      <span>
+        <span>
         <button type="button" class="show-news btn-show-news" id="show-news" data-url= "<%= article.source %>">Expand news <i class="fas fa-angle-double-right"></i></button>
       </span>
     </div>
