@@ -27,7 +27,7 @@ Jan = User.create (
    password: "123456",
    username: "Jan",
    remote_photo_url: urljan
- }
+   }
 )
 
 Hiroki = User.create (
@@ -35,7 +35,7 @@ Hiroki = User.create (
    password: "123456",
    username: "Hiroki",
    remote_photo_url: urlhiroki
- }
+   }
 )
 
 David = User.create (
@@ -43,7 +43,7 @@ David = User.create (
    password: "123456",
    username: "David",
    remote_photo_url: urldavid
- }
+   }
 )
 
 Tania = User.create (
@@ -51,7 +51,7 @@ Tania = User.create (
    password: "123456",
    username: "Tania",
    remote_photo_url:urltania
- }
+   }
 )
 
 p "created 5 users"
@@ -355,26 +355,26 @@ puts "30 ownedcurrencies created"
 
 
 Follow.create ( {
-  followable: Hiroki,
-  follower: David
+                  followable: Hiroki,
+                  follower: David
 })
 
 
 Follow.create ( {
-  followable: David,
-  follower: Hiroki
+                  followable: David,
+                  follower: Hiroki
 })
 
 
 Follow.create ( {
-  followable: Tania,
-  follower: Jan
+                  followable: Tania,
+                  follower: Jan
 })
 
 
 Follow.create ( {
-  followable: Jan,
-  follower: Hiroki
+                  followable: Jan,
+                  follower: Hiroki
 })
 
 

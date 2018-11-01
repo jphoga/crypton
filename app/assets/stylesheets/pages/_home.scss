@@ -13,7 +13,8 @@ body {
   display: flex;
   flex-direction: column;
   flex: 25%;
-  height: calc(150vh - 60px);
+  // min-height: calc(150vh - 60px);
+  // min-height: 100vh;
 }
 .posts-inner-container{
   border-radius: 2px;
@@ -29,10 +30,12 @@ body {
   display: flex;
   flex-direction: column;
   flex: 20%;
-  height: calc(150vh - 60px);
+  // min-height: calc(150vh - 60px);
+  // min-height: 100vh;
 }
 .news-inner-container {
-  min-height: 1500px;
+  // min-height: 100vh;
+  height: 1500px;
   overflow-y: scroll;
   border-radius: 2px;
   margin: 10px;
@@ -69,7 +72,8 @@ body {
 }
 
 .news-link {
-  color: blue;
+  color: #3880D1;
+  font-style: italic;
   font-size: 15px;
   text-decoration: none;
   overflow-wrap: break-word;
@@ -81,17 +85,23 @@ body {
   word-break: break-word;
 }
 
+.news-link:hover{
+    text-decoration:none;
+    color: gray;
+  }
+
 
 .news-header {
   color: #66757f;
+  height: 80px;
 }
 
 // Middle Section
 
 #news-main-box {
-  min-height: 100vh;
-  min-width:600px;
+  // min-height: 100vh;
 }
+
 
 
 // .all-news-container {
@@ -106,10 +116,11 @@ body {
   display: flex;
   flex-direction: column;
   flex: 55%;
-  min-height: calc(150vh - 60px);
+  // min-height: calc(150vh - 60px);
+  // min-height: 100vh;
 }
 .prices-inner-container {
-  min-height: 1500px;
+  // min-height: 1500px;
   border-radius: 2px;
   // margin: 10px;
   // padding: 10px;
@@ -226,6 +237,7 @@ td {
   flex-direction: row;
   position: relative;
   flex-grow: 33%;
+  flex-wrap: wrap;
 }
   //TOP DASHBOARD BANNER
 .bitcoin-logo{
@@ -242,14 +254,14 @@ td {
 }
 #bitcoin-price {
   color: #0084b4;
-  font-size: 27px;
+  font-size: 25px;
   margin-left: 10px;
   font-style: normal;
   font-family: 'Roboto', sans-serif;
 }
 #marketcap {
   color: #0084b4;
-  font-size: 27px;
+  font-size: 25px;
   margin-left: 10px;
   font-family: 'Roboto', sans-serif;
 }
@@ -269,6 +281,20 @@ td {
   color: #0084b4;
   font-size: 20px;
 }
+.highlight-red{
+  color: white !important;
+  font-style: bold;
+  background-color: #870209;
+  border-color: #870209;
+  border-radius: 5px;
+}
+.highlight-green{
+  color: white !important;
+  font-style: bold;
+  background-color: #256b00;
+  border-color: #256b00;
+  border-radius: 5px;
+}
 .top-row {
   background-color: white;
   // background-color: gray;
@@ -287,22 +313,18 @@ td {
 .recent-posts {
   color: black;
 }
-
 .container-for-search-box{
   display: flex;
   align-items: center;
   margin-bottom: -40px;
 }
-
 .search-box-bottom-box{
   display: flex;
   align-items: center;
 }
-
 .first-search-shrunk {
   margin-right: 10px;
 }
-
 .form-for-subscription {
   margin-right: 20px;
 }

@@ -1,42 +1,59 @@
 <div class="posts-show-wrapper">
-  <div class="prices-back-right">
-    <%= link_to prices_path, remote: true do %>
-      <span>Dashboard <i class="fas fa-angle-double-right"></i></span>
-    <% end %>
-  </div>
-  <div class="post-show">
-    <div class="vote-card">
-      <% if policy(post).upvote? %>
-        <%= link_to upvote_post_path(post), method: :put do %>
-          <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
-        <% end %>
-      <% end %>
-      <div class="vote-weighted"><%= post.weighted_score %></div>
-      <% if policy(post).downvote? %>
-        <%= link_to downvote_post_path(post), method: :put do %>
-          <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
-        <% end %>
+  <div class="post-inner-wrapper">
+    <div class="prices-back-right">
+      <%= link_to prices_path, remote: true do %>
+        <span>Dashboard <i class="fas fa-angle-double-right"></i></span>
       <% end %>
     </div>
-    <div class="post-show-card-top">
-      <div class="card-meta"><time><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
-      <article class="card-content">
-        <p><%= post.content %></p>
-      </article>
-      <div class="card-user"> By <span class="card-username"><%= post.user.email %></span></div>
-      <% if policy(post).destroy? %>
-        <%= link_to post_path, method: :delete, data: { confirm: "Delete Post?" } do %>
-          <i class="fas fa-trash trash-icon"></i>
+    <div class="post-show">
+      <div class="vote-card">
+        <% if policy(post).upvote? %>
+          <%= link_to upvote_post_path(post), method: :put do %>
+            <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
+          <% end %>
         <% end %>
-      <% end %>
+        <div class="vote-weighted"><%= post.weighted_score %></div>
+        <% if policy(post).downvote? %>
+          <%= link_to downvote_post_path(post), method: :put do %>
+            <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="profile-foto">
+        <%= cl_image_tag(post.user.photo, :transformation=>[
+            {:effect=>"cartoonify"},
+            {:effect=>"outline:100", :color=>"white"},
+            {:background=>"white"},
+            {:height=>100, :crop=>"scale"}
+         ]) %>
+      </div>
+      <div class="post-show-card-top">
+        <div class="card-meta"><time style="color: gray; font-size: 12px;"><%= post.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
+        <article class="card-content">
+          <p style="font-size:24px;"><%= post.content %></p>
+        </article>
+        <div class="post-and-comment-card-user">
+          <span>
+            <%= link_to user_path(post.user), class: 'post-and-comment-card-user-color' do %>
+            <%= post.user.username %>
+            <% end %>
+            </span>
+        </div>
+        <% if policy(post).destroy? %>
+          <%= link_to post_path, method: :delete, data: { confirm: "Delete Post?" } do %>
+            <i class="fas fa-trash trash-icon"></i>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <% unless !current_user %>
-    <h4>Add a comment:</h4>
-    <div id="new_comment"><%= render 'comments/form', post: post, comment: comment %></div>
-  <% end %>
-  <h4>Comments</h4>
-  <div id="comments">
-    <%= render 'comments/show', post: post %>
+    <% unless !current_user %>
+      <div class="comments">
+        <h5>Add your comment:</h5>
+        <div id="new_comment"><%= render 'comments/form', post: post, comment: comment %></div>
+      <% end %>
+      <div id="comments">
+        <%= render 'comments/show', post: post %>
+      </div>
+    </div>
   </div>
 </div>

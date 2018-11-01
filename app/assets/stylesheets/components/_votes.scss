@@ -1,7 +1,13 @@
 .vote-card {
-  position: relative;
+  padding: 7px;
   background-color: white;
   margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.upvote-icon-link {
+  text-align: center;
 }
 
 .upvote-icon {
@@ -9,6 +15,10 @@
   &:hover {
     color: #0996d0;
   }
+}
+
+.downvote-icon-link {
+  text-align: center;
 }
 
 .downvote-icon {
@@ -20,4 +30,9 @@
 
 .vote-weighted {
   text-align: center;
+}
+
+.vote-buttons-container {
+  display: flex;
+  flex-direction: column;
 }

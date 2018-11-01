@@ -1,5 +1,17 @@
-<div class="card">
-  <div class="card-meta"><time><%= comment.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
-  <article class="card-content"><p><%= comment.content %></p></article>
-  <div class="card-user"> By <span class="card-username"><%= comment.user.email %></span></div>
+<div class="comment-card" id="comments-card">
+  <div class="card-meta"><time style="color: gray; font-size: 12px;"><%= comment.created_at.strftime("%b %e, %Y - %l:%M %p") %></time></div>
+  <article class="card-content">
+    <p><%= comment.content %></p>
+  </article>
+  <div class="post-and-comment-card-user">
+    <span>
+      <%= link_to user_path(comment.user), class: 'post-and-comment-card-user-color' do %>
+      <span><%= comment.user.username %></span>
+      <% end %>
+  <% if policy(comment).destroy? %>
+    <%= link_to comment_path(comment), method: :delete, data: { confirm: "Delete Post?" } do %>
+      <i class="fas fa-trash trash-icon"></i>
+    <% end %>
+  <% end %></span>
+  </div>
 </div>

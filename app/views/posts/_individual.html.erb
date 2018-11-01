@@ -2,18 +2,18 @@
   <article class="home-post-show-second">
     <div class="home-post-show-third">
       <div class="vote-card">
-        <div class="voteButtons-<%= post.id %>">
+        <div class="post-indiv-avatar">
+          <%= cl_image_tag(post.user.photo, :transformation=>[
+          {:effect=>"cartoonify"},
+          {:height=>35, :width => 35, :crop=>"fill"}
+          ]) %>
+        </div>
+        <div class="voteButtons-<%= post.id %> vote-buttons-container">
           <%= render 'posts/vote_buttons', post: post %>
         </div>
       </div>
       <div class="home-post-card">
         <div class="post-card-header">
-          <%= cl_image_tag(post.user.photo, :transformation=>[
-            {:effect=>"cartoonify"},
-            {:effect=>"outline:100", :color=>"white"},
-            {:background=>"white"},
-            {:height=>30, :crop=>"scale"}
-            ]) %>
           <span class="user-profile-link-container">
             <%= link_to user_path(post.user), class: 'user-profile-link' do %>
               <span><%= post.user.username %></span>
@@ -26,8 +26,7 @@
         </div>
         <div class="post-card-footer">
           <ul class="post-card-footer-list">
-            <li><%= link_to "View", post_path(post), class: 'view-comments-link', "data-id": post.id, remote: true %> <span class="post-comment-count"><%= post.comments.count %></span> </li>
-            <li><button onclick="triggerComment(this)" class="comment-button">Comment</button></li>
+            <li><%= link_to "Comment", post_path(post), class: 'view-comments-link', "data-id": post.id, remote: true %> <span class="post-comment-count"><%= post.comments.count %></span> </li>
           </ul>
         </div>
         <div class="home_post_comment"><%= render 'comments/form', post: post, comment: @comment %></div>

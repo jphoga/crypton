@@ -1,19 +1,19 @@
 <% if current_user %>
-  <%= link_to upvote_post_path(post), method: :put, remote: true do %>
+  <%= link_to upvote_post_path(post), class: 'upvote-icon-link', method: :put, remote: true do %>
     <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
   <% end %>
 <% else %>
-  <%= link_to new_user_session_path, method: :get do %>
+  <%= link_to new_user_session_path, class: 'upvote-icon-link', method: :get do %>
     <span class="glyphicon glyphicon-chevron-up upvote-icon"></span>
   <% end %>
 <% end %>
 <div class="vote-weighted"><%= post.weighted_score %></div>
 <% if current_user %>
-  <%= link_to downvote_post_path(post), method: :put, remote: true do %>
+  <%= link_to downvote_post_path(post), class: 'downvote-icon-link', method: :put, remote: true do %>
     <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
   <% end %>
 <% else %>
-  <%= link_to new_user_session_path, method: :get do %>
+  <%= link_to new_user_session_path, class: 'downvote-icon-link', method: :get do %>
     <span class="glyphicon glyphicon-chevron-down downvote-icon"></span>
   <% end %>
 <% end %>

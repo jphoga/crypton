@@ -1,4 +1,4 @@
-<%= simple_form_for([post, comment], remote: true, html: { onsubmit: "formGone(this)"}) do |f| %>
+<%= simple_form_for([post, comment], remote: true) do |f| %>
   <%= f.input :content, label: false %>
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>
