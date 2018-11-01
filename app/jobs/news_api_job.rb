@@ -49,7 +49,8 @@ class NewsApiJob < ApplicationJob
           ups: article["ups"]
         )
         unless article["preview"] == nil
-          new_article.image_url = article["preview"]["images"][0]["source"]["url"]
+          # new_article.image_url = article["preview"]["images"][0]["source"]["url"]
+          new_article.image_url = article["url"]
         end
         new_article.save!
       end
