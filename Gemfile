@@ -24,7 +24,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 #pie_chart_gem
 gem "chartkick"
 #carrier
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 2.1'
 
 # card preferences
 gem 'acts_as_favoritor'
